@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экспресс Транс — Грузоперевозки и переезды по всей России</title>
+  <meta name="description" content="Бережные грузоперевозки и домашние переезды по всей России. Без предоплаты, по договору, с гарантией сохранности. Расчёт стоимости за 10 минут.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Экспресс Транс — Грузоперевозки и переезды по России">
+  <meta property="og:description" content="Бережно перевезём ваши вещи в другой город попутной машиной. Без предоплаты, по договору. Расчёт за 10 минут.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ex-trans.ru">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="design-tokens.css">
+
+  <style>
+    /* ============================================
+       PAGE-SPECIFIC STYLES
+       ============================================ */
+
+    /* --- Header --- */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) 0;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    @media (min-width: 768px) {
+      .logo img {
+        height: 56px;
+      }
+    }
+
+    .header-contacts {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .header-phone {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-white);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .header-phone:hover {
+      color: var(--color-accent-400);
+    }
+
+    .header-phone-icon {
+      animation: pulse-soft 2s ease-in-out infinite;
+    }
+
+    .messenger-links {
+      display: flex;
+      gap: var(--space-2);
+    }
+
+    .messenger-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--color-white);
+      text-decoration: none;
+      transition: background var(--transition-fast);
+    }
+
+    .messenger-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Mobile nav toggle --- */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+
+    /* --- Hero specifics --- */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      padding-top: var(--space-4);
+    }
+
+    .hero-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: var(--font-size-body-lg);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .hero-guarantee {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      color: var(--color-accent-400);
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .hero-layout {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--space-12);
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-form-wrapper {
+        flex: 0 0 420px;
+      }
+    }
+
+    /* --- Hero decorative elements --- */
+    .hero-decor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-decor-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.035);
+      filter: blur(1px);
+    }
+
+    .hero-decor-circle--lg {
+      width: 150px;
+      height: 150px;
+      top: 5%;
+      right: 5%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-decor-circle--md {
+      width: 80px;
+      height: 80px;
+      bottom: 15%;
+      left: 8%;
+      animation: float-slow 5.5s ease-in-out infinite;
+      opacity: 0.04;
+    }
+
+    .hero-decor-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-decor-dot--1 {
+      top: 20%;
+      left: 15%;
+      animation: float-slow 6s ease-in-out infinite;
+    }
+
+    .hero-decor-dot--2 {
+      top: 40%;
+      right: 20%;
+      animation: float 3.5s ease-in-out infinite;
+      width: 8px;
+      height: 8px;
+    }
+
+    .hero-decor-dot--3 {
+      bottom: 25%;
+      right: 35%;
+      animation: float-slow 5s ease-in-out infinite 0.5s;
+      width: 12px;
+      height: 12px;
+    }
+
+    .hero-decor-dot--4 {
+      top: 60%;
+      left: 25%;
+      animation: float 4.5s ease-in-out infinite 1s;
+      width: 6px;
+      height: 6px;
+      opacity: 0.06;
+    }
+
+    .hero-decor-arc {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: 50%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-decor-arc--2 {
+      width: 300px;
+      height: 300px;
+      top: auto;
+      bottom: -5%;
+      left: 60%;
+      border-color: rgba(255, 255, 255, 0.025);
+    }
+
+    #hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        /* Warm amber glow bottom-right */
+        radial-gradient(ellipse 600px 400px at 85% 80%, rgba(217, 119, 6, 0.12) 0%, transparent 70%),
+        /* Cool blue glow top-left */
+        radial-gradient(ellipse 500px 500px at 10% 20%, rgba(58, 95, 153, 0.15) 0%, transparent 60%),
+        /* Subtle purple accent mid */
+        radial-gradient(ellipse 400px 300px at 50% 60%, rgba(100, 60, 140, 0.06) 0%, transparent 70%),
+        /* Small warm spot - headlight feel */
+        radial-gradient(circle 80px at 75% 65%, rgba(251, 191, 36, 0.08) 0%, transparent 100%),
+        radial-gradient(circle 60px at 20% 75%, rgba(251, 191, 36, 0.05) 0%, transparent 100%),
+        /* Horizon line glow */
+        linear-gradient(180deg,
+          rgba(10, 18, 38, 0) 0%,
+          rgba(10, 18, 38, 0) 55%,
+          rgba(30, 45, 70, 0.3) 70%,
+          rgba(20, 32, 55, 0.4) 85%,
+          rgba(15, 25, 42, 0.5) 100%
+        ),
+        /* Base gradient */
+        linear-gradient(160deg, #0a1226 0%, #0f1b2d 20%, #162844 50%, #1a2b45 75%, #1e3352 100%);
+    }
+
+    #hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero inherits dark text styles */
+    #hero .text-hero {
+      color: var(--color-white);
+    }
+    #hero .text-h2,
+    #hero .text-h3 {
+      color: var(--color-white);
+    }
+    #hero .text-body,
+    #hero .text-body-lg,
+    #hero .hero-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- Image placeholders --- */
+    .img-placeholder {
+      background-color: var(--color-neutral-200);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-neutral-500);
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-medium);
+      min-height: 200px;
+      text-align: center;
+      padding: var(--space-4);
+    }
+
+    .img-placeholder--dark {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .img-placeholder--team {
+      min-height: 240px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    /* --- Photo placeholders (realistic) --- */
+    .photo-placeholder {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 240px;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: var(--space-3);
+    }
+
+    .photo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-medium);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Photo: truck loading */
+    .photo-truck-loading {
+      background:
+        radial-gradient(ellipse 40% 50% at 80% 30%, rgba(217, 119, 6, 0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 40% at 20% 70%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 50% 50%, rgba(74, 85, 104, 0.3) 0%, transparent 80%),
+        linear-gradient(135deg, #1a2744 0%, #2d3e5c 30%, #4a5568 60%, #d97706 95%);
+      aspect-ratio: 16 / 9;
+      min-height: 240px;
+    }
+
+    .photo-truck-loading::before {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    }
+
+    .photo-truck-loading::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.3) 0%, transparent 70%);
+      filter: blur(8px);
+    }
+
+    /* Photo: map */
+    .photo-map {
+      background:
+        radial-gradient(circle 8px at 25% 40%, #D97706 0%, #D97706 100%, transparent 100%),
+        radial-gradient(circle 8px at 65% 55%, #D97706 0%, #D97706 100%, transparent 100%),
+        radial-gradient(circle 8px at 80% 30%, #D97706 0%, #D97706 100%, transparent 100%),
+        radial-gradient(circle 6px at 45% 65%, #F59E0B 0%, #F59E0B 100%, transparent 100%),
+        radial-gradient(circle 6px at 55% 35%, #F59E0B 0%, #F59E0B 100%, transparent 100%),
+        linear-gradient(135deg, #e8ecd6 0%, #d4dbc4 25%, #c9d1b8 50%, #dde3cf 75%, #eef1e4 100%);
+      aspect-ratio: 16 / 9;
+      min-height: 220px;
+      position: relative;
+    }
+
+    .photo-map::before {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      width: 60%;
+      height: 0;
+      border-top: 2px dashed rgba(217, 119, 6, 0.4);
+      transform: rotate(-5deg);
+    }
+
+    .photo-map::after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 35%;
+      width: 30%;
+      height: 0;
+      border-top: 2px dashed rgba(217, 119, 6, 0.3);
+      transform: rotate(15deg);
+    }
+
+    .photo-map .map-cities {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .photo-map .map-city {
+      position: absolute;
+      font-size: 11px;
+      font-weight: var(--font-weight-medium);
+      color: rgba(15, 27, 45, 0.35);
+      white-space: nowrap;
+    }
+
+    .photo-map .map-city--1 { top: 32%; left: 18%; }
+    .photo-map .map-city--2 { top: 58%; left: 58%; }
+    .photo-map .map-city--3 { top: 22%; left: 72%; }
+    .photo-map .map-city--4 { top: 48%; left: 38%; }
+
+    /* Photo: fleet */
+    .photo-fleet {
+      background:
+        linear-gradient(180deg, #b0c4de 0%, #8fa8c8 40%, #6b7b8d 70%, #4a5568 100%);
+      aspect-ratio: 16 / 9;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-fleet::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      background: linear-gradient(180deg, transparent 0%, rgba(74, 85, 104, 0.4) 100%);
+    }
+
+    .photo-fleet .fleet-silhouettes {
+      position: absolute;
+      bottom: 15%;
+      left: 5%;
+      right: 5%;
+      display: flex;
+      gap: 8%;
+      align-items: flex-end;
+      height: 40%;
+    }
+
+    .fleet-truck {
+      background: rgba(26, 43, 69, 0.25);
+      border-radius: 4px 4px 0 0;
+      flex: 1;
+      position: relative;
+    }
+
+    .fleet-truck--1 { height: 80%; }
+    .fleet-truck--2 { height: 70%; }
+    .fleet-truck--3 { height: 85%; }
+    .fleet-truck--4 { height: 65%; }
+
+    .fleet-truck::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 60%;
+      width: 40%;
+      height: 20%;
+      background: rgba(26, 43, 69, 0.2);
+      border-radius: 3px 3px 0 0;
+    }
+
+    /* Photo: team member */
+    .photo-team-member {
+      min-height: 240px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .photo-team-member::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.08));
+    }
+
+    .photo-team-member .team-avatar-icon {
+      color: rgba(100, 116, 139, 0.3);
+    }
+
+    /* Photo: letter (thank you letter) */
+    .photo-letter {
+      min-height: 140px;
+      border-radius: var(--radius-md);
+      background:
+        repeating-linear-gradient(
+          180deg,
+          transparent,
+          transparent 18px,
+          rgba(148, 163, 184, 0.15) 18px,
+          rgba(148, 163, 184, 0.15) 19px
+        ),
+        linear-gradient(135deg, #fefce8 0%, #fef9c3 30%, #fffbeb 60%, #fefce8 100%);
+      position: relative;
+      overflow: hidden;
+      padding: var(--space-3);
+    }
+
+    .photo-letter::before {
+      content: '';
+      position: absolute;
+      bottom: 15%;
+      right: 12%;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid rgba(220, 38, 38, 0.2);
+      background: rgba(220, 38, 38, 0.05);
+    }
+
+    .photo-letter::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 15%;
+      width: 50px;
+      height: 0;
+      border-top: 2px solid rgba(15, 23, 42, 0.12);
+      transform: rotate(-8deg);
+    }
+
+    /* --- Form card (dark bg) --- */
+    .form-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .form-card .text-h3 {
+      color: var(--color-primary-800);
+    }
+
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 479px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* --- Form trust indicators --- */
+    .form-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      margin-top: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .form-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-size: var(--font-size-caption);
+      color: var(--color-neutral-500);
+    }
+
+    .form-trust-item i {
+      color: var(--color-success-500);
+    }
+
+    /* --- Advantages cards (hero bottom) --- */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .advantages-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .advantage-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      transition: background var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .advantage-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .advantage-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(249, 158, 11, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent-400);
+    }
+
+    .advantage-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--line-height-normal);
+    }
+
+    /* --- Section heading --- */
+    .section-heading {
+      margin-bottom: var(--space-8);
+    }
+
+    .section-heading .text-body-lg {
+      margin-top: var(--space-3);
+      color: var(--color-neutral-500);
+    }
+
+    .section-heading--center {
+      text-align: center;
+    }
+
+    /* --- Service cards --- */
+    .service-card {
+      padding: var(--space-6);
+      transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .service-card:hover {
+      border-color: var(--color-primary-500);
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1);
+    }
+
+    .service-card .text-h3 {
+      margin-bottom: var(--space-3);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary-600);
+      margin-bottom: var(--space-4);
+      transition: transform var(--transition-normal);
+    }
+
+    /* --- Card icon row --- */
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--color-accent-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent-600);
+      margin-bottom: var(--space-3);
+      flex-shrink: 0;
+    }
+
+    .card-icon--primary {
+      background: var(--color-primary-100);
+      color: var(--color-primary-600);
+    }
+
+    .card-icon--success {
+      background: var(--color-success-50);
+      color: var(--color-success-500);
+    }
+
+    /* --- CTA banner --- */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--color-accent-50) 0%, var(--color-accent-100) 100%);
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      text-align: center;
+      margin-top: var(--space-8);
+    }
+
+    .cta-banner .text-h3 {
+      margin-bottom: var(--space-4);
+    }
+
+    /* --- Lead magnet section --- */
+    .leadmagnet-form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    /* --- Support cards --- */
+    .support-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .support-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* --- Checklist items --- */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--font-size-body);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .checklist-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      background: var(--color-success-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-success-500);
+      margin-top: 2px;
+    }
+
+    /* --- Timeline --- */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline-step {
+      display: flex;
+      gap: var(--space-4);
+      padding-bottom: var(--space-6);
+      position: relative;
+    }
+
+    .timeline-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-marker {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-number {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: var(--color-accent-600);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-bold);
+      flex-shrink: 0;
+    }
+
+    .timeline-line {
+      flex: 1;
+      width: 2px;
+      background: var(--color-neutral-200);
+      margin-top: var(--space-2);
+    }
+
+    .timeline-step:last-child .timeline-line {
+      display: none;
+    }
+
+    .timeline-content {
+      padding-top: var(--space-1);
+    }
+
+    .timeline-content .text-h4 {
+      margin-bottom: var(--space-1);
+    }
+
+    .timeline-content .text-body {
+      color: var(--color-neutral-500);
+    }
+
+    @media (min-width: 768px) {
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+      }
+      .timeline-step {
+        padding-bottom: 0;
+      }
+      .timeline-line {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .timeline {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* --- Stats grid --- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .stat-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-bg-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      font-weight: var(--font-weight-extrabold);
+      color: var(--color-accent-600);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 1280px) {
+      .stat-bg-number {
+        font-size: 120px;
+      }
+    }
+
+    /* --- Team card --- */
+    .team-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .team-card-body {
+      padding: var(--space-5);
+    }
+
+    .team-card-body .text-h4 {
+      margin-bottom: var(--space-1);
+    }
+
+    /* --- Footer --- */
+    .site-footer {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-8);
+      border-top: 1px solid var(--color-neutral-200);
+      background: var(--color-neutral-50);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .footer-col-title {
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-neutral-700);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .footer-links a {
+      color: var(--color-neutral-500);
+      text-decoration: none;
+      font-size: var(--font-size-body-sm);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary-500);
+    }
+
+    .footer-bottom {
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-neutral-200);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-bottom .text-caption {
+      color: var(--color-neutral-400);
+    }
+
+    /* --- Avito link --- */
+    .avito-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-primary-500);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+    }
+
+    .avito-link:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Spacing utilities --- */
+    .mb-2 { margin-bottom: var(--space-2); }
+    .mb-3 { margin-bottom: var(--space-3); }
+    .mb-4 { margin-bottom: var(--space-4); }
+    .mb-5 { margin-bottom: var(--space-5); }
+    .mb-6 { margin-bottom: var(--space-6); }
+    .mb-8 { margin-bottom: var(--space-8); }
+    .mt-4 { margin-top: var(--space-4); }
+    .mt-6 { margin-top: var(--space-6); }
+    .mt-8 { margin-top: var(--space-8); }
+    .text-center { text-align: center; }
+
+    /* --- Tracking block --- */
+    .tracking-block {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      background: var(--color-primary-50);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .tracking-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--color-primary-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary-600);
+    }
+
+    /* --- Documents grid --- */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .docs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* --- Section warm text fix --- */
+    .section-warm .text-h2,
+    .section-warm .text-h3 {
+      color: var(--color-primary-800);
+    }
+
+    /* --- Sticky CTA body padding --- */
+    @media (max-width: 767px) {
+      body {
+        padding-bottom: 76px;
+      }
+    }
+
+    /* --- Dark section form overrides --- */
+    .section-dark .form-card .text-body {
+      color: var(--color-neutral-500);
+    }
+
+    .section-dark-alt .form-card .text-body {
+      color: var(--color-neutral-500);
+    }
+
+    /* --- Geography highlights --- */
+    .geo-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+
+    .geo-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .geo-highlight i {
+      flex-shrink: 0;
+      color: var(--color-accent-600);
+      margin-top: 2px;
+    }
+
+    /* --- Insurance block --- */
+    .insurance-block {
+      background: var(--color-success-50);
+      border: 1px solid #BBF7D0;
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+
+    .insurance-block i {
+      flex-shrink: 0;
+      color: var(--color-success-500);
+    }
+
+    /* --- Letters placeholder --- */
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .letters-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .letter-placeholder {
+      background: var(--color-accent-100);
+      border-radius: var(--radius-md);
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent-600);
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-medium);
+      text-align: center;
+      padding: var(--space-3);
+    }
+
+    /* --- Team grid --- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* --- Review avatar --- */
+    .review-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-white);
+      flex-shrink: 0;
+    }
+
+    .review-avatar--1 { background: linear-gradient(135deg, #3B82F6, #6366F1); }
+    .review-avatar--2 { background: linear-gradient(135deg, #10B981, #059669); }
+    .review-avatar--3 { background: linear-gradient(135deg, #F59E0B, #D97706); }
+    .review-avatar--4 { background: linear-gradient(135deg, #EF4444, #DC2626); }
+    .review-avatar--5 { background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
+
+    /* --- Badge trust (reviews) --- */
+    .badge-trust-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      background-color: var(--color-success-50);
+      color: var(--color-success-500);
+      border: 1px solid #BBF7D0;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-semibold);
+      margin-left: var(--space-3);
+      vertical-align: middle;
+    }
+
+    /* --- Wave divider --- */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: -1px;
+    }
+
+    .wave-divider--flip {
+      transform: scaleY(-1);
+      margin-top: 0;
+      margin-bottom: -1px;
+    }
+
+    /* --- Dot grid pattern for light sections --- */
+    .section-light {
+      position: relative;
+    }
+
+    .section-light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle 1px at center, rgba(100, 116, 139, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .section-light > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- Sticky CTA improvements --- */
+    .sticky-cta {
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-cta-text {
+      display: block;
+      text-align: center;
+      font-size: 11px;
+      color: var(--color-neutral-500);
+      margin-bottom: 4px;
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta {
+        transform: none;
+      }
+    }
+
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+
+    /* --- Keyframes --- */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes float-rotate {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-8px) rotate(3deg); }
+      50% { transform: translateY(-14px) rotate(0deg); }
+      75% { transform: translateY(-6px) rotate(-3deg); }
+    }
+
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fade-in-left {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fade-in-right {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pop-in {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      60% {
+        transform: scale(1.15);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* --- Hero animations --- */
+    .hero-anim-h1 {
+      animation: fade-in-left 0.8s ease both;
+    }
+
+    .hero-anim-subtitle {
+      animation: fade-in-left 0.8s ease 0.2s both;
+    }
+
+    .hero-anim-guarantee {
+      animation: fade-in 0.6s ease 0.4s both;
+    }
+
+    .hero-anim-photo {
+      animation: fade-in-up 0.6s ease 0.5s both;
+    }
+
+    .hero-anim-form {
+      animation: fade-in-right 0.6s ease 0.3s both;
+    }
+
+    .hero-anim-advantage {
+      animation: fade-in-up 0.5s ease both;
+    }
+
+    .hero-anim-advantage:nth-child(1) { animation-delay: 0.5s; }
+    .hero-anim-advantage:nth-child(2) { animation-delay: 0.6s; }
+    .hero-anim-advantage:nth-child(3) { animation-delay: 0.7s; }
+
+    /* --- Scroll reveal --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+    .reveal-delay-7 { transition-delay: 0.7s; }
+    .reveal-delay-8 { transition-delay: 0.8s; }
+
+    /* --- Timeline pop-in for numbers --- */
+    .timeline-number-anim {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .timeline-number-anim.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* --- Card hover enhancements --- */
+    .card {
+      transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    @media (hover: hover) {
+      .card:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--color-primary-500);
+      }
+
+      .card:hover .card-icon {
+        transform: scale(1.1);
+      }
+    }
+
+    .card-icon {
+      transition: transform var(--transition-normal);
+    }
+
+    /* --- CTA button shimmer --- */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+      );
+      animation: shimmer 3.5s infinite;
+    }
+
+    @media (hover: hover) {
+      .btn-primary:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+      }
+    }
+
+    /* --- prefers-reduced-motion --- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .timeline-number-anim {
+        opacity: 1;
+        transform: none;
+      }
+
+      .sticky-cta {
+        transform: none;
+      }
+
+      .hero-decor-circle,
+      .hero-decor-dot {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       BLOCK 1 — HERO
+       ============================================ -->
+  <section class="section" id="hero">
+    <!-- Decorative elements -->
+    <div class="hero-decor">
+      <div class="hero-decor-circle hero-decor-circle--lg"></div>
+      <div class="hero-decor-circle hero-decor-circle--md"></div>
+      <div class="hero-decor-dot hero-decor-dot--1"></div>
+      <div class="hero-decor-dot hero-decor-dot--2"></div>
+      <div class="hero-decor-dot hero-decor-dot--3"></div>
+      <div class="hero-decor-dot hero-decor-dot--4"></div>
+      <!-- Bokeh light spots -->
+      <div style="position:absolute;width:40px;height:40px;border-radius:50%;background:rgba(217,119,6,0.06);filter:blur(8px);top:35%;right:25%;animation:float-slow 7s ease-in-out infinite;"></div>
+      <div style="position:absolute;width:25px;height:25px;border-radius:50%;background:rgba(100,150,220,0.05);filter:blur(6px);top:55%;left:30%;animation:float 5s ease-in-out infinite 1s;"></div>
+      <div style="position:absolute;width:55px;height:55px;border-radius:50%;background:rgba(251,191,36,0.04);filter:blur(12px);bottom:30%;right:40%;animation:float-slow 8s ease-in-out infinite 0.5s;"></div>
+      <div style="position:absolute;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.04);filter:blur(4px);top:25%;left:55%;animation:float 4s ease-in-out infinite 2s;"></div>
+      <div style="position:absolute;width:35px;height:35px;border-radius:50%;background:rgba(217,119,6,0.04);filter:blur(10px);top:70%;left:12%;animation:float-slow 6s ease-in-out infinite;"></div>
+      <div class="hero-decor-arc"></div>
+      <div class="hero-decor-arc hero-decor-arc--2"></div>
+    </div>
+
+    <div class="container">
+      <!-- Header -->
+      <header class="site-header">
+        <a href="/" class="logo">
+          <img src="logo-white.png" alt="Экспресс Транс — логистика это просто" width="272" height="164">
+        </a>
+        <div class="header-contacts">
+          <a href="tel:+79001234567" class="header-phone">
+            <span class="header-phone-icon"><i data-lucide="phone" style="width:18px;height:18px;"></i></span>
+            +7 (900) 123-45-67
+          </a>
+          <div class="messenger-links">
+            <a href="https://wa.me/79001234567" class="messenger-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
+            </a>
+            <a href="https://t.me/extrans" class="messenger-link" aria-label="Telegram" target="_blank" rel="noopener">
+              <i data-lucide="send" style="width:20px;height:20px;"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero content -->
+      <div class="hero-content">
+        <div class="hero-layout">
+          <!-- Left: text -->
+          <div class="hero-text">
+            <h1 class="text-hero mb-6 hero-anim-h1">Бережно перевезём ваши личные вещи в другой город попутной машиной без риска и стресса</h1>
+            <p class="hero-subtitle mb-5 hero-anim-subtitle">Полный комплекс услуг: от подбора попутного транспорта с экономией до 40% до профессиональных грузчиков. Наш опыт — более 300 успешно выполненных переездов за 2025&nbsp;г.</p>
+            <div class="hero-guarantee hero-anim-guarantee">
+              <i data-lucide="shield-check" style="width:20px;height:20px;flex-shrink:0;"></i>
+              Загрузим/выгрузим точно в срок или сделаем скидку 30% от стоимости перевозки
+            </div>
+
+            <!-- Photo placeholder -->
+            <div class="photo-placeholder photo-truck-loading mt-6 hero-anim-photo">
+              <div class="photo-overlay">
+                <div class="photo-badge">
+                  <i data-lucide="camera" style="width:16px;height:16px;"></i>
+                  Фото загрузки
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="hero-form-wrapper hero-anim-form">
+            <div class="form-card">
+              <p class="text-h3 mb-2">Получите расчёт стоимости</p>
+              <p class="text-body mb-5" style="color:var(--color-neutral-500);">Заполните форму и получите расчёт в мессенджер в течение 10&nbsp;минут</p>
+              <form action="#" method="POST" class="form-grid">
+                <div>
+                  <label for="hero-name" class="label">Имя</label>
+                  <input type="text" id="hero-name" name="name" class="input" placeholder="Ваше имя" required>
+                </div>
+                <div>
+                  <label for="hero-phone" class="label">Телефон</label>
+                  <input type="tel" id="hero-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-row">
+                  <div>
+                    <label for="hero-from" class="label">Откуда</label>
+                    <input type="text" id="hero-from" name="from" class="input" placeholder="Город отправления">
+                  </div>
+                  <div>
+                    <label for="hero-to" class="label">Куда</label>
+                    <input type="text" id="hero-to" name="to" class="input" placeholder="Город назначения">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Получить расчёт</button>
+              </form>
+              <!-- Trust indicators -->
+              <div class="form-trust">
+                <span class="form-trust-item">
+                  <i data-lucide="lock" style="width:13px;height:13px;"></i> Безопасно
+                </span>
+                <span class="form-trust-item">
+                  <i data-lucide="clock" style="width:13px;height:13px;"></i> Ответ за 10 мин
+                </span>
+                <span class="form-trust-item">
+                  <i data-lucide="check-circle" style="width:13px;height:13px;"></i> Бесплатно
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 advantages -->
+        <div class="advantages-grid">
+          <div class="advantage-card hero-anim-advantage">
+            <div class="advantage-icon">
+              <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+            </div>
+            <p class="advantage-text">Гарантируем погрузку в чистый кузов</p>
+          </div>
+          <div class="advantage-card hero-anim-advantage">
+            <div class="advantage-icon">
+              <i data-lucide="banknote" style="width:20px;height:20px;"></i>
+            </div>
+            <p class="advantage-text">0% — работаем без предоплаты</p>
+          </div>
+          <div class="advantage-card hero-anim-advantage">
+            <div class="advantage-icon">
+              <i data-lucide="zap" style="width:20px;height:20px;"></i>
+            </div>
+            <p class="advantage-text">Можем сегодня — срочная подача транспорта</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave divider after hero -->
+  <svg class="wave-divider" viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0V25Z" fill="#FFFFFF"/>
+  </svg>
+
+
+  <!-- ============================================
+       BLOCK 2 — GEOGRAPHY & SERVICES
+       ============================================ -->
+  <section class="section section-white" id="services">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2 class="text-h2">География и услуги</h2>
+      </div>
+
+      <!-- Geo highlights -->
+      <div class="geo-highlights">
+        <div class="geo-highlight reveal reveal-delay-1">
+          <i data-lucide="map-pin" style="width:20px;height:20px;"></i>
+          <p class="text-body">Работаем по всей территории РФ, включая новые регионы</p>
+        </div>
+        <div class="geo-highlight reveal reveal-delay-2">
+          <i data-lucide="home" style="width:20px;height:20px;"></i>
+          <p class="text-body">Перевозка от квартиры до квартиры, без перегруза</p>
+        </div>
+        <div class="geo-highlight reveal reveal-delay-3">
+          <i data-lucide="compass" style="width:20px;height:20px;"></i>
+          <p class="text-body">Возим на самый край континента — крайняя точка выгрузки — берег Ледовитого океана</p>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="photo-placeholder photo-map mb-8 reveal">
+        <div class="map-cities">
+          <span class="map-city map-city--1">Москва</span>
+          <span class="map-city map-city--2">Краснодар</span>
+          <span class="map-city map-city--3">Новосибирск</span>
+          <span class="map-city map-city--4">Казань</span>
+        </div>
+        <div class="photo-overlay">
+          <div class="photo-badge">
+            <i data-lucide="map" style="width:16px;height:16px;"></i>
+            География перевозок
+          </div>
+        </div>
+      </div>
+
+      <!-- Service cards -->
+      <div class="grid-2 mb-8">
+        <div class="card service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <i data-lucide="truck" style="width:24px;height:24px;"></i>
+          </div>
+          <h3 class="text-h3">Переезд «Под ключ»</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Отдельная попутная машина только под ваш груз + профессиональные грузчики на погрузке и выгрузке. Полный контроль и максимальная сохранность.</p>
+        </div>
+        <div class="card service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <i data-lucide="package" style="width:24px;height:24px;"></i>
+          </div>
+          <h3 class="text-h3">Перевозка догрузом</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Экономия за счёт совмещения с попутным грузом. Идеально для небольших объёмов — до 40% дешевле отдельной машины.</p>
+        </div>
+      </div>
+
+      <!-- Facts -->
+      <div class="grid-3">
+        <div class="card-accent reveal reveal-delay-1" style="padding:var(--space-5);">
+          <div class="card-icon card-icon--success">
+            <i data-lucide="file-check" style="width:20px;height:20px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Гарантируем в договоре сохранность имущества, соблюдение сроков, сумму и условия оплаты</p>
+        </div>
+        <div class="card-accent reveal reveal-delay-2" style="padding:var(--space-5);">
+          <div class="card-icon">
+            <i data-lucide="star" style="width:20px;height:20px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Оценка 4,9 по отзывам на Авито. Статус «Надёжный исполнитель»</p>
+        </div>
+        <div class="card-accent reveal reveal-delay-3" style="padding:var(--space-5);">
+          <div class="card-icon card-icon--primary">
+            <i data-lucide="calendar-check" style="width:20px;height:20px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Подача транспорта в удобные для вас дату и время</p>
+        </div>
+      </div>
+
+      <!-- CTA banner -->
+      <div class="cta-banner reveal">
+        <p class="text-h3">Оставьте заявку — получите страховку груза в подарок к перевозке</p>
+        <a href="#final-form" class="btn btn-primary">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 3 — LEAD MAGNET 1
+       ============================================ -->
+  <section class="section section-light" id="checklist">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2">Получите чек-лист безопасного переезда</h2>
+        <p class="text-body-lg">Заполните форму — отправим полезный чек-лист в мессенджер</p>
+      </div>
+      <form action="#" method="POST" class="leadmagnet-form reveal">
+        <div>
+          <label for="lm1-name" class="label">Имя</label>
+          <input type="text" id="lm1-name" name="name" class="input" placeholder="Ваше имя" required>
+        </div>
+        <div>
+          <label for="lm1-phone" class="label">Телефон</label>
+          <input type="tel" id="lm1-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Получить чек-лист</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 4 — SERVICE & SUPPORT
+       ============================================ -->
+  <section class="section section-white" id="support">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2 class="text-h2">Всегда на связи</h2>
+      </div>
+
+      <div class="support-cards mb-6">
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon card-icon--primary">
+            <i data-lucide="headphones" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Персональный менеджер 24/7</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">В том числе в выходные. Ответим оперативно или скидка 10%</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon">
+            <i data-lucide="user-check" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Контакт руководителя</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Если возникнут проблемы, руководитель ответит лично. Не ответим за 20 минут — скидка 10%</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon card-icon--success">
+            <i data-lucide="award" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Уровень сервиса на Авито — 100%</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Объективная оценка оперативности нашей работы</p>
+        </div>
+        <div class="card reveal reveal-delay-4">
+          <div class="card-icon card-icon--primary">
+            <i data-lucide="message-square" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Все виды связи</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Телефон, WhatsApp, Telegram, VK — выбирайте удобный</p>
+        </div>
+      </div>
+
+      <!-- Tracking -->
+      <div class="tracking-block reveal">
+        <div class="tracking-icon">
+          <i data-lucide="map-pin-check" style="width:20px;height:20px;"></i>
+        </div>
+        <p class="text-body" style="font-weight:var(--font-weight-medium);">Отслеживайте местоположение транспорта — по запросу направим геолокацию</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-banner reveal">
+        <p class="text-h3">Заполните форму и получите сертификат Ozon в подарок к договору</p>
+        <a href="#final-form" class="btn btn-primary">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 5 — LEGAL / CONTRACT
+       ============================================ -->
+  <section class="section section-warm" id="contract">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2 class="text-h2">Работаем по договору</h2>
+        <p class="text-body-lg">Все условия прозрачны и зафиксированы документально</p>
+      </div>
+
+      <!-- Checklist -->
+      <h3 class="text-h3 mb-4 reveal">Что прописываем в договоре</h3>
+      <ul class="checklist mb-8">
+        <li class="reveal reveal-delay-1">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Полная материальная ответственность за сохранность груза
+        </li>
+        <li class="reveal reveal-delay-2">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Отсутствие предоплаты
+        </li>
+        <li class="reveal reveal-delay-3">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Адреса загрузки и выгрузки
+        </li>
+        <li class="reveal reveal-delay-4">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Даты и время прибытия
+        </li>
+        <li class="reveal reveal-delay-5">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Гарантия 30% от стоимости на соблюдение сроков
+        </li>
+        <li class="reveal reveal-delay-6">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Данные на авто и водителя
+        </li>
+        <li class="reveal reveal-delay-7">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Реквизиты компании
+        </li>
+        <li class="reveal reveal-delay-8">
+          <span class="checklist-icon"><i data-lucide="check" style="width:14px;height:14px;"></i></span>
+          Контакт руководителя
+        </li>
+      </ul>
+
+      <!-- Insurance -->
+      <div class="insurance-block reveal">
+        <i data-lucide="shield" style="width:24px;height:24px;"></i>
+        <div>
+          <p class="text-h4 mb-2">Страхование груза</p>
+          <p class="text-body" style="color:var(--color-neutral-700);">Застрахуем ваш груз на период перевозки. Полная компенсация в случае повреждения.</p>
+        </div>
+      </div>
+
+      <!-- Documents for compensation -->
+      <h3 class="text-h3 mt-8 mb-4 reveal">Документы на компенсацию</h3>
+      <p class="text-body mb-4 reveal" style="color:var(--color-neutral-500);">Для работодателя, СФ, Минобороны — предоставим полный пакет:</p>
+      <div class="docs-grid">
+        <div class="card reveal reveal-delay-1" style="padding:var(--space-4);">
+          <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
+            <i data-lucide="file-text" style="width:16px;height:16px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Договор на перевозку</p>
+        </div>
+        <div class="card reveal reveal-delay-2" style="padding:var(--space-4);">
+          <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
+            <i data-lucide="clipboard-list" style="width:16px;height:16px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Опись имущества</p>
+        </div>
+        <div class="card reveal reveal-delay-3" style="padding:var(--space-4);">
+          <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
+            <i data-lucide="receipt" style="width:16px;height:16px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Кассовый чек</p>
+        </div>
+        <div class="card reveal reveal-delay-4" style="padding:var(--space-4);">
+          <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
+            <i data-lucide="check-square" style="width:16px;height:16px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Акт выполненных работ</p>
+        </div>
+        <div class="card reveal reveal-delay-5" style="padding:var(--space-4);">
+          <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
+            <i data-lucide="building" style="width:16px;height:16px;"></i>
+          </div>
+          <p class="text-body" style="font-weight:var(--font-weight-medium);">Учредительные документы</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 6 — LEAD MAGNET 2
+       ============================================ -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2">Получите чек-лист подготовки к переезду</h2>
+        <p class="text-body-lg">Пошаговый план, который сэкономит ваше время и нервы</p>
+      </div>
+      <form action="#" method="POST" class="leadmagnet-form reveal">
+        <div>
+          <label for="lm2-name" class="label">Имя</label>
+          <input type="text" id="lm2-name" name="name" class="input" placeholder="Ваше имя" required>
+        </div>
+        <div>
+          <label for="lm2-phone" class="label">Телефон</label>
+          <input type="tel" id="lm2-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Получить чек-лист</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 7 — HOW WE WORK
+       ============================================ -->
+  <section class="section section-white" id="how">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2">Как мы работаем</h2>
+        <p class="text-body-lg">8 простых шагов от заявки до получения вещей</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step reveal reveal-delay-1">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Детали</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Сообщите объём груза, маршрут и пожелания</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-2">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Цена</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Рассчитаем стоимость. Цены прозрачны и фиксируются в договоре</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-3">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">3</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Дата</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Выберем удобные дату и время погрузки</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-4">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">4</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Договор</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Заключим договор, пропишем все условия</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-5">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">5</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Погрузка</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Авто приедет вовремя, водитель поможет загрузить</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-6">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">6</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Транспортировка</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">~700 км/день, отслеживание геолокации в реальном времени</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-7">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">7</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Выгрузка</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">Авто прибудет вовремя, проверка сохранности на месте</p>
+          </div>
+        </div>
+        <div class="timeline-step reveal reveal-delay-8">
+          <div class="timeline-marker">
+            <div class="timeline-number timeline-number-anim">8</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <h4 class="text-h4">Оплата</h4>
+            <p class="text-body" style="color:var(--color-neutral-500);">По факту прибытия: наличные или перевод на карту</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-8 reveal">
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
+        <p class="text-body-sm mt-4" style="color:var(--color-neutral-400);">или позвоните: <a href="tel:+79001234567" style="color:var(--color-primary-500);font-weight:var(--font-weight-semibold);text-decoration:none;">+7 (900) 123-45-67</a></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 8 — REVIEWS
+       ============================================ -->
+  <section class="section section-light" id="reviews">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2" style="display:inline;">Что говорят наши клиенты</h2>
+        <span class="badge-trust-inline">
+          <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
+          Надёжный исполнитель на Авито
+        </span>
+      </div>
+
+      <div class="review-scroll">
+        <div class="card-review reveal reveal-delay-1">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
+            <div class="review-avatar review-avatar--1">АМ</div>
+            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+            </div>
+          </div>
+          <p class="text-body mb-3">Переезжали из Москвы в Краснодар. Всё приехало в целости. Менеджер на связи был круглосуточно, отвечал даже поздно вечером. Рекомендую!</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Анна М., Москва → Краснодар</p>
+        </div>
+        <div class="card-review reveal reveal-delay-2">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
+            <div class="review-avatar review-avatar--2">ДК</div>
+            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+            </div>
+          </div>
+          <p class="text-body mb-3">Отправляли вещи догрузом из Питера в Новосибирск. Сэкономили почти в 2 раза по сравнению с отдельной машиной. Сроки соблюдены, вещи без повреждений.</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Дмитрий К., Санкт-Петербург → Новосибирск</p>
+        </div>
+        <div class="card-review reveal reveal-delay-3">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
+            <div class="review-avatar review-avatar--3">СВ</div>
+            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+            </div>
+          </div>
+          <p class="text-body mb-3">Военнослужащий, переезжал по контракту. Ребята подготовили все документы для компенсации — договор, опись, чек, акт. Всё приняли без вопросов.</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Сергей В., Мурманск → Ростов-на-Дону</p>
+        </div>
+        <div class="card-review reveal reveal-delay-4">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
+            <div class="review-avatar review-avatar--4">ЕТ</div>
+            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+            </div>
+          </div>
+          <p class="text-body mb-3">Срочно нужно было перевезти вещи — подали машину в тот же день! Без предоплаты, всё по договору. Водитель вежливый, помог загрузить. Спасибо!</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Елена Т., Екатеринбург → Казань</p>
+        </div>
+        <div class="card-review reveal reveal-delay-5">
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
+            <div class="review-avatar review-avatar--5">ОН</div>
+            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
+            </div>
+          </div>
+          <p class="text-body mb-3">Перевозили мебель и бытовую технику. Кузов чистый, всё аккуратно закрепили. Геолокацию присылали по запросу — видно, где машина. Очень удобно.</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Олег Н., Самара → Воронеж</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-6">
+        <a href="#" class="avito-link" target="_blank" rel="noopener">
+          <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+          Смотреть все отзывы на Авито
+        </a>
+      </div>
+
+      <div class="text-center mt-6 reveal">
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 9 — FLEET
+       ============================================ -->
+  <section class="section section-white" id="fleet">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2 class="text-h2">Наш автопарк</h2>
+      </div>
+
+      <div class="grid-2 mb-8">
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon card-icon--success">
+            <i data-lucide="wrench" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Вся техника исправна</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Регулярное техническое обслуживание каждого автомобиля</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon card-icon--primary">
+            <i data-lucide="calendar" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Не старше 8 лет</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Возраст транспорта — не более 8 лет</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon">
+            <i data-lucide="user" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Профессиональные водители</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Вежливые и опытные — стаж от 10 лет</p>
+        </div>
+        <div class="card reveal reveal-delay-4">
+          <div class="card-icon card-icon--success">
+            <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
+          </div>
+          <h3 class="text-h4 mb-2">Чистый кузов</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Гарантируем погрузку в чистый кузов без посторонних запахов</p>
+        </div>
+      </div>
+
+      <!-- Fleet photos placeholder -->
+      <div class="photo-placeholder photo-fleet reveal">
+        <div class="fleet-silhouettes">
+          <div class="fleet-truck fleet-truck--1"></div>
+          <div class="fleet-truck fleet-truck--2"></div>
+          <div class="fleet-truck fleet-truck--3"></div>
+          <div class="fleet-truck fleet-truck--4"></div>
+        </div>
+        <div class="photo-overlay">
+          <div class="photo-badge">
+            <i data-lucide="camera" style="width:16px;height:16px;"></i>
+            Автопарк компании
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-6 reveal">
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 10 — TEAM
+       ============================================ -->
+  <section class="section section-light" id="team">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2">Наша команда</h2>
+        <p class="text-body-lg">Люди, которые сделают ваш переезд комфортным</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="card team-card reveal reveal-delay-1">
+          <div class="photo-team-member">
+            <span class="team-avatar-icon"><i data-lucide="user-circle" style="width:48px;height:48px;"></i></span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="text-h4">Иван Петров</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Руководитель. 10+ лет в логистике. Лично контролирует качество каждого переезда.</p>
+          </div>
+        </div>
+        <div class="card team-card reveal reveal-delay-2">
+          <div class="photo-team-member">
+            <span class="team-avatar-icon"><i data-lucide="user-circle" style="width:48px;height:48px;"></i></span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="text-h4">Мария Сидорова</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Менеджер по работе с клиентами. На связи 24/7, поможет с любым вопросом.</p>
+          </div>
+        </div>
+        <div class="card team-card reveal reveal-delay-3">
+          <div class="photo-team-member">
+            <span class="team-avatar-icon"><i data-lucide="user-circle" style="width:48px;height:48px;"></i></span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="text-h4">Алексей Кузнецов</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Логист. Подберёт оптимальный маршрут и рассчитает стоимость.</p>
+          </div>
+        </div>
+        <div class="card team-card reveal reveal-delay-4">
+          <div class="photo-team-member">
+            <span class="team-avatar-icon"><i data-lucide="user-circle" style="width:48px;height:48px;"></i></span>
+          </div>
+          <div class="team-card-body">
+            <h3 class="text-h4">Николай Волков</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Старший водитель. Стаж 15 лет, более 200 успешных переездов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 11 — SOCIAL PROOF / STATS
+       ============================================ -->
+  <!-- Wave divider before dark-ish section -->
+  <section class="section section-warm" id="trust">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2">Почему нам доверяют</h2>
+      </div>
+
+      <div class="stats-grid mb-8" id="stats-section">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-bg-number">300</div>
+          <div class="stat-number" data-count="300" data-suffix="+">0</div>
+          <div class="stat-label">переездов за 2025 год</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-bg-number">4.9</div>
+          <div class="stat-number" data-count="4.9" data-decimals="1">0</div>
+          <div class="stat-label">оценка на Авито</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-bg-number">100</div>
+          <div class="stat-number" data-count="100" data-suffix="%">0</div>
+          <div class="stat-label">уровень сервиса</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-4">
+          <div class="stat-bg-number">8</div>
+          <div class="stat-number" data-count="8" data-suffix="+">0</div>
+          <div class="stat-label">лет опыта</div>
+        </div>
+      </div>
+
+      <!-- Letters placeholder -->
+      <h3 class="text-h3 text-center mb-4 reveal">Благодарственные письма</h3>
+      <div class="letters-grid">
+        <div class="photo-letter reveal reveal-delay-1">
+          <div class="photo-overlay">
+            <div class="photo-badge">
+              <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+              Письмо 1
+            </div>
+          </div>
+        </div>
+        <div class="photo-letter reveal reveal-delay-2">
+          <div class="photo-overlay">
+            <div class="photo-badge">
+              <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+              Письмо 2
+            </div>
+          </div>
+        </div>
+        <div class="photo-letter reveal reveal-delay-3">
+          <div class="photo-overlay">
+            <div class="photo-badge">
+              <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+              Письмо 3
+            </div>
+          </div>
+        </div>
+        <div class="photo-letter reveal reveal-delay-4">
+          <div class="photo-overlay">
+            <div class="photo-badge">
+              <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+              Письмо 4
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8 reveal">
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Стать клиентом</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK 12 — FINAL CTA
+       ============================================ -->
+  <!-- Wave divider before dark section -->
+  <svg class="wave-divider wave-divider--flip" viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0V25Z" fill="#1A2B45"/>
+  </svg>
+  <section class="section section-dark-alt" id="final-form">
+    <div class="container">
+      <div class="section-heading section-heading--center reveal">
+        <h2 class="text-h2" style="color:var(--color-white);">Готовы к переезду?</h2>
+        <p class="text-body-lg" style="color:rgba(255,255,255,0.8);margin-top:var(--space-3);">Получите расчёт стоимости в мессенджер за 10 минут</p>
+      </div>
+
+      <div style="max-width:520px;margin:0 auto;" class="reveal">
+        <div class="form-card">
+          <form action="#" method="POST" class="form-grid">
+            <div>
+              <label for="final-name" class="label">Имя</label>
+              <input type="text" id="final-name" name="name" class="input" placeholder="Ваше имя" required>
+            </div>
+            <div>
+              <label for="final-phone" class="label">Телефон</label>
+              <input type="tel" id="final-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="final-from" class="label">Откуда</label>
+                <input type="text" id="final-from" name="from" class="input" placeholder="Город отправления">
+              </div>
+              <div>
+                <label for="final-to" class="label">Куда</label>
+                <input type="text" id="final-to" name="to" class="input" placeholder="Город назначения">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Получить расчёт стоимости</button>
+          </form>
+          <p class="text-caption text-center mt-4">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom:var(--space-4);">
+            <img src="logo.png" alt="Экспресс Транс — логистика это просто" width="272" height="164" style="height:48px;width:auto;">
+          </div>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);">ИНН: XXXXXXXXXX</p>
+          <p class="text-body-sm" style="color:var(--color-neutral-500);">ОГРН: XXXXXXXXXXXXX</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Контакты</p>
+          <ul class="footer-links">
+            <li><a href="tel:+79001234567">+7 (900) 123-45-67</a></li>
+            <li><a href="mailto:info@ex-trans.ru">info@ex-trans.ru</a></li>
+            <li><a href="https://wa.me/79001234567" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://t.me/extrans" target="_blank" rel="noopener">Telegram</a></li>
+            <li><a href="https://vk.com/extrans" target="_blank" rel="noopener">ВКонтакте</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Ссылки</p>
+          <ul class="footer-links">
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#how">Как мы работаем</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#contract">Договор</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Профиль на Авито</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="text-caption">&copy; 2025 Экспресс Транс. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       STICKY CTA BAR (Mobile)
+       ============================================ -->
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sticky-cta-text">Расчёт бесплатно, без обязательств</span>
+    <a href="#final-form" class="btn btn-primary" style="width:100%;">Получить расчёт</a>
+  </div>
+
+
+  <!-- ============================================
+       MINIMAL JS
+       ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // --- Scroll Reveal (IntersectionObserver) ---
+      var revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(function(el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        // Fallback: show all
+        revealElements.forEach(function(el) {
+          el.classList.add('active');
+        });
+      }
+
+      // --- Timeline number pop-in ---
+      var timelineNumbers = document.querySelectorAll('.timeline-number-anim');
+      if ('IntersectionObserver' in window) {
+        var timelineObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              // Find the parent timeline-step and get its delay index
+              var step = entry.target.closest('.timeline-step');
+              var allSteps = Array.prototype.slice.call(document.querySelectorAll('.timeline-step'));
+              var idx = allSteps.indexOf(step);
+              var delay = idx * 150; // 0.15s stagger
+              setTimeout(function() {
+                entry.target.classList.add('active');
+              }, delay);
+              timelineObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        timelineNumbers.forEach(function(el) {
+          timelineObserver.observe(el);
+        });
+      } else {
+        timelineNumbers.forEach(function(el) {
+          el.classList.add('active');
+        });
+      }
+
+      // --- Counter Animation ---
+      var statsAnimated = false;
+      var statsSection = document.getElementById('stats-section');
+
+      function animateCountUp(el, target, duration, decimals, suffix) {
+        var start = 0;
+        var startTime = null;
+        decimals = decimals || 0;
+        suffix = suffix || '';
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          // Ease out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = eased * target;
+
+          if (decimals > 0) {
+            el.textContent = current.toFixed(decimals) + suffix;
+          } else {
+            el.textContent = Math.floor(current) + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            if (decimals > 0) {
+              el.textContent = target.toFixed(decimals) + suffix;
+            } else {
+              el.textContent = target + suffix;
+            }
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      if (statsSection && 'IntersectionObserver' in window) {
+        var statsObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting && !statsAnimated) {
+              statsAnimated = true;
+              var counters = statsSection.querySelectorAll('[data-count]');
+              counters.forEach(function(counter) {
+                var target = parseFloat(counter.getAttribute('data-count'));
+                var suffix = counter.getAttribute('data-suffix') || '';
+                var decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
+                var duration = 2000;
+
+                // Custom durations
+                if (target === 300) duration = 2000;
+                else if (target === 4.9) duration = 1500;
+                else if (target === 100) duration = 1800;
+                else if (target === 8) duration = 1000;
+
+                animateCountUp(counter, target, duration, decimals, suffix);
+              });
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        statsObserver.observe(statsSection);
+      }
+
+      // --- Sticky CTA visibility ---
+      var stickyCta = document.getElementById('sticky-cta');
+      var heroSection = document.getElementById('hero');
+
+      if (stickyCta && heroSection && 'IntersectionObserver' in window) {
+        var stickyObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) {
+              stickyCta.classList.add('visible');
+            } else {
+              stickyCta.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0 });
+
+        stickyObserver.observe(heroSection);
+      }
+
+      // --- Smooth scroll for anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var offset = 20;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>
