@@ -257,25 +257,15 @@
       position: relative;
       overflow: hidden;
       background:
-        /* Warm amber glow bottom-right */
-        radial-gradient(ellipse 600px 400px at 85% 80%, rgba(217, 119, 6, 0.12) 0%, transparent 70%),
-        /* Cool blue glow top-left */
-        radial-gradient(ellipse 500px 500px at 10% 20%, rgba(58, 95, 153, 0.15) 0%, transparent 60%),
-        /* Subtle purple accent mid */
-        radial-gradient(ellipse 400px 300px at 50% 60%, rgba(100, 60, 140, 0.06) 0%, transparent 70%),
-        /* Small warm spot - headlight feel */
-        radial-gradient(circle 80px at 75% 65%, rgba(251, 191, 36, 0.08) 0%, transparent 100%),
-        radial-gradient(circle 60px at 20% 75%, rgba(251, 191, 36, 0.05) 0%, transparent 100%),
-        /* Horizon line glow */
+        /* Dark overlay for text readability */
         linear-gradient(180deg,
-          rgba(10, 18, 38, 0) 0%,
-          rgba(10, 18, 38, 0) 55%,
-          rgba(30, 45, 70, 0.3) 70%,
-          rgba(20, 32, 55, 0.4) 85%,
-          rgba(15, 25, 42, 0.5) 100%
+          rgba(10, 18, 38, 0.7) 0%,
+          rgba(10, 18, 38, 0.5) 40%,
+          rgba(10, 18, 38, 0.6) 70%,
+          rgba(10, 18, 38, 0.8) 100%
         ),
-        /* Base gradient */
-        linear-gradient(160deg, #0a1226 0%, #0f1b2d 20%, #162844 50%, #1a2b45 75%, #1e3352 100%);
+        /* Photo */
+        url('hero-bg.jpg') center/cover no-repeat;
     }
 
     #hero > .container {
