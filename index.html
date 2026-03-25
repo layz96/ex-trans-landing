@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Экспресс Транс — Грузоперевозки и переезды по всей России</title>
-  <meta name="description" content="Бережные грузоперевозки и домашние переезды по всей России. Без предоплаты, по договору, с гарантией сохранности. Расчёт стоимости за 10 минут.">
+  <title>Экспресс Транс — Переезд в другой город без предоплаты, по договору</title>
+  <meta name="description" content="Перевезём вещи в другой город — платите после получения. Договор, страховка, рейтинг 4.9 на Авито. Расчёт за 10 минут.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ex-trans.ru/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Экспресс Транс — Грузоперевозки и переезды по России">
-  <meta property="og:description" content="Бережно перевезём ваши вещи в другой город попутной машиной. Без предоплаты, по договору. Расчёт за 10 минут.">
+  <meta property="og:title" content="Экспресс Транс — Переезд в другой город без предоплаты">
+  <meta property="og:description" content="Перевезём вещи в другой город — платите после получения. Договор, страховка, рейтинг 4.9 на Авито. Расчёт за 10 минут.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ex-trans.ru">
+  <meta property="og:url" content="https://ex-trans.ru/">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Экспресс Транс">
+  <meta property="og:image" content="https://ex-trans.ru/img/truck-loading.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +29,23 @@
 
   <!-- Design Tokens -->
   <link rel="stylesheet" href="design-tokens.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "Экспресс Транс",
+    "url": "https://ex-trans.ru",
+    "telephone": "+7-922-255-53-72",
+    "email": "tk-extrans@mail.ru",
+    "description": "Межгородские грузоперевозки и домашние переезды по всей России. Без предоплаты, по договору.",
+    "areaServed": { "@type": "Country", "name": "Россия" },
+    "serviceType": ["Грузоперевозки", "Межгородской переезд", "Домашний переезд", "Перевозка вещей"],
+    "priceRange": "$$",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "74", "bestRating": "5" }
+  }
+  </script>
 
   <style>
     /* ============================================
@@ -1594,6 +1617,29 @@
       }
     }
 
+    /* --- Mobile optimizations (from UI/UX audit) --- */
+    @media (max-width: 767px) {
+      .hero-decor { display: none; }
+      .photo-placeholder.photo-truck-loading { display: none; }
+      .wave-divider { display: none; }
+      .section-light::before { display: none; }
+
+      .hero-content { gap: var(--space-3); }
+      .hero-layout { gap: var(--space-4); }
+      .text-hero { font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.03em; }
+      .hero-subtitle { font-size: 0.875rem; line-height: 1.5; }
+      .hero-guarantee { padding: var(--space-2) var(--space-3); font-size: 0.8125rem; }
+      .form-card { padding: var(--space-4); }
+
+      .section { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+      .section-heading { margin-bottom: var(--space-5); }
+      .card { padding: var(--space-4); }
+      .cta-banner { padding: var(--space-4); margin-top: var(--space-5); }
+
+      .reveal { transform: translateY(16px); }
+      .card:hover { transform: none; }
+    }
+
     /* --- prefers-reduced-motion --- */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -1672,11 +1718,11 @@
         <div class="hero-layout">
           <!-- Left: text -->
           <div class="hero-text">
-            <h1 class="text-hero mb-6 hero-anim-h1">Бережно перевезём ваши личные вещи в другой город попутной машиной без риска и стресса</h1>
-            <p class="hero-subtitle mb-5 hero-anim-subtitle">Полный комплекс услуг: от подбора попутного транспорта с экономией до 40% до профессиональных грузчиков. Наш опыт — более 300 успешно выполненных переездов за 2025&nbsp;г.</p>
+            <h1 class="text-hero mb-6 hero-anim-h1">Перевезём вещи в другой город — платите после получения</h1>
+            <p class="hero-subtitle mb-5 hero-anim-subtitle">Работаем по договору, 300+ переездов за год, оценка 4.9 на Авито. Отдельная машина или догруз — экономия до&nbsp;40%.</p>
             <div class="hero-guarantee hero-anim-guarantee">
               <i data-lucide="shield-check" style="width:20px;height:20px;flex-shrink:0;"></i>
-              Загрузим/выгрузим точно в срок или сделаем скидку 30% от стоимости перевозки
+              Опоздаем — вернём 30% стоимости. Это в договоре.
             </div>
 
             <!-- Photo -->
@@ -1694,8 +1740,8 @@
           <!-- Right: form -->
           <div class="hero-form-wrapper hero-anim-form">
             <div class="form-card">
-              <p class="text-h3 mb-2">Получите расчёт стоимости</p>
-              <p class="text-body mb-5" style="color:var(--color-neutral-500);">Заполните форму и получите расчёт в мессенджер в течение 10&nbsp;минут</p>
+              <p class="text-h3 mb-2">Сколько стоит ваш переезд?</p>
+              <p class="text-body mb-5" style="color:var(--color-neutral-500);">Ответим в WhatsApp или Telegram через 10&nbsp;минут. Без обязательств.</p>
               <form action="#" method="POST" class="form-grid">
                 <div>
                   <label for="hero-name" class="label">Имя</label>
@@ -1703,7 +1749,7 @@
                 </div>
                 <div>
                   <label for="hero-phone" class="label">Телефон</label>
-                  <input type="tel" id="hero-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+                  <input type="tel" id="hero-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
                 </div>
                 <div class="form-row">
                   <div>
@@ -1715,18 +1761,18 @@
                     <input type="text" id="hero-to" name="to" class="input" placeholder="Город назначения">
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary mt-4">Получить расчёт</button>
+                <button type="submit" class="btn btn-primary mt-4">Узнать стоимость за 10 минут</button>
               </form>
               <!-- Trust indicators -->
               <div class="form-trust">
                 <span class="form-trust-item">
-                  <i data-lucide="lock" style="width:13px;height:13px;"></i> Безопасно
+                  <i data-lucide="lock" style="width:13px;height:13px;"></i> Данные защищены
                 </span>
                 <span class="form-trust-item">
                   <i data-lucide="clock" style="width:13px;height:13px;"></i> Ответ за 10 мин
                 </span>
                 <span class="form-trust-item">
-                  <i data-lucide="check-circle" style="width:13px;height:13px;"></i> Бесплатно
+                  <i data-lucide="check-circle" style="width:13px;height:13px;"></i> Без обязательств
                 </span>
               </div>
             </div>
@@ -1739,19 +1785,19 @@
             <div class="advantage-icon">
               <i data-lucide="sparkles" style="width:20px;height:20px;"></i>
             </div>
-            <p class="advantage-text">Гарантируем погрузку в чистый кузов</p>
+            <p class="advantage-text">По договору — сохранность и сроки гарантированы</p>
           </div>
           <div class="advantage-card hero-anim-advantage">
             <div class="advantage-icon">
               <i data-lucide="banknote" style="width:20px;height:20px;"></i>
             </div>
-            <p class="advantage-text">0% — работаем без предоплаты</p>
+            <p class="advantage-text">0 руб. предоплата — платите только при получении</p>
           </div>
           <div class="advantage-card hero-anim-advantage">
             <div class="advantage-icon">
               <i data-lucide="zap" style="width:20px;height:20px;"></i>
             </div>
-            <p class="advantage-text">Можем сегодня — срочная подача транспорта</p>
+            <p class="advantage-text">Рейтинг 4.9 на Авито — 300+ переездов за год</p>
           </div>
         </div>
       </div>
@@ -1770,22 +1816,22 @@
   <section class="section section-white" id="services">
     <div class="container">
       <div class="section-heading reveal">
-        <h2 class="text-h2">География и услуги</h2>
+        <h2 class="text-h2">Перевозим по всей России</h2>
       </div>
 
       <!-- Geo highlights -->
       <div class="geo-highlights">
         <div class="geo-highlight reveal reveal-delay-1">
           <i data-lucide="map-pin" style="width:20px;height:20px;"></i>
-          <p class="text-body">Работаем по всей территории РФ, включая новые регионы</p>
+          <p class="text-body">Любой город России — от Калининграда до Владивостока</p>
         </div>
         <div class="geo-highlight reveal reveal-delay-2">
           <i data-lucide="home" style="width:20px;height:20px;"></i>
-          <p class="text-body">Перевозка от квартиры до квартиры, без перегруза</p>
+          <p class="text-body">От двери до двери — без перегрузов и складов</p>
         </div>
         <div class="geo-highlight reveal reveal-delay-3">
           <i data-lucide="compass" style="width:20px;height:20px;"></i>
-          <p class="text-body">Возим на самый край континента — крайняя точка выгрузки — берег Ледовитого океана</p>
+          <p class="text-body">Самая дальняя точка — берег Ледовитого океана</p>
         </div>
       </div>
 
@@ -1813,14 +1859,14 @@
             <i data-lucide="truck" style="width:24px;height:24px;"></i>
           </div>
           <h3 class="text-h3">Переезд «Под ключ»</h3>
-          <p class="text-body" style="color:var(--color-neutral-500);">Отдельная попутная машина только под ваш груз + профессиональные грузчики на погрузке и выгрузке. Полный контроль и максимальная сохранность.</p>
+          <p class="text-body" style="color:var(--color-neutral-500);">Отдельная машина только для вас. Грузчики на погрузке и выгрузке. Ваши вещи никуда не перегружаются.</p>
         </div>
         <div class="card service-card reveal reveal-delay-2">
           <div class="service-icon">
             <i data-lucide="package" style="width:24px;height:24px;"></i>
           </div>
-          <h3 class="text-h3">Перевозка догрузом</h3>
-          <p class="text-body" style="color:var(--color-neutral-500);">Экономия за счёт совмещения с попутным грузом. Идеально для небольших объёмов — до 40% дешевле отдельной машины.</p>
+          <h3 class="text-h3">Догруз — экономия до 40%</h3>
+          <p class="text-body" style="color:var(--color-neutral-500);">Ваш груз едет попутной машиной. Идеально, если вещей немного — платите только за своё место в кузове.</p>
         </div>
       </div>
 
@@ -1848,8 +1894,8 @@
 
       <!-- CTA banner -->
       <div class="cta-banner reveal">
-        <p class="text-h3">Оставьте заявку — получите страховку груза в подарок к перевозке</p>
-        <a href="#final-form" class="btn btn-primary">Оставить заявку</a>
+        <p class="text-h3">Оставьте заявку сегодня — страховка груза в подарок</p>
+        <a href="#final-form" class="btn btn-primary">Рассчитать мой переезд</a>
       </div>
     </div>
   </section>
@@ -1861,8 +1907,8 @@
   <section class="section section-light" id="checklist">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2">Получите чек-лист безопасного переезда</h2>
-        <p class="text-body-lg">Заполните форму — отправим полезный чек-лист в мессенджер</p>
+        <h2 class="text-h2">Боитесь что-то забыть? Скачайте чек-лист</h2>
+        <p class="text-body-lg">Заполните форму — отправим чек-лист безопасного переезда в мессенджер</p>
       </div>
       <form action="#" method="POST" class="leadmagnet-form reveal">
         <div>
@@ -1871,9 +1917,9 @@
         </div>
         <div>
           <label for="lm1-phone" class="label">Телефон</label>
-          <input type="tel" id="lm1-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+          <input type="tel" id="lm1-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
         </div>
-        <button type="submit" class="btn btn-primary">Получить чек-лист</button>
+        <button type="submit" class="btn btn-primary">Скачать бесплатно</button>
       </form>
     </div>
   </section>
@@ -1885,7 +1931,7 @@
   <section class="section section-white" id="support">
     <div class="container">
       <div class="section-heading reveal">
-        <h2 class="text-h2">Всегда на связи</h2>
+        <h2 class="text-h2">Ваш менеджер на связи 24/7</h2>
       </div>
 
       <div class="support-cards mb-6">
@@ -1929,8 +1975,8 @@
 
       <!-- CTA -->
       <div class="cta-banner reveal">
-        <p class="text-h3">Заполните форму и получите сертификат Ozon в подарок к договору</p>
-        <a href="#final-form" class="btn btn-primary">Оставить заявку</a>
+        <p class="text-h3">Закажите переезд сейчас — получите сертификат Ozon в подарок</p>
+        <a href="#final-form" class="btn btn-primary">Рассчитать мой переезд</a>
       </div>
     </div>
   </section>
@@ -1942,8 +1988,8 @@
   <section class="section section-warm" id="contract">
     <div class="container">
       <div class="section-heading reveal">
-        <h2 class="text-h2">Работаем по договору</h2>
-        <p class="text-body-lg">Все условия прозрачны и зафиксированы документально</p>
+        <h2 class="text-h2">Всё по договору — никаких сюрпризов</h2>
+        <p class="text-body-lg">Сохранность, сроки, цена — всё зафиксировано на бумаге</p>
       </div>
 
 
@@ -1989,13 +2035,13 @@
         <i data-lucide="shield" style="width:24px;height:24px;"></i>
         <div>
           <p class="text-h4 mb-2">Страхование груза</p>
-          <p class="text-body" style="color:var(--color-neutral-700);">Застрахуем ваш груз на период перевозки. Полная компенсация в случае повреждения.</p>
+          <p class="text-body" style="color:var(--color-neutral-700);">Оформим страховку на весь маршрут. Если что-то повредится — полная компенсация.</p>
         </div>
       </div>
 
       <!-- Documents for compensation -->
       <h3 class="text-h3 mt-8 mb-4 reveal">Документы на компенсацию</h3>
-      <p class="text-body mb-4 reveal" style="color:var(--color-neutral-500);">Для работодателя, СФ, Минобороны — предоставим полный пакет:</p>
+      <p class="text-body mb-4 reveal" style="color:var(--color-neutral-500);">Нужны документы для компенсации от работодателя или Минобороны? Подготовим:</p>
       <div class="docs-grid">
         <div class="card reveal reveal-delay-1" style="padding:var(--space-4);">
           <div class="card-icon card-icon--primary" style="width:32px;height:32px;">
@@ -2038,8 +2084,8 @@
   <section class="section section-light">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2">Получите чек-лист подготовки к переезду</h2>
-        <p class="text-body-lg">Пошаговый план, который сэкономит ваше время и нервы</p>
+        <h2 class="text-h2">Переезжаете впервые? Вот пошаговый план</h2>
+        <p class="text-body-lg">Чек-лист подготовки к переезду — сэкономит время и нервы</p>
       </div>
       <form action="#" method="POST" class="leadmagnet-form reveal">
         <div>
@@ -2048,9 +2094,9 @@
         </div>
         <div>
           <label for="lm2-phone" class="label">Телефон</label>
-          <input type="tel" id="lm2-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+          <input type="tel" id="lm2-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
         </div>
-        <button type="submit" class="btn btn-primary">Получить чек-лист</button>
+        <button type="submit" class="btn btn-primary">Скачать бесплатно</button>
       </form>
     </div>
   </section>
@@ -2062,8 +2108,8 @@
   <section class="section section-white" id="how">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2">Как мы работаем</h2>
-        <p class="text-body-lg">8 простых шагов от заявки до получения вещей</p>
+        <h2 class="text-h2">От заявки до разгрузки — 8 простых шагов</h2>
+        <p class="text-body-lg">Всё прозрачно — вы знаете, что происходит на каждом этапе</p>
       </div>
 
       <div class="timeline">
@@ -2151,8 +2197,8 @@
 
       <!-- CTA -->
       <div class="text-center mt-8 reveal">
-        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
-        <p class="text-body-sm mt-4" style="color:var(--color-neutral-400);">или позвоните: <a href="tel:+79222555372" style="color:var(--color-primary-500);font-weight:var(--font-weight-semibold);text-decoration:none;">+7 (922) 255-53-72</a></p>
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Узнать стоимость</a>
+        <p class="text-body-sm mt-4" style="color:var(--color-neutral-400);">Или позвоните — ответим сразу: <a href="tel:+79222555372" style="color:var(--color-primary-500);font-weight:var(--font-weight-semibold);text-decoration:none;">+7 (922) 255-53-72</a></p>
       </div>
     </div>
   </section>
@@ -2164,7 +2210,7 @@
   <section class="section section-light" id="reviews">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2" style="display:inline;">Что говорят наши клиенты</h2>
+        <h2 class="text-h2" style="display:inline;">300+ семей уже переехали с нами</h2>
         <span class="badge-trust-inline">
           <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
           Надёжный исполнитель на Авито
@@ -2197,7 +2243,7 @@
       </div>
 
       <div class="text-center mt-6 reveal">
-        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Рассчитать мой переезд</a>
       </div>
     </div>
   </section>
@@ -2209,7 +2255,7 @@
   <section class="section section-white" id="fleet">
     <div class="container">
       <div class="section-heading reveal">
-        <h2 class="text-h2">Наш автопарк</h2>
+        <h2 class="text-h2">Чистые машины, опытные водители</h2>
       </div>
 
       <div class="grid-2 mb-8">
@@ -2279,7 +2325,7 @@
       </div>
 
       <div class="text-center mt-6 reveal">
-        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку</a>
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Рассчитать мой переезд</a>
       </div>
     </div>
   </section>
@@ -2291,8 +2337,8 @@
   <section class="section section-light" id="team">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2">Наша команда</h2>
-        <p class="text-body-lg">Люди, которые сделают ваш переезд комфортным</p>
+        <h2 class="text-h2">Знакомьтесь — мы за вас отвечаем</h2>
+        <p class="text-body-lg">Вы будете знать в лицо каждого, кто отвечает за ваш груз</p>
       </div>
 
       <div class="team-grid">
@@ -2335,7 +2381,7 @@
   <section class="section section-warm" id="trust">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2">Почему нам доверяют</h2>
+        <h2 class="text-h2">Цифры говорят за нас</h2>
       </div>
 
       <div class="stats-grid mb-8" id="stats-section">
@@ -2379,7 +2425,7 @@
       </div>
 
       <div class="text-center mt-8 reveal">
-        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Стать клиентом</a>
+        <a href="#final-form" class="btn btn-primary" style="display:inline-flex;">Оставить заявку — это бесплатно</a>
       </div>
     </div>
   </section>
@@ -2395,8 +2441,8 @@
   <section class="section section-dark-alt" id="final-form">
     <div class="container">
       <div class="section-heading section-heading--center reveal">
-        <h2 class="text-h2" style="color:var(--color-white);">Готовы к переезду?</h2>
-        <p class="text-body-lg" style="color:rgba(255,255,255,0.8);margin-top:var(--space-3);">Получите расчёт стоимости в мессенджер за 10 минут</p>
+        <h2 class="text-h2" style="color:var(--color-white);">Узнайте стоимость прямо сейчас</h2>
+        <p class="text-body-lg" style="color:rgba(255,255,255,0.8);margin-top:var(--space-3);">Заполните 4 поля — пришлём расчёт в мессенджер за 10 минут</p>
       </div>
 
       <div style="max-width:520px;margin:0 auto;" class="reveal">
@@ -2408,7 +2454,7 @@
             </div>
             <div>
               <label for="final-phone" class="label">Телефон</label>
-              <input type="tel" id="final-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required>
+              <input type="tel" id="final-phone" name="phone" class="input" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
             </div>
             <div class="form-row">
               <div>
@@ -2420,7 +2466,7 @@
                 <input type="text" id="final-to" name="to" class="input" placeholder="Город назначения">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-4">Получить расчёт стоимости</button>
+            <button type="submit" class="btn btn-primary mt-4">Узнать точную стоимость</button>
           </form>
           <p class="text-caption text-center mt-4">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
         </div>
@@ -2472,8 +2518,8 @@
        STICKY CTA BAR (Mobile)
        ============================================ -->
   <div class="sticky-cta" id="sticky-cta">
-    <span class="sticky-cta-text">Расчёт бесплатно, без обязательств</span>
-    <a href="#final-form" class="btn btn-primary" style="width:100%;">Получить расчёт</a>
+    <span class="sticky-cta-text">Бесплатный расчёт за 10 минут</span>
+    <a href="#final-form" class="btn btn-primary" style="width:100%;">Узнать стоимость</a>
   </div>
 
 
@@ -2637,6 +2683,25 @@
       });
 
     });
+
+    // Phone mask
+    document.querySelectorAll('input[type="tel"]').forEach(function(input) {
+      input.addEventListener('input', function(e) {
+        var val = e.target.value.replace(/\D/g, '');
+        if (val.startsWith('8')) val = '7' + val.slice(1);
+        if (val.length > 0 && !val.startsWith('7')) val = '7' + val;
+        var f = '';
+        if (val.length > 0) f = '+' + val[0];
+        if (val.length > 1) f += ' (' + val.substring(1, 4);
+        if (val.length > 4) f += ') ' + val.substring(4, 7);
+        if (val.length > 7) f += '-' + val.substring(7, 9);
+        if (val.length > 9) f += '-' + val.substring(9, 11);
+        e.target.value = f;
+      });
+      input.addEventListener('focus', function(e) { if (!e.target.value) e.target.value = '+7'; });
+      input.addEventListener('blur', function(e) { if (e.target.value === '+7' || e.target.value === '+7 (') e.target.value = ''; });
+    });
+
   </script>
 
 </body>
