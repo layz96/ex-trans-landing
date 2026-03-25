@@ -45,13 +45,13 @@
     }
 
     .logo img {
-      height: 48px;
+      height: 64px;
       width: auto;
     }
 
     @media (min-width: 768px) {
       .logo img {
-        height: 56px;
+        height: 80px;
       }
     }
 
@@ -631,14 +631,15 @@
     /* --- Advantages cards (hero bottom) --- */
     .advantages-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-      margin-top: var(--space-8);
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      margin-top: var(--space-5);
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 767px) {
       .advantages-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
       }
     }
 
@@ -1159,6 +1160,32 @@
       padding: var(--space-3);
     }
 
+    /* --- Vehicle grid --- */
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .vehicle-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .vehicle-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .vehicle-card img {
+      width: 100%;
+      height: auto;
+    }
+
     /* --- Team grid --- */
     .team-grid {
       display: grid;
@@ -1174,7 +1201,7 @@
 
     @media (min-width: 1280px) {
       .team-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -2175,8 +2202,25 @@
         </div>
       </div>
 
+      <!-- Vehicle types -->
+      <h3 class="text-h3 text-center mb-4 reveal">Виды транспорта</h3>
+      <div class="vehicle-grid reveal">
+        <div class="vehicle-card">
+          <img src="img/vehicle-1.jpg" alt="Газель — до 1.5 тонн" loading="lazy">
+        </div>
+        <div class="vehicle-card">
+          <img src="img/vehicle-2.jpg" alt="5-тонник — до 3 тонн" loading="lazy">
+        </div>
+        <div class="vehicle-card">
+          <img src="img/vehicle-3.jpg" alt="10-тонник — до 5 тонн" loading="lazy">
+        </div>
+        <div class="vehicle-card">
+          <img src="img/vehicle-4.jpg" alt="Еврофура — до 20 тонн" loading="lazy">
+        </div>
+      </div>
+
       <!-- Fleet photo -->
-      <div class="photo-placeholder photo-fleet reveal">
+      <div class="photo-placeholder photo-fleet reveal" style="margin-top:var(--space-6);">
         <img src="img/fleet.jpg" alt="Автопарк Экспресс Транс" loading="lazy">
         <div class="photo-overlay">
           <div class="photo-badge">
@@ -2206,38 +2250,29 @@
       <div class="team-grid">
         <div class="card team-card reveal reveal-delay-1">
           <div class="photo-team-member">
-            <img src="img/team-1.jpg" alt="Иван Петров" loading="lazy">
+            <img src="img/team-1.jpg" alt="Ильченко Сергей" loading="lazy">
           </div>
           <div class="team-card-body">
-            <h3 class="text-h4">Иван Петров</h3>
-            <p class="text-body-sm" style="color:var(--color-neutral-500);">Руководитель. 10+ лет в логистике. Лично контролирует качество каждого переезда.</p>
+            <h3 class="text-h4">Сергей Ильченко</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Руководитель. Лично контролирует качество каждого переезда.</p>
           </div>
         </div>
         <div class="card team-card reveal reveal-delay-2">
           <div class="photo-team-member">
-            <img src="img/team-2.jpg" alt="Мария Сидорова" loading="lazy">
+            <img src="img/team-2.jpg" alt="Баева Татьяна" loading="lazy">
           </div>
           <div class="team-card-body">
-            <h3 class="text-h4">Мария Сидорова</h3>
-            <p class="text-body-sm" style="color:var(--color-neutral-500);">Менеджер по работе с клиентами. На связи 24/7, поможет с любым вопросом.</p>
+            <h3 class="text-h4">Татьяна Баева</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Менеджер-логист. На связи 24/7, поможет с любым вопросом.</p>
           </div>
         </div>
         <div class="card team-card reveal reveal-delay-3">
           <div class="photo-team-member">
-            <img src="img/team-3.jpg" alt="Алексей Кузнецов" loading="lazy">
+            <img src="img/team-3.jpg" alt="Юнусов Камил" loading="lazy">
           </div>
           <div class="team-card-body">
-            <h3 class="text-h4">Алексей Кузнецов</h3>
-            <p class="text-body-sm" style="color:var(--color-neutral-500);">Логист. Подберёт оптимальный маршрут и рассчитает стоимость.</p>
-          </div>
-        </div>
-        <div class="card team-card reveal reveal-delay-4">
-          <div class="photo-team-member">
-            <img src="img/team-4.jpg" alt="Николай Волков" loading="lazy">
-          </div>
-          <div class="team-card-body">
-            <h3 class="text-h4">Николай Волков</h3>
-            <p class="text-body-sm" style="color:var(--color-neutral-500);">Старший водитель. Стаж 15 лет, более 200 успешных переездов.</p>
+            <h3 class="text-h4">Камил Юнусов</h3>
+            <p class="text-body-sm" style="color:var(--color-neutral-500);">Менеджер-логист. Подберёт оптимальный маршрут и рассчитает стоимость.</p>
           </div>
         </div>
       </div>

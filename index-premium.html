@@ -105,7 +105,8 @@
       backdrop-filter: blur(20px);
     }
 
-    .logo img { height: 44px; width: auto; }
+    .logo img { height: 64px; width: auto; }
+    @media (min-width: 768px) { .logo img { height: 80px; } }
 
     .header-nav {
       display: flex;
@@ -495,7 +496,7 @@
     }
 
     @media (min-width: 768px) {
-      .team-grid { grid-template-columns: repeat(4, 1fr); }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .team-card {
@@ -1120,20 +1121,16 @@
 
     <div class="team-grid reveal">
       <div class="team-card">
-        <div class="team-photo"><img src="img/team-1.jpg" alt="Иван Петров" loading="lazy"></div>
-        <div class="team-info"><p class="team-name">Иван Петров</p><p class="team-role">Руководитель, 10+ лет</p></div>
+        <div class="team-photo"><img src="img/team-1.jpg" alt="Сергей Ильченко" loading="lazy"></div>
+        <div class="team-info"><p class="team-name">Сергей Ильченко</p><p class="team-role">Руководитель</p></div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img src="img/team-2.jpg" alt="Мария Сидорова" loading="lazy"></div>
-        <div class="team-info"><p class="team-name">Мария Сидорова</p><p class="team-role">Менеджер, 24/7</p></div>
+        <div class="team-photo"><img src="img/team-2.jpg" alt="Татьяна Баева" loading="lazy"></div>
+        <div class="team-info"><p class="team-name">Татьяна Баева</p><p class="team-role">Менеджер-логист</p></div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img src="img/team-3.jpg" alt="Алексей Кузнецов" loading="lazy"></div>
-        <div class="team-info"><p class="team-name">Алексей Кузнецов</p><p class="team-role">Логист</p></div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><img src="img/team-4.jpg" alt="Николай Волков" loading="lazy"></div>
-        <div class="team-info"><p class="team-name">Николай Волков</p><p class="team-role">Водитель, 15 лет стажа</p></div>
+        <div class="team-photo"><img src="img/team-3.jpg" alt="Камил Юнусов" loading="lazy"></div>
+        <div class="team-info"><p class="team-name">Камил Юнусов</p><p class="team-role">Менеджер-логист</p></div>
       </div>
     </div>
   </div>
