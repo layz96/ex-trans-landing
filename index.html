@@ -1167,9 +1167,17 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: var(--space-3);
+      padding: 0 var(--space-4) var(--space-3);
+      margin: 0 calc(-1 * var(--space-4));
       scrollbar-width: thin;
       scrollbar-color: var(--color-neutral-300) transparent;
+    }
+
+    @media (min-width: 768px) {
+      .review-carousel {
+        padding: 0 48px var(--space-3);
+        margin: 0 -48px;
+      }
     }
 
     .review-carousel::-webkit-scrollbar {
@@ -2118,11 +2126,6 @@
           <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
           Надёжный исполнитель на Авито
         </span>
-      </div>
-
-      <!-- Avito rating screenshot -->
-      <div class="text-center mb-6 reveal">
-        <img src="img/review-avito-rating.jpg" alt="Рейтинг 4.9 на Авито — 74 оценки" loading="lazy" style="max-width:360px;margin:0 auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
       </div>
 
       <!-- Real Avito review screenshots -->
