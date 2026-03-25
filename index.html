@@ -486,9 +486,9 @@
 
     /* Photo: team member */
     .photo-team-member {
-      min-height: 240px;
+      height: 320px;
       border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
+      background: #e2e8f0;
       position: relative;
       display: flex;
       align-items: center;
@@ -514,7 +514,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 20%;
       position: absolute;
       inset: 0;
     }
@@ -1160,23 +1160,43 @@
       padding: var(--space-3);
     }
 
-    /* --- Review screenshots grid --- */
-    .review-screenshots-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    /* --- Review screenshots carousel --- */
+    .review-carousel {
+      display: flex;
       gap: var(--space-4);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: var(--space-3);
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-neutral-300) transparent;
     }
 
-    @media (min-width: 768px) {
-      .review-screenshots-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    .review-carousel::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .review-carousel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .review-carousel::-webkit-scrollbar-thumb {
+      background: var(--color-neutral-300);
+      border-radius: 3px;
     }
 
     .review-screenshot {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-md);
+    }
+
+    @media (min-width: 768px) {
+      .review-screenshot {
+        flex: 0 0 320px;
+      }
     }
 
     .review-screenshot img {
@@ -2106,25 +2126,13 @@
       </div>
 
       <!-- Real Avito review screenshots -->
-      <div class="review-screenshots-grid">
-        <div class="review-screenshot reveal reveal-delay-1">
-          <img src="img/review-1.jpg" alt="Отзыв Татьяна — Сызрань-Санкт-Петербург" loading="lazy">
-        </div>
-        <div class="review-screenshot reveal reveal-delay-2">
-          <img src="img/review-2.jpg" alt="Отзыв Мария — Московская область-Ульяновск" loading="lazy">
-        </div>
-        <div class="review-screenshot reveal reveal-delay-3">
-          <img src="img/review-3.jpg" alt="Отзыв Кирилл Мишин" loading="lazy">
-        </div>
-        <div class="review-screenshot reveal reveal-delay-4">
-          <img src="img/review-4.jpg" alt="Отзыв клиента" loading="lazy">
-        </div>
-        <div class="review-screenshot reveal reveal-delay-5">
-          <img src="img/review-5.jpg" alt="Отзыв клиента" loading="lazy">
-        </div>
-        <div class="review-screenshot reveal reveal-delay-5">
-          <img src="img/review-6.jpg" alt="Отзыв клиента" loading="lazy">
-        </div>
+      <div class="review-carousel">
+        <div class="review-screenshot"><img src="img/review-1.jpg" alt="Отзыв Татьяна — Сызрань-СПб" loading="lazy"></div>
+        <div class="review-screenshot"><img src="img/review-2.jpg" alt="Отзыв Мария — МО-Ульяновск" loading="lazy"></div>
+        <div class="review-screenshot"><img src="img/review-3.jpg" alt="Отзыв Кирилл Мишин" loading="lazy"></div>
+        <div class="review-screenshot"><img src="img/review-4.jpg" alt="Отзыв клиента" loading="lazy"></div>
+        <div class="review-screenshot"><img src="img/review-5.jpg" alt="Отзыв клиента" loading="lazy"></div>
+        <div class="review-screenshot"><img src="img/review-6.jpg" alt="Отзыв клиента" loading="lazy"></div>
       </div>
 
       <div class="text-center mt-6">
