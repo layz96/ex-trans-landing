@@ -1213,6 +1213,52 @@
       display: block;
     }
 
+    /* --- Loading photos carousel --- */
+    .loading-carousel {
+      display: flex;
+      gap: var(--space-3);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 var(--space-4) var(--space-3);
+      margin: 0 calc(-1 * var(--space-4));
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-neutral-300) transparent;
+    }
+
+    @media (min-width: 768px) {
+      .loading-carousel {
+        padding: 0 48px var(--space-3);
+        margin: 0 -48px;
+      }
+    }
+
+    .loading-carousel::-webkit-scrollbar { height: 6px; }
+    .loading-carousel::-webkit-scrollbar-track { background: transparent; }
+    .loading-carousel::-webkit-scrollbar-thumb { background: var(--color-neutral-300); border-radius: 3px; }
+
+    .loading-photo {
+      flex: 0 0 220px;
+      height: 280px;
+      scroll-snap-align: start;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (min-width: 768px) {
+      .loading-photo {
+        flex: 0 0 260px;
+        height: 320px;
+      }
+    }
+
+    .loading-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     /* --- Vehicle grid --- */
     .vehicle-grid {
       display: grid;
@@ -2209,13 +2255,22 @@
         </div>
       </div>
 
-      <!-- Loading gallery -->
+      <!-- Loading gallery carousel -->
       <h3 class="text-h3 text-center mb-4 reveal" style="margin-top:var(--space-8);">Фото наших погрузок</h3>
-      <div class="vehicle-grid reveal">
-        <div class="vehicle-card"><img src="img/loading-1.jpg" alt="Погрузка лодки" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/loading-2.jpg" alt="Погрузка мебели" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/loading-3.jpg" alt="Личные вещи в кузове" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/loading-4.jpg" alt="Погрузка коробок" loading="lazy"></div>
+      <div class="loading-carousel">
+        <div class="loading-photo"><img src="img/loading-1.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-2.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-3.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-4.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-5.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-6.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-7.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-8.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-9.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-10.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-11.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-12.jpg" alt="Погрузка" loading="lazy"></div>
+        <div class="loading-photo"><img src="img/loading-13.jpg" alt="Погрузка" loading="lazy"></div>
       </div>
 
       <div class="text-center mt-6 reveal">
