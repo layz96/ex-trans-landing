@@ -1,2558 +1,827 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Экспресс Транс — Переезд в другой город без предоплаты, по договору</title>
-  <meta name="description" content="Перевезём вещи в другой город — платите после получения. Договор, страховка, рейтинг 4.9 на Авито. Расчёт за 10 минут.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ex-trans.ru/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Экспресс Транс — Переезд в другой город без предоплаты">
-  <meta property="og:description" content="Перевезём вещи в другой город — платите после получения. Договор, страховка, рейтинг 4.9 на Авито.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ex-trans.ru/">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Экспресс Транс">
-  <meta property="og:image" content="https://ex-trans.ru/img/truck-loading.jpg">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="1024">
-
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MovingCompany",
-    "name": "Экспресс Транс",
-    "url": "https://ex-trans.ru",
-    "telephone": "+7-922-255-53-72",
-    "email": "tk-extrans@mail.ru",
-    "description": "Межгородские грузоперевозки и домашние переезды по всей России. Без предоплаты, по договору.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "RU"
-    },
-    "areaServed": { "@type": "Country", "name": "Россия" },
-    "serviceType": ["Грузоперевозки", "Межгородской переезд", "Домашний переезд", "Перевозка вещей"],
-    "priceRange": "$$",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "74", "bestRating": "5" },
-    "sameAs": [
-      "https://t.me/+79222555372",
-      "https://www.avito.ru/user/0fffe3b7e337707d1ab67581618e9c87/profile?src=sharing"
-    ]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Грузоперевозки и переезд межгород — Экспресс Транс</title>
+<meta name="description" content="Переезд в другой город без предоплаты. 300+ переездов, рейтинг 4.9 на Авито. Договор, страхование груза, оплата по факту. Узнайте стоимость за 10 минут.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ex-trans.ru/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  "name": "Экспресс Транс",
+  "description": "Грузоперевозки и переезды между городами России. Без предоплаты, по договору.",
+  "url": "https://ex-trans.ru",
+  "telephone": "+79222555372",
+  "email": "tk-extrans@mail.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "RU"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "300",
+    "bestRating": "5"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Россия"
   }
-  </script>
-
-  <style>
-    /* ==============================================
-       RESET & BASE
-       ============================================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #1e293b;
-      background: #ffffff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; }
-    ul { list-style: none; }
-    button, input { font-family: inherit; }
-
-    /* ==============================================
-       DESIGN TOKENS
-       ============================================== */
-    :root {
-      /* Colors */
-      --navy-900: #0f1b2d;
-      --navy-800: #1a2b45;
-      --navy-700: #243b5e;
-      --navy-600: #2e4a72;
-      --navy-500: #3b5998;
-      --navy-100: #e8edf5;
-      --navy-50: #f1f5fb;
-
-      --amber-600: #d97706;
-      --amber-500: #f59e0b;
-      --amber-400: #fbbf24;
-      --amber-100: #fef3c7;
-      --amber-50: #fffbeb;
-
-      --slate-900: #0f172a;
-      --slate-700: #334155;
-      --slate-600: #475569;
-      --slate-500: #64748b;
-      --slate-400: #94a3b8;
-      --slate-300: #cbd5e1;
-      --slate-200: #e2e8f0;
-      --slate-100: #f1f5f9;
-      --slate-50: #f8fafc;
-
-      --green-600: #16a34a;
-      --green-500: #22c55e;
-      --green-100: #dcfce7;
-      --green-50: #f0fdf4;
-
-      --red-500: #ef4444;
-      --red-50: #fef2f2;
-
-      --white: #ffffff;
-
-      /* Spacing */
-      --container: 1120px;
-      --section-py-mobile: 32px;
-      --section-py-desktop: 48px;
-
-      /* Radius */
-      --r-sm: 6px;
-      --r-md: 10px;
-      --r-lg: 14px;
-      --r-xl: 18px;
-      --r-full: 9999px;
-
-      /* Shadows */
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 30px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
-      --shadow-xl: 0 20px 50px rgba(0,0,0,0.1);
-    }
-
-    /* ==============================================
-       LAYOUT
-       ============================================== */
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    @media (min-width: 768px) {
-      .container { padding: 0 24px; }
-    }
-
-    @media (min-width: 1024px) {
-      .container { padding: 0 32px; }
-    }
-
-    .section {
-      padding: var(--section-py-mobile) 0;
-    }
-
-    @media (min-width: 768px) {
-      .section { padding: var(--section-py-desktop) 0; }
-    }
-
-    /* ==============================================
-       TYPOGRAPHY
-       ============================================== */
-    h1, h2, h3, h4 {
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--slate-900);
-    }
-
-    h1 { font-size: 1.625rem; letter-spacing: -0.02em; }
-    h2 { font-size: 1.5rem; letter-spacing: -0.015em; }
-    h3 { font-size: 1.125rem; }
-    h4 { font-size: 1rem; }
-
-    @media (min-width: 768px) {
-      h1 { font-size: 2.25rem; }
-      h2 { font-size: 1.875rem; }
-      h3 { font-size: 1.25rem; }
-    }
-
-    @media (min-width: 1024px) {
-      h1 { font-size: 2.75rem; }
-      h2 { font-size: 2.125rem; }
-    }
-
-    .subtitle {
-      color: var(--slate-500);
-      font-size: 0.9375rem;
-      line-height: 1.6;
-    }
-
-    @media (min-width: 768px) {
-      .subtitle { font-size: 1.0625rem; }
-    }
-
-    /* ==============================================
-       BUTTONS
-       ============================================== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border-radius: var(--r-md);
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-      position: relative;
-      overflow: hidden;
-      line-height: 1.3;
-    }
-
-    .btn-primary {
-      background: var(--amber-600);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: #ca6d04;
-      box-shadow: 0 4px 16px rgba(217,119,6,0.35);
-      transform: translateY(-1px);
-    }
-
-    /* Shimmer: max 3 iterations */
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      animation: shimmer 2.5s ease-in-out 3;
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 200%; }
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--amber-600);
-      border: 2px solid var(--amber-600);
-    }
-
-    .btn-outline:hover {
-      background: var(--amber-50);
-    }
-
-    .btn-white {
-      background: var(--white);
-      color: var(--navy-800);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-white:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-1px);
-    }
-
-    .btn-sm {
-      padding: 10px 20px;
-      font-size: 0.875rem;
-    }
-
-    .btn-full { width: 100%; }
-
-    /* ==============================================
-       FORMS
-       ============================================== */
-    .form-group { margin-bottom: 12px; }
-
-    .form-label {
-      display: block;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--slate-700);
-      margin-bottom: 4px;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 12px 14px;
-      font-size: 0.9375rem;
-      border: 1.5px solid var(--slate-200);
-      border-radius: var(--r-md);
-      background: var(--white);
-      color: var(--slate-900);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-
-    .form-input::placeholder { color: var(--slate-400); }
-
-    .form-input:focus {
-      border-color: var(--amber-500);
-      box-shadow: 0 0 0 3px rgba(245,158,11,0.15);
-    }
-
-    /* ==============================================
-       CARDS
-       ============================================== */
-    .card {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      border-radius: var(--r-lg);
-      padding: 20px;
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
-    }
-
-    @media (hover: hover) {
-      .card:hover {
-        box-shadow: var(--shadow-lg);
-        border-color: var(--slate-300);
-        transform: translateY(-2px);
-      }
-    }
-
-    @media (max-width: 767px) {
-      .card:hover { transform: none; }
-    }
-
-    /* ==============================================
-       SVG ICONS (inline)
-       ============================================== */
-    .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .icon svg {
-      width: 20px; height: 20px;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .icon-sm svg { width: 16px; height: 16px; }
-    .icon-lg svg { width: 24px; height: 24px; }
-
-    /* ==============================================
-       HEADER (Sticky on desktop)
-       ============================================== */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-    }
-
-    .site-header.visible {
-      transform: translateY(0);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      gap: 16px;
-    }
-
-    .header-logo img {
-      height: 40px;
-      width: auto;
-    }
-
-    .header-contacts {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .header-phone {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--navy-800);
-      text-decoration: none;
-      display: none;
-    }
-
-    @media (min-width: 768px) {
-      .header-phone { display: inline-flex; align-items: center; gap: 6px; }
-    }
-
-    .header-cta {
-      padding: 8px 18px;
-      font-size: 0.8125rem;
-    }
-
-    /* ==============================================
-       HERO
-       ============================================== */
-    #hero {
-      position: relative;
-      background: linear-gradient(170deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-700) 100%);
-      overflow: hidden;
-      padding: 20px 0 var(--section-py-mobile);
-    }
-
-    @media (min-width: 768px) {
-      #hero { padding: 28px 0 var(--section-py-desktop); }
-    }
-
-    /* Hero background image — hidden on mobile */
-    .hero-bg {
-      display: none;
-    }
-
-    @media (min-width: 1024px) {
-      .hero-bg {
-        display: block;
-        position: absolute;
-        top: 0; right: 0;
-        width: 45%;
-        height: 100%;
-        background: url('img/truck-loading.jpg') center/cover no-repeat;
-        opacity: 0.2;
-        mask-image: linear-gradient(to right, transparent 0%, black 30%);
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
-      }
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-    }
-
-    .hero-logo img {
-      height: 52px;
-      width: auto;
-    }
-
-    @media (min-width: 768px) {
-      .hero-logo img { height: 64px; }
-    }
-
-    .hero-contacts {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .hero-phone-link {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9375rem;
-      display: none;
-    }
-
-    @media (min-width: 768px) {
-      .hero-phone-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 1.0625rem;
-      }
-    }
-
-    .hero-tg-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px; height: 40px;
-      border-radius: var(--r-sm);
-      background: rgba(255,255,255,0.1);
-      color: var(--white);
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .hero-tg-link:hover { background: rgba(255,255,255,0.2); }
-
-    .hero-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (min-width: 1024px) {
-      .hero-layout {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 48px;
-      }
-      .hero-text { flex: 1; }
-      .hero-form-col { flex: 0 0 400px; }
-    }
-
-    .hero-text h1 {
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-
-    .hero-guarantee {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--r-md);
-      padding: 8px 14px;
-      color: var(--amber-400);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .hero-guarantee { font-size: 0.875rem; padding: 10px 16px; }
-    }
-
-    /* Trust badges in hero */
-    .hero-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--r-full);
-      padding: 6px 12px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.75rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .hero-badge .icon svg { width: 14px; height: 14px; }
-    .hero-badge--accent { color: var(--amber-400); border-color: rgba(251,191,36,0.2); }
-
-    /* Hero form */
-    .hero-form-card {
-      background: var(--white);
-      border-radius: var(--r-xl);
-      padding: 24px;
-      box-shadow: var(--shadow-xl);
-    }
-
-    .hero-form-card h3 {
-      font-size: 1.125rem;
-      margin-bottom: 4px;
-    }
-
-    .hero-form-card .form-subtitle {
-      color: var(--slate-500);
-      font-size: 0.8125rem;
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .form-trust {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .form-trust-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.6875rem;
-      color: var(--slate-500);
-    }
-
-    .form-trust-item .icon { color: var(--green-500); }
-    .form-trust-item .icon svg { width: 12px; height: 12px; }
-
-    /* ==============================================
-       STATS BAR
-       ============================================== */
-    .stats-bar {
-      background: var(--white);
-      border-bottom: 1px solid var(--slate-200);
-      padding: 20px 0;
-    }
-
-    .stats-bar-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .stats-bar-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .stat-item {}
-
-    .stat-number {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--amber-600);
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--slate-500);
-      font-weight: 500;
-    }
-
-    /* ==============================================
-       FEARS SECTION (PAS)
-       ============================================== */
-    .fears-section {
-      background: var(--slate-50);
-    }
-
-    .fears-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .fear-card {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      border-radius: var(--r-lg);
-      padding: 20px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: box-shadow 0.3s, border-color 0.3s;
-    }
-
-    .fear-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--slate-300);
-    }
-
-    .fear-icon {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      border-radius: var(--r-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .fear-icon--red { background: var(--red-50); color: var(--red-500); }
-    .fear-icon--amber { background: var(--amber-50); color: var(--amber-600); }
-
-    .fear-content {}
-    .fear-problem {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--slate-900);
-      margin-bottom: 4px;
-    }
-
-    .fear-solution {
-      font-size: 0.8125rem;
-      color: var(--green-600);
-      font-weight: 500;
-      display: flex;
-      align-items: flex-start;
-      gap: 4px;
-    }
-
-    .fear-solution .icon { color: var(--green-600); margin-top: 1px; }
-    .fear-solution .icon svg { width: 14px; height: 14px; }
-
-    /* ==============================================
-       SECTION HEADING
-       ============================================== */
-    .section-heading {
-      margin-bottom: 24px;
-    }
-
-    .section-heading h2 { margin-bottom: 8px; }
-    .section-heading .subtitle { max-width: 640px; }
-    .section-heading--center { text-align: center; }
-    .section-heading--center .subtitle { margin: 0 auto; }
-
-    @media (min-width: 768px) {
-      .section-heading { margin-bottom: 32px; }
-    }
-
-    /* ==============================================
-       GEOGRAPHY & SERVICES
-       ============================================== */
-    .geo-highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .geo-highlight {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9375rem;
-    }
-
-    .geo-highlight .icon { color: var(--amber-600); margin-top: 2px; }
-
-    .geo-map {
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .geo-map img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .service-card {
-      padding: 24px;
-    }
-
-    .service-card .icon-box {
-      width: 44px; height: 44px;
-      border-radius: var(--r-md);
-      background: var(--navy-50);
-      color: var(--navy-600);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3 { margin-bottom: 6px; }
-    .service-card p { color: var(--slate-500); font-size: 0.875rem; }
-
-    .facts-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    @media (min-width: 768px) {
-      .facts-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .fact-card {
-      background: var(--amber-50);
-      border: 1px solid var(--amber-100);
-      border-radius: var(--r-lg);
-      padding: 16px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .fact-card .icon { color: var(--amber-600); margin-top: 2px; }
-    .fact-card p { font-size: 0.875rem; font-weight: 500; }
-
-    /* ==============================================
-       LEAD MAGNET
-       ============================================== */
-    .lead-magnet {
-      background: var(--navy-800);
-      color: var(--white);
-    }
-
-    .lead-magnet h2 { color: var(--white); }
-    .lead-magnet .subtitle { color: rgba(255,255,255,0.7); }
-
-    .lead-form {
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
-    .lead-form .form-input {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.15);
-      color: var(--white);
-    }
-
-    .lead-form .form-input::placeholder { color: rgba(255,255,255,0.4); }
-    .lead-form .form-input:focus { border-color: var(--amber-500); }
-    .lead-form .form-label { color: rgba(255,255,255,0.7); }
-
-    /* ==============================================
-       SUPPORT
-       ============================================== */
-    .support-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    @media (min-width: 768px) {
-      .support-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .support-card .icon-box {
-      width: 40px; height: 40px;
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-
-    .icon-box--navy { background: var(--navy-50); color: var(--navy-600); }
-    .icon-box--amber { background: var(--amber-50); color: var(--amber-600); }
-    .icon-box--green { background: var(--green-50); color: var(--green-600); }
-
-    .support-card h4 { margin-bottom: 4px; }
-    .support-card p { color: var(--slate-500); font-size: 0.875rem; }
-
-    .tracking-block {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--navy-50);
-      border-radius: var(--r-md);
-      padding: 16px;
-      margin-top: 20px;
-    }
-
-    .tracking-block .icon { color: var(--navy-600); }
-    .tracking-block p { font-size: 0.875rem; font-weight: 500; }
-
-    /* ==============================================
-       CONTRACT / LEGAL
-       ============================================== */
-    .contract-section { background: var(--slate-50); }
-
-    .checklist {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .checklist li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9375rem;
-    }
-
-    .check-icon {
-      flex-shrink: 0;
-      width: 22px; height: 22px;
-      border-radius: var(--r-full);
-      background: var(--green-100);
-      color: var(--green-600);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2px;
-    }
-
-    .check-icon svg { width: 12px; height: 12px; }
-
-    .insurance-block {
-      background: var(--green-50);
-      border: 1px solid var(--green-100);
-      border-radius: var(--r-lg);
-      padding: 16px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 24px;
-    }
-
-    .insurance-block .icon { color: var(--green-600); }
-    .insurance-block h4 { margin-bottom: 4px; }
-    .insurance-block p { color: var(--slate-600); font-size: 0.875rem; }
-
-    /* Comparison table */
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-      margin-bottom: 24px;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      border: 1px solid var(--slate-200);
-    }
-
-    .compare-table th,
-    .compare-table td {
-      padding: 10px 14px;
-      text-align: left;
-      border-bottom: 1px solid var(--slate-200);
-    }
-
-    .compare-table thead th {
-      font-weight: 600;
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .compare-table thead th:first-child {
-      background: var(--slate-100);
-      color: var(--slate-600);
-    }
-
-    .compare-table thead th:nth-child(2) {
-      background: var(--red-50);
-      color: var(--red-500);
-    }
-
-    .compare-table thead th:nth-child(3) {
-      background: var(--green-50);
-      color: var(--green-600);
-    }
-
-    .compare-table tbody td:first-child {
-      font-weight: 500;
-      color: var(--slate-700);
-    }
-
-    .compare-table tbody td:nth-child(2) { color: var(--slate-500); }
-    .compare-table tbody td:nth-child(3) { color: var(--green-600); font-weight: 500; }
-
-    .compare-table tbody tr:last-child td { border-bottom: none; }
-    .compare-table tbody tr:nth-child(even) { background: var(--slate-50); }
-
-    .docs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .docs-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .doc-card {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      border-radius: var(--r-md);
-      padding: 14px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      font-size: 0.8125rem;
-      font-weight: 500;
-    }
-
-    .doc-card .icon { color: var(--navy-600); }
-
-    /* ==============================================
-       FAQ
-       ============================================== */
-    .faq-section { background: var(--white); }
-
-    .faq-list {
-      max-width: 760px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .faq-item {
-      border: 1px solid var(--slate-200);
-      border-radius: var(--r-md);
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-
-    .faq-item[open] {
-      border-color: var(--amber-500);
-    }
-
-    .faq-item summary {
-      padding: 14px 16px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--slate-900);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      list-style: none;
-      user-select: none;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-
-    .faq-item summary::after {
-      content: '';
-      width: 20px; height: 20px;
-      flex-shrink: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
-      transition: transform 0.2s;
-    }
-
-    .faq-item[open] summary::after {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      padding: 0 16px 14px;
-      font-size: 0.875rem;
-      color: var(--slate-600);
-      line-height: 1.6;
-    }
-
-    /* ==============================================
-       HOW WE WORK (TIMELINE)
-       ============================================== */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width: 1024px) {
-      .steps-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .step-card {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    @media (min-width: 1024px) {
-      .step-card { flex-direction: column; text-align: center; align-items: center; }
-    }
-
-    .step-number {
-      flex-shrink: 0;
-      width: 36px; height: 36px;
-      border-radius: var(--r-full);
-      background: var(--amber-600);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.875rem;
-      font-weight: 700;
-    }
-
-    .step-card h4 { margin-bottom: 2px; }
-    .step-card p { color: var(--slate-500); font-size: 0.8125rem; }
-
-    /* ==============================================
-       REVIEWS CAROUSEL
-       ============================================== */
-    .review-carousel {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 16px 8px;
-      margin: 0 -16px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--slate-300) transparent;
-    }
-
-    @media (min-width: 768px) {
-      .review-carousel { padding: 0 24px 8px; margin: 0 -24px; }
-    }
-
-    .review-carousel::-webkit-scrollbar { height: 5px; }
-    .review-carousel::-webkit-scrollbar-track { background: transparent; }
-    .review-carousel::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 3px; }
-
-    .review-screenshot {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-    }
-
-    .review-screenshot img {
-      height: 400px;
-      width: auto;
-      display: block;
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    @media (min-width: 768px) {
-      .review-screenshot img { height: 460px; }
-    }
-
-    .avito-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--navy-500);
-      font-weight: 500;
-      font-size: 0.875rem;
-      text-decoration: none;
-    }
-
-    .avito-link:hover { text-decoration: underline; }
-
-    /* ==============================================
-       FLEET / TRANSPORT
-       ============================================== */
-    .fleet-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .fleet-cards { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .fleet-fact {
-      padding: 16px;
-    }
-
-    .fleet-fact .icon-box {
-      margin-bottom: 8px;
-    }
-
-    .fleet-fact h4 { font-size: 0.875rem; margin-bottom: 2px; }
-    .fleet-fact p { color: var(--slate-500); font-size: 0.8125rem; }
-
-    .vehicle-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .vehicle-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .vehicle-card {
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      background: var(--white);
-    }
-
-    .vehicle-card img { width: 100%; height: auto; }
-
-    /* Loading photos carousel */
-    .loading-carousel {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 16px 8px;
-      margin: 0 -16px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--slate-300) transparent;
-    }
-
-    @media (min-width: 768px) {
-      .loading-carousel { padding: 0 24px 8px; margin: 0 -24px; }
-    }
-
-    .loading-carousel::-webkit-scrollbar { height: 5px; }
-    .loading-carousel::-webkit-scrollbar-track { background: transparent; }
-    .loading-carousel::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 3px; }
-
-    .loading-photo {
-      flex: 0 0 200px;
-      height: 260px;
-      scroll-snap-align: start;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-
-    @media (min-width: 768px) {
-      .loading-photo { flex: 0 0 240px; height: 300px; }
-    }
-
-    .loading-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* ==============================================
-       TEAM
-       ============================================== */
-    .team-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .team-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .team-card {
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .team-photo {
-      height: 280px;
-      overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .team-photo { height: 320px; }
-    }
-
-    .team-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-    }
-
-    .team-info {
-      padding: 16px;
-    }
-
-    .team-info h4 { margin-bottom: 2px; }
-    .team-info p { color: var(--slate-500); font-size: 0.8125rem; }
-
-    /* ==============================================
-       TRUST / LETTERS
-       ============================================== */
-    .trust-section { background: var(--slate-50); }
-
-    .letters-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    @media (min-width: 768px) {
-      .letters-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .letter-card {
-      border-radius: var(--r-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      aspect-ratio: 3/4;
-    }
-
-    .letter-card img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* ==============================================
-       FINAL CTA
-       ============================================== */
-    .final-cta {
-      background: linear-gradient(170deg, var(--navy-900) 0%, var(--navy-800) 100%);
-      color: var(--white);
-    }
-
-    .final-cta h2 { color: var(--white); }
-    .final-cta .subtitle { color: rgba(255,255,255,0.7); }
-
-    .final-form-card {
-      background: var(--white);
-      border-radius: var(--r-xl);
-      padding: 24px;
-      max-width: 480px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-xl);
-    }
-
-    .final-form-card .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    @media (max-width: 479px) {
-      .final-form-card .form-row { grid-template-columns: 1fr; }
-    }
-
-    /* ==============================================
-       CTA BANNER (inline)
-       ============================================== */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--amber-50) 0%, var(--amber-100) 100%);
-      border: 1px solid var(--amber-100);
-      border-radius: var(--r-xl);
-      padding: 24px;
-      text-align: center;
-      margin-top: 24px;
-    }
-
-    .cta-banner h3 { margin-bottom: 12px; }
-
-    /* ==============================================
-       FOOTER
-       ============================================== */
-    .site-footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--slate-200);
-      background: var(--slate-50);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .footer-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .footer-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--slate-600);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-    }
-
-    .footer-links { display: flex; flex-direction: column; gap: 6px; }
-    .footer-links a {
-      color: var(--slate-500);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--navy-600); }
-
-    .footer-bottom {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid var(--slate-200);
-      text-align: center;
-    }
-
-    .footer-bottom p {
-      font-size: 0.75rem;
-      color: var(--slate-400);
-    }
-
-    .footer-logo img { height: 40px; width: auto; margin-bottom: 8px; }
-    .footer-legal { font-size: 0.75rem; color: var(--slate-400); }
-
-    /* ==============================================
-       STICKY CTA (Mobile)
-       ============================================== */
-    .sticky-cta {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      z-index: 90;
-      background: var(--white);
-      border-top: 1px solid var(--slate-200);
-      padding: 8px 16px;
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
-    }
-
-    .sticky-cta.visible { transform: translateY(0); }
-
-    .sticky-cta-buttons {
-      display: flex;
-      gap: 8px;
-    }
-
-    .sticky-cta-buttons .btn { flex: 1; padding: 12px 8px; font-size: 0.8125rem; }
-
-    .sticky-btn-call {
-      background: var(--amber-600);
-      color: var(--white);
-    }
-
-    .sticky-btn-tg {
-      background: #0088cc;
-      color: var(--white);
-    }
-
-    @media (min-width: 768px) {
-      .sticky-cta { display: none; }
-    }
-
-    @media (max-width: 767px) {
-      body { padding-bottom: 64px; }
-    }
-
-    /* ==============================================
-       REVEAL ANIMATIONS
-       ============================================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-d1 { transition-delay: 0.05s; }
-    .reveal-d2 { transition-delay: 0.1s; }
-    .reveal-d3 { transition-delay: 0.15s; }
-    .reveal-d4 { transition-delay: 0.2s; }
-    .reveal-d5 { transition-delay: 0.25s; }
-    .reveal-d6 { transition-delay: 0.3s; }
-    .reveal-d7 { transition-delay: 0.35s; }
-    .reveal-d8 { transition-delay: 0.4s; }
-
-    /* Hero animations (one-time) */
-    .hero-anim { opacity: 0; transform: translateY(16px); animation: hero-in 0.5s ease forwards; }
-    .hero-anim-d1 { animation-delay: 0.1s; }
-    .hero-anim-d2 { animation-delay: 0.2s; }
-    .hero-anim-d3 { animation-delay: 0.3s; }
-    .hero-anim-d4 { animation-delay: 0.4s; }
-
-    @keyframes hero-in {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ==============================================
-       REDUCED MOTION
-       ============================================== */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .reveal { opacity: 1; transform: none; }
-      .hero-anim { opacity: 1; transform: none; }
-      .sticky-cta { transform: none; }
-    }
-
-    /* ==============================================
-       UTILITIES
-       ============================================== */
-    .text-center { text-align: center; }
-    .mt-12 { margin-top: 12px; }
-    .mt-16 { margin-top: 16px; }
-    .mt-20 { margin-top: 20px; }
-    .mt-24 { margin-top: 24px; }
-    .mb-8 { margin-bottom: 8px; }
-    .mb-12 { margin-bottom: 12px; }
-    .mb-16 { margin-bottom: 16px; }
-    .mb-24 { margin-bottom: 24px; }
-
-    .bg-white { background: var(--white); }
-    .bg-slate { background: var(--slate-50); }
-  </style>
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1B2D;background:#fff;font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit;font-size:inherit;border:none;outline:none}
+ul,ol{list-style:none}
+
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 32px}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+h1{font-size:clamp(1.75rem,5vw,3rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em}
+h2{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:700;line-height:1.2;letter-spacing:-0.01em}
+h3{font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:600;line-height:1.3}
+p{color:#3B4A5E}
+
+section{padding:48px 0}
+@media(min-width:768px){section{padding:80px 0}}
+.section-title{text-align:center;margin-bottom:12px}
+.section-subtitle{text-align:center;color:#5A6B7F;max-width:600px;margin:0 auto 40px;font-size:1.05rem}
+
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;background:#D97706;color:#fff;font-weight:600;font-size:1rem;padding:14px 28px;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;min-height:48px;border:none;gap:8px;width:100%}
+.btn-primary:hover{background:#B45309}
+.btn-primary:active{transform:scale(.98)}
+
+.input-field{width:100%;padding:14px 16px;border:2px solid #E5E7EB;border-radius:10px;font-size:1rem;background:#fff;color:#0F1B2D;transition:border-color .2s;min-height:48px}
+.input-field:focus{border-color:#D97706}
+.input-field::placeholder{color:#9CA3AF}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .3s}
+.header.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.header-logo img{height:32px;width:auto}
+.header-phone{display:flex;align-items:center;gap:6px;font-weight:600;font-size:.9rem;color:#0F1B2D}
+.header-phone svg{flex-shrink:0}
+@media(min-width:768px){.header-inner{height:64px}.header-logo img{height:38px}.header-phone{font-size:1rem}}
+
+/* HERO */
+.hero{padding-top:72px;padding-bottom:32px;background:#FAFBFC}
+@media(min-width:768px){.hero{padding-top:96px;padding-bottom:48px}}
+.hero-grid{display:grid;gap:32px}
+@media(min-width:768px){.hero-grid{grid-template-columns:1fr 400px;align-items:start;gap:48px}}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 440px}}
+.hero-content{display:flex;flex-direction:column;gap:16px}
+.hero h1{color:#0F1B2D}
+.hero h1 span{color:#D97706}
+.hero-subtitle{font-size:1.05rem;color:#3B4A5E;line-height:1.6}
+.hero-guarantee{display:inline-flex;align-items:center;gap:8px;background:#FEF3C7;color:#92400E;font-weight:600;font-size:.9rem;padding:8px 14px;border-radius:8px;align-self:flex-start}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.hero-badge{display:flex;align-items:center;gap:6px;font-size:.85rem;font-weight:500;color:#3B4A5E;background:#fff;padding:6px 12px;border-radius:8px;border:1px solid #E5E7EB}
+.hero-badge strong{color:#0F1B2D;font-weight:700}
+.hero-form-card{background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:28px 24px;border:1px solid #F3F4F6}
+.hero-form-title{font-size:1.25rem;font-weight:700;margin-bottom:4px;color:#0F1B2D}
+.hero-form-subtitle{font-size:.9rem;color:#5A6B7F;margin-bottom:20px}
+.hero-form{display:flex;flex-direction:column;gap:12px}
+.hero-form .btn-primary{margin-top:4px}
+
+/* STATS */
+.stats-strip{background:#0F1B2D;padding:20px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+.stat-item{text-align:center;color:#fff}
+.stat-value{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:#D97706;line-height:1.2}
+.stat-label{font-size:.85rem;color:rgba(255,255,255,.7);margin-top:2px}
+
+/* FEARS */
+.fears{background:#fff}
+.fears-grid{display:grid;gap:16px}
+@media(min-width:768px){.fears-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.fears-grid{grid-template-columns:repeat(3,1fr)}}
+.fear-card{background:#FAFBFC;border-radius:12px;padding:24px;border:1px solid #F3F4F6;transition:box-shadow .3s}
+.fear-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.fear-icon{width:44px;height:44px;border-radius:10px;background:#FEE2E2;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.fear-title{font-size:1rem;font-weight:700;color:#991B1B;margin-bottom:8px}
+.fear-solution{display:flex;align-items:flex-start;gap:8px;font-size:.95rem;color:#166534;line-height:1.5}
+.fear-solution svg{flex-shrink:0;margin-top:3px}
+
+/* GEOGRAPHY */
+.geography{background:#FAFBFC}
+.geo-top{display:grid;gap:32px;margin-bottom:32px}
+@media(min-width:768px){.geo-top{grid-template-columns:1fr 1fr;align-items:center}}
+.geo-map{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+.geo-map img{width:100%;height:100%;object-fit:cover}
+.geo-text h2{margin-bottom:12px}
+.geo-text p{margin-bottom:16px;font-size:1.05rem}
+.services-grid{display:grid;gap:16px;margin-bottom:32px}
+@media(min-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
+.service-card{background:#fff;border-radius:12px;padding:28px 24px;box-shadow:0 1px 3px rgba(0,0,0,.08);border:1px solid #F3F4F6}
+.service-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.service-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.service-card:first-child .service-icon{background:#DBEAFE}
+.service-card:last-child .service-icon{background:#D1FAE5}
+.service-card h3{font-size:1.15rem}
+.service-card p{margin-top:8px;font-size:.95rem;color:#5A6B7F}
+.service-card .price-tag{display:inline-block;margin-top:12px;background:#F3F4F6;padding:6px 12px;border-radius:6px;font-weight:600;font-size:.9rem;color:#0F1B2D}
+.geo-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.geo-fact{text-align:center;padding:16px 8px;background:#fff;border-radius:10px;border:1px solid #E5E7EB}
+.geo-fact-value{font-size:1.35rem;font-weight:800;color:#D97706}
+.geo-fact-label{font-size:.8rem;color:#5A6B7F;margin-top:2px}
+
+/* LEAD MAGNET */
+.lead-magnet{background:linear-gradient(135deg,#0F1B2D 0%,#1E3A5F 100%);color:#fff;padding:40px 0}
+.lead-inner{display:grid;gap:24px;align-items:center}
+@media(min-width:768px){.lead-inner{grid-template-columns:1fr 380px}}
+.lead-content h2{color:#fff;margin-bottom:8px;font-size:clamp(1.3rem,3vw,1.75rem)}
+.lead-content p{color:rgba(255,255,255,.75);font-size:1rem}
+.lead-form{display:flex;gap:12px;flex-direction:column}
+@media(min-width:768px){.lead-form{flex-direction:row}.lead-form .input-field{flex:1}.lead-form .btn-primary{width:auto;white-space:nowrap}}
+
+/* SUPPORT */
+.support{background:#fff}
+.support-grid{display:grid;gap:16px}
+@media(min-width:768px){.support-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.support-grid{grid-template-columns:repeat(4,1fr)}}
+.support-card{text-align:center;padding:28px 20px;background:#FAFBFC;border-radius:12px;border:1px solid #F3F4F6}
+.support-card-icon{width:52px;height:52px;margin:0 auto 14px;background:#EEF2FF;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.support-card h3{font-size:1rem;margin-bottom:6px}
+.support-card p{font-size:.9rem;color:#5A6B7F}
+
+/* CONTRACT */
+.contract{background:#FAFBFC}
+.contract-features{display:grid;gap:12px;margin-bottom:32px}
+@media(min-width:768px){.contract-features{grid-template-columns:repeat(2,1fr)}}
+.contract-feature{display:flex;align-items:flex-start;gap:10px;padding:16px;background:#fff;border-radius:10px;border:1px solid #E5E7EB}
+.contract-feature svg{flex-shrink:0;margin-top:2px}
+.contract-feature span{font-size:.95rem;color:#3B4A5E}
+.contract-feature strong{color:#0F1B2D}
+.comparison-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:32px;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.comparison-table thead th{padding:16px;font-size:.95rem;font-weight:700;text-align:left}
+.comparison-table thead th:first-child{background:#FEE2E2;color:#991B1B}
+.comparison-table thead th:last-child{background:#D1FAE5;color:#166534}
+.comparison-table tbody td{padding:14px 16px;font-size:.9rem;border-bottom:1px solid #F3F4F6;vertical-align:top}
+.comparison-table tbody td:first-child{color:#991B1B;background:#FFF5F5}
+.comparison-table tbody td:last-child{color:#166534;background:#F0FFF4;font-weight:500}
+.comparison-table tbody tr:last-child td{border-bottom:none}
+.compensation-block{margin-top:32px;padding:24px;background:#fff;border-radius:12px;border:1px solid #E5E7EB;display:flex;align-items:flex-start;gap:16px}
+@media(max-width:767px){.compensation-block{flex-direction:column}}
+.compensation-icon{width:52px;height:52px;background:#EEF2FF;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.compensation-block h3{font-size:1.1rem;margin-bottom:6px}
+.compensation-block p{font-size:.9rem;color:#5A6B7F}
+
+/* FAQ */
+.faq{background:#fff}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:#FAFBFC;border-radius:10px;border:1px solid #F3F4F6;overflow:hidden}
+.faq-item summary{padding:16px 20px;font-weight:600;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;min-height:48px;color:#0F1B2D;transition:background .2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'';width:20px;height:20px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%235A6B7F' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;flex-shrink:0;transition:transform .3s}
+.faq-item[open] summary::after{transform:rotate(180deg)}
+.faq-item summary:hover{background:#F3F4F6}
+.faq-item .faq-answer{padding:0 20px 16px;font-size:.95rem;color:#5A6B7F;line-height:1.6}
+
+/* HOW WE WORK */
+.how-we-work{background:#FAFBFC}
+.steps-grid{display:grid;gap:16px}
+@media(min-width:768px){.steps-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.steps-grid{grid-template-columns:repeat(4,1fr)}}
+.step-card{text-align:center;padding:24px 16px;background:#fff;border-radius:12px;border:1px solid #F3F4F6}
+.step-num{width:36px;height:36px;background:#D97706;color:#fff;font-weight:800;font-size:.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.step-card h3{font-size:.95rem;margin-bottom:4px}
+.step-card p{font-size:.85rem;color:#5A6B7F}
+
+/* REVIEWS */
+.reviews{background:#fff}
+.reviews-header{text-align:center;margin-bottom:24px}
+.reviews-avito-link{display:inline-flex;align-items:center;gap:8px;background:#F3F4F6;padding:8px 16px;border-radius:8px;font-size:.9rem;font-weight:600;color:#0F1B2D;margin-top:12px;transition:background .2s}
+.reviews-avito-link:hover{background:#E5E7EB}
+.carousel-wrapper{position:relative;overflow:hidden}
+.carousel-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 16px;margin:0 -16px}
+.carousel-track::-webkit-scrollbar{display:none}
+.review-card{flex:0 0 260px;scroll-snap-align:start;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);background:#fff;border:1px solid #F3F4F6}
+.review-card img{width:100%;height:auto;display:block}
+@media(min-width:768px){.review-card{flex:0 0 280px}}
+
+/* FLEET */
+.fleet{background:#FAFBFC}
+.fleet-features{display:grid;gap:12px;margin-bottom:32px}
+@media(min-width:768px){.fleet-features{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.fleet-features{grid-template-columns:repeat(4,1fr)}}
+.fleet-feature{text-align:center;padding:20px 16px;background:#fff;border-radius:10px;border:1px solid #F3F4F6}
+.fleet-feature-icon{margin-bottom:8px}
+.fleet-feature h3{font-size:.95rem;margin-bottom:4px}
+.fleet-feature p{font-size:.85rem;color:#5A6B7F}
+.vehicles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:32px}
+@media(min-width:1024px){.vehicles-grid{grid-template-columns:repeat(4,1fr)}}
+.vehicle-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #F3F4F6;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.vehicle-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.vehicle-card-body{padding:12px;text-align:center}
+.vehicle-card-body h3{font-size:.9rem;margin-bottom:2px}
+.vehicle-card-body p{font-size:.8rem;color:#5A6B7F}
+.loading-carousel .carousel-track{gap:12px}
+.loading-card{flex:0 0 240px;scroll-snap-align:start;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.loading-card img{width:100%;height:180px;object-fit:cover}
+@media(min-width:768px){.loading-card{flex:0 0 280px}.loading-card img{height:200px}}
+
+/* TEAM */
+.team{background:#fff}
+.team-grid{display:grid;gap:16px}
+@media(min-width:768px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+.team-card{text-align:center;background:#FAFBFC;border-radius:12px;overflow:hidden;border:1px solid #F3F4F6}
+.team-card img{width:100%;aspect-ratio:1;object-fit:cover}
+.team-card-body{padding:16px}
+.team-card-body h3{font-size:1.05rem;margin-bottom:2px}
+.team-card-body p{font-size:.9rem;color:#5A6B7F}
+
+/* TRUST */
+.trust{background:#FAFBFC}
+.trust-counters{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
+@media(min-width:768px){.trust-counters{grid-template-columns:repeat(4,1fr)}}
+.trust-counter{text-align:center;padding:20px 12px;background:#fff;border-radius:10px;border:1px solid #E5E7EB}
+.trust-counter-value{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:#D97706}
+.trust-counter-label{font-size:.85rem;color:#5A6B7F;margin-top:2px}
+.letters-heading{font-size:1.15rem;font-weight:700;text-align:center;margin-bottom:16px}
+.letters-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.letters-grid{grid-template-columns:repeat(4,1fr)}}
+.letter-card{border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);cursor:pointer;transition:transform .2s}
+.letter-card:hover{transform:scale(1.02)}
+.letter-card img{width:100%;height:auto}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(135deg,#0F1B2D 0%,#1E3A5F 100%);color:#fff;padding:56px 0}
+.final-cta-inner{max-width:520px;margin:0 auto;text-align:center}
+.final-cta h2{color:#fff;margin-bottom:8px}
+.final-cta p{color:rgba(255,255,255,.75);margin-bottom:24px;font-size:1.05rem}
+.final-cta-form{display:flex;flex-direction:column;gap:12px}
+
+/* FOOTER */
+.footer{background:#0F1B2D;color:#fff;padding:48px 0 24px}
+.footer-grid{display:grid;gap:32px;margin-bottom:32px}
+@media(min-width:768px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+.footer h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-bottom:12px}
+.footer a{color:rgba(255,255,255,.8);transition:color .2s}
+.footer a:hover{color:#D97706}
+.footer-contacts{display:flex;flex-direction:column;gap:10px}
+.footer-contact-item{display:flex;align-items:center;gap:8px;font-size:.95rem}
+.footer-contact-item svg{flex-shrink:0;color:#D97706}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:.95rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;flex-direction:column;gap:8px;font-size:.8rem;color:rgba(255,255,255,.4)}
+@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
+
+/* STICKY BAR */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#fff;border-top:1px solid #E5E7EB;padding:8px 12px;display:flex;gap:8px;box-shadow:0 -2px 12px rgba(0,0,0,.08)}
+@media(min-width:768px){.sticky-bar{display:none}}
+.sticky-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;border-radius:10px;font-weight:600;font-size:.9rem;min-height:48px;cursor:pointer;border:none;text-decoration:none}
+.sticky-btn-phone{background:#D97706;color:#fff}
+.sticky-btn-tg{background:#0088CC;color:#fff}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.9);align-items:center;justify-content:center;padding:24px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:8px}
+.lightbox-close{position:absolute;top:16px;right:16px;width:44px;height:44px;background:rgba(255,255,255,.2);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+@media(max-width:767px){.footer{padding-bottom:80px}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
 </head>
 <body>
 
-  <!-- ============================================
-       STICKY HEADER (appears on scroll)
-       ============================================ -->
-  <header class="site-header" id="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="/" class="header-logo">
-          <img src="logo.png" alt="Экспресс Транс" width="272" height="164">
-        </a>
-        <div class="header-contacts">
-          <a href="tel:+79222555372" class="header-phone">
-            <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            +7 (922) 255-53-72
-          </a>
-          <a href="#final-form" class="btn btn-primary btn-sm header-cta">Рассчитать</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-  <!-- ============================================
-       BLOCK 1 — HERO
-       ============================================ -->
-  <section id="hero">
-    <div class="hero-bg" role="presentation"></div>
-    <div class="container">
-      <!-- Top bar: logo + contacts -->
-      <div class="hero-top">
-        <a href="/" class="hero-logo">
-          <img src="logo-white.png" alt="Экспресс Транс" width="272" height="164">
-        </a>
-        <div class="hero-contacts">
-          <a href="tel:+79222555372" class="hero-phone-link">
-            <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            +7 (922) 255-53-72
-          </a>
-          <a href="https://t.me/+79222555372" class="hero-tg-link" target="_blank" rel="noopener" aria-label="Telegram">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Main hero content -->
-      <div class="hero-layout">
-        <!-- Left: text -->
-        <div class="hero-text">
-          <h1 class="hero-anim">Перевезём вещи в другой город — платите после получения</h1>
-
-          <div class="hero-guarantee hero-anim hero-anim-d1">
-            <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
-            Опоздаем — вернём 30% стоимости. Это в договоре.
-          </div>
-
-          <div class="hero-badges hero-anim hero-anim-d2">
-            <span class="hero-badge hero-badge--accent">
-              <span class="icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-              4.9 на Авито
-            </span>
-            <span class="hero-badge">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-              300+ переездов
-            </span>
-            <span class="hero-badge">
-              <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
-              Без предоплаты
-            </span>
-          </div>
-        </div>
-
-        <!-- Right: form -->
-        <div class="hero-form-col hero-anim hero-anim-d3">
-          <div class="hero-form-card">
-            <h3>Сколько стоит ваш переезд?</h3>
-            <p class="form-subtitle">Ответим в Telegram за 10 минут. Без обязательств.</p>
-            <form id="hero-form" class="js-form">
-              <div class="form-group">
-                <label for="hero-route" class="form-label">Маршрут</label>
-                <input type="text" id="hero-route" name="route" class="form-input" placeholder="напр. Тюмень → Москва">
-              </div>
-              <div class="form-group">
-                <label for="hero-phone" class="form-label">Телефон</label>
-                <input type="tel" id="hero-phone" name="phone" class="form-input js-phone" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
-              </div>
-              <button type="submit" class="btn btn-primary btn-full">Узнать стоимость за 10 минут</button>
-            </form>
-            <div class="form-trust">
-              <span class="form-trust-item">
-                <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                Перезвоним за 10 мин
-              </span>
-              <span class="form-trust-item">
-                <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
-                Без предоплаты
-              </span>
-              <span class="form-trust-item">
-                <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-                300+ переездов
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       STATS BAR
-       ============================================ -->
-  <div class="stats-bar" id="stats-bar">
-    <div class="container">
-      <div class="stats-bar-grid">
-        <div class="stat-item reveal">
-          <div class="stat-number" data-count="300" data-suffix="+">0</div>
-          <div class="stat-label">переездов за 2025</div>
-        </div>
-        <div class="stat-item reveal reveal-d1">
-          <div class="stat-number" data-count="4.9" data-decimals="1">0</div>
-          <div class="stat-label">оценка на Авито</div>
-        </div>
-        <div class="stat-item reveal reveal-d2">
-          <div class="stat-number" data-count="100" data-suffix="%">0</div>
-          <div class="stat-label">уровень сервиса</div>
-        </div>
-        <div class="stat-item reveal reveal-d3">
-          <div class="stat-number" data-count="8" data-suffix="+">0</div>
-          <div class="stat-label">лет опыта</div>
-        </div>
-      </div>
-    </div>
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="/" class="header-logo" aria-label="Экспресс Транс — на главную">
+      <img src="logo.png" alt="Экспресс Транс" width="140" height="32" loading="eager">
+    </a>
+    <a href="tel:+79222555372" class="header-phone">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +7 (922) 255-53-72
+    </a>
   </div>
+</header>
 
+<main>
 
-  <!-- ============================================
-       BLOCK: 5 FEARS (PAS pattern)
-       ============================================ -->
-  <section class="section fears-section">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>5 страхов при переезде — и как мы их решаем</h2>
-        <p class="subtitle">Каждый из них закрыт документально и финансово</p>
-      </div>
-
-      <div class="fears-grid">
-        <div class="fear-card reveal">
-          <div class="fear-icon fear-icon--red">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-          </div>
-          <div class="fear-content">
-            <p class="fear-problem">Вещи повредят при перевозке</p>
-            <p class="fear-solution">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              Договор с мат. ответственностью + страхование груза
-            </p>
-          </div>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>Перевезём вещи в&nbsp;другой город&nbsp;— <span>платите после получения</span></h1>
+        <p class="hero-subtitle">Работаем по&nbsp;договору. 300+ переездов за&nbsp;год, рейтинг 4.9 на&nbsp;Авито. Экономия до&nbsp;40% на&nbsp;догрузе.</p>
+        <div class="hero-guarantee">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Опоздаем — вернём 30% стоимости. Это в договоре.
         </div>
-
-        <div class="fear-card reveal reveal-d1">
-          <div class="fear-icon fear-icon--red">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#D97706"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <strong>4.9</strong> Авито
           </div>
-          <div class="fear-content">
-            <p class="fear-problem">Сорвут сроки доставки</p>
-            <p class="fear-solution">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              Компенсация 30% стоимости при опоздании, по договору
-            </p>
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>300+</strong> переездов
           </div>
-        </div>
-
-        <div class="fear-card reveal reveal-d2">
-          <div class="fear-icon fear-icon--amber">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-          </div>
-          <div class="fear-content">
-            <p class="fear-problem">Возьмут больше, чем обещали</p>
-            <p class="fear-solution">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              Цена зафиксирована в договоре, оплата только по факту
-            </p>
-          </div>
-        </div>
-
-        <div class="fear-card reveal reveal-d3">
-          <div class="fear-icon fear-icon--amber">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-          </div>
-          <div class="fear-content">
-            <p class="fear-problem">А вдруг мошенники?</p>
-            <p class="fear-solution">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              ИП с ОГРН, 300+ переездов, рейтинг 4.9 на Авито
-            </p>
-          </div>
-        </div>
-
-        <div class="fear-card reveal reveal-d4">
-          <div class="fear-icon fear-icon--amber">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          </div>
-          <div class="fear-content">
-            <p class="fear-problem">Не дозвонюсь когда нужно</p>
-            <p class="fear-solution">
-              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-              Менеджер на связи 24/7, отслеживание геолокации
-            </p>
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Без предоплаты
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 2 — GEOGRAPHY & SERVICES
-       ============================================ -->
-  <section class="section bg-white" id="services">
-    <div class="container">
-      <div class="section-heading reveal">
-        <h2>Перевозим по всей России</h2>
-        <p class="subtitle">Любой город — от Калининграда до Владивостока. От двери до двери, без перегрузов.</p>
-      </div>
-
-      <div class="geo-map reveal">
-        <img src="img/map-russia.jpg" alt="География перевозок по всей России" loading="lazy">
-      </div>
-
-      <div class="services-grid">
-        <div class="card service-card reveal">
-          <div class="icon-box icon-box--navy">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-          </div>
-          <h3>Переезд «Под ключ»</h3>
-          <p>Отдельная машина только для вас. Грузчики на погрузке и выгрузке. Ваши вещи никуда не перегружаются.</p>
-        </div>
-        <div class="card service-card reveal reveal-d1">
-          <div class="icon-box icon-box--amber">
-            <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
-          </div>
-          <h3>Догруз — экономия до 40%</h3>
-          <p>Ваш груз едет попутной машиной. Идеально, если вещей немного — платите только за своё место в кузове.</p>
-        </div>
-      </div>
-
-      <div class="facts-grid reveal">
-        <div class="fact-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-          <p>Гарантия сохранности, сроков и суммы — в договоре</p>
-        </div>
-        <div class="fact-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-          <p>Оценка 4,9 на Авито. Статус «Надёжный исполнитель»</p>
-        </div>
-        <div class="fact-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></span>
-          <p>Подача транспорта в удобные для вас дату и время</p>
-        </div>
-      </div>
-
-      <div class="cta-banner reveal">
-        <h3>Оставьте заявку сегодня — страховка груза в подарок</h3>
-        <a href="#final-form" class="btn btn-primary">Узнать стоимость за 10 минут</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 3 — LEAD MAGNET
-       ============================================ -->
-  <section class="section lead-magnet" id="checklist">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>Боитесь что-то забыть? Скачайте чек-лист</h2>
-        <p class="subtitle">Оставьте номер — отправим чек-лист безопасного переезда в Telegram</p>
-      </div>
-      <div class="lead-form reveal">
-        <form class="js-form">
-          <div class="form-group">
-            <label for="lm-phone" class="form-label">Телефон</label>
-            <input type="tel" id="lm-phone" name="phone" class="form-input js-phone" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Получить чек-лист бесплатно</button>
+      <div class="hero-form-card">
+        <div class="hero-form-title">Сколько стоит ваш переезд?</div>
+        <div class="hero-form-subtitle">Назовём точную цену за 10 минут. Без обязательств.</div>
+        <form class="hero-form" onsubmit="handleForm(event,'hero')">
+          <input type="tel" class="input-field" placeholder="+7 (___) ___-__-__" autocomplete="tel" required aria-label="Телефон">
+          <input type="text" class="input-field" placeholder="Откуда — Куда" aria-label="Маршрут">
+          <button type="submit" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Узнать стоимость за 10 минут
+          </button>
         </form>
-        <div class="form-trust" style="margin-top:12px;">
-          <span class="form-trust-item" style="color:rgba(255,255,255,0.5);">
-            <span class="icon" style="color:rgba(255,255,255,0.4);"><svg viewBox="0 0 24 24" style="width:12px;height:12px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-            Данные в безопасности
-          </span>
-        </div>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 4 — SERVICE & SUPPORT
-       ============================================ -->
-  <section class="section bg-white" id="support">
-    <div class="container">
-      <div class="section-heading reveal">
-        <h2>Ваш менеджер на связи 24/7</h2>
-        <p class="subtitle">Персональный контроль на каждом этапе переезда</p>
-      </div>
-
-      <div class="support-grid mb-16">
-        <div class="card support-card reveal">
-          <div class="icon-box icon-box--navy">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
-          </div>
-          <h4>Персональный менеджер 24/7</h4>
-          <p>В том числе в выходные. Ответим оперативно или скидка 10%</p>
-        </div>
-        <div class="card support-card reveal reveal-d1">
-          <div class="icon-box icon-box--amber">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
-          </div>
-          <h4>Контакт руководителя</h4>
-          <p>Если проблемы — руководитель ответит лично. Не ответим за 20 минут — скидка 10%</p>
-        </div>
-        <div class="card support-card reveal reveal-d2">
-          <div class="icon-box icon-box--green">
-            <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span>
-          </div>
-          <h4>Уровень сервиса на Авито — 100%</h4>
-          <p>Объективная оценка оперативности нашей работы</p>
-        </div>
-        <div class="card support-card reveal reveal-d3">
-          <div class="icon-box icon-box--navy">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          </div>
-          <h4>Телефон и Telegram</h4>
-          <p>Выбирайте удобный способ связи — ответим быстро в любом</p>
-        </div>
-      </div>
-
-      <div class="tracking-block reveal">
-        <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <p>Отслеживайте местоположение транспорта — по запросу направим геолокацию</p>
-      </div>
-
-      <div class="cta-banner reveal">
-        <h3>Закажите переезд — получите сертификат Ozon в подарок</h3>
-        <a href="#final-form" class="btn btn-primary">Узнать стоимость за 10 минут</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 5 — CONTRACT / LEGAL
-       ============================================ -->
-  <section class="section contract-section" id="contract">
-    <div class="container">
-      <div class="section-heading reveal">
-        <h2>Всё по договору — никаких сюрпризов</h2>
-        <p class="subtitle">Сохранность, сроки, цена — всё зафиксировано на бумаге</p>
-      </div>
-
-      <div class="checklist reveal">
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Полная материальная ответственность за сохранность груза
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Отсутствие предоплаты
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Адреса загрузки и выгрузки
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Даты и время прибытия
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Гарантия 30% от стоимости на соблюдение сроков
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Данные на авто и водителя
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Реквизиты компании
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          Контакт руководителя
-        </li>
-      </div>
-
-      <div class="insurance-block reveal">
-        <span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-        <div>
-          <h4>Страхование груза</h4>
-          <p>Оформим страховку на весь маршрут. Если что-то повредится — полная компенсация.</p>
-        </div>
-      </div>
-
-      <!-- Comparison table -->
-      <h3 class="mb-12 reveal">Недобросовестные перевозчики vs Экспресс Транс</h3>
-      <div style="overflow-x:auto;" class="mb-24 reveal">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Другие</th>
-              <th>Экспресс Транс</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Договор</td>
-              <td>Устная договорённость</td>
-              <td>Полноценный договор с мат. ответственностью</td>
-            </tr>
-            <tr>
-              <td>Предоплата</td>
-              <td>30-100% вперёд</td>
-              <td>0 руб. — оплата по факту</td>
-            </tr>
-            <tr>
-              <td>Сроки</td>
-              <td>«Примерно через неделю»</td>
-              <td>Точная дата + компенсация 30% за опоздание</td>
-            </tr>
-            <tr>
-              <td>Сохранность</td>
-              <td>«Ну мы аккуратно»</td>
-              <td>Страхование + опись имущества</td>
-            </tr>
-            <tr>
-              <td>Связь</td>
-              <td>Телефон не берут</td>
-              <td>Менеджер 24/7 + геолокация</td>
-            </tr>
-            <tr>
-              <td>Цена</td>
-              <td>Растёт после погрузки</td>
-              <td>Фиксирована в договоре</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Documents for compensation -->
-      <h3 class="mb-8 reveal">Документы для компенсации от работодателя</h3>
-      <p class="subtitle mb-16 reveal">Нужны документы для компенсации от работодателя или Минобороны? Подготовим:</p>
-      <div class="docs-grid reveal">
-        <div class="doc-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-          Договор на перевозку
-        </div>
-        <div class="doc-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg></span>
-          Опись имущества
-        </div>
-        <div class="doc-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-          Кассовый чек
-        </div>
-        <div class="doc-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-          Акт выполненных работ
-        </div>
-        <div class="doc-card">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg></span>
-          Учредительные документы
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 6 — FAQ
-       ============================================ -->
-  <section class="section faq-section" id="faq">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>Частые вопросы</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item reveal">
-          <summary>Как рассчитывается стоимость переезда?</summary>
-          <div class="faq-answer">Стоимость зависит от расстояния, объёма груза и типа транспорта. Мы рассчитаем точную цену бесплатно за 10 минут после вашей заявки. Цена фиксируется в договоре и не меняется.</div>
-        </details>
-        <details class="faq-item reveal reveal-d1">
-          <summary>Нужна ли предоплата?</summary>
-          <div class="faq-answer">Нет. Мы работаем без предоплаты. Вы платите только после получения вещей в целости и сохранности. Это прописано в договоре.</div>
-        </details>
-        <details class="faq-item reveal reveal-d2">
-          <summary>Что будет, если вещи повредят?</summary>
-          <div class="faq-answer">Мы несём полную материальную ответственность по договору. Дополнительно оформляем страховку на груз. При повреждении — полная компенсация.</div>
-        </details>
-        <details class="faq-item reveal reveal-d3">
-          <summary>Какие сроки доставки?</summary>
-          <div class="faq-answer">Транспорт проходит ~700 км в день. Москва-Тюмень — 3-4 дня, Краснодар-Новосибирск — 4-5 дней. Точные сроки фиксируем в договоре. При опоздании — компенсация 30% стоимости.</div>
-        </details>
-        <details class="faq-item reveal reveal-d4">
-          <summary>Можно ли отследить, где мой груз?</summary>
-          <div class="faq-answer">Да. По вашему запросу менеджер отправит геолокацию транспорта в Telegram. Вы всегда знаете, где находятся ваши вещи.</div>
-        </details>
-        <details class="faq-item reveal reveal-d5">
-          <summary>Готовите ли вы документы для компенсации от работодателя?</summary>
-          <div class="faq-answer">Да. Подготовим полный пакет: договор, опись имущества, кассовый чек, акт выполненных работ, учредительные документы. Подходит для компенсации от работодателя и Минобороны.</div>
-        </details>
-        <details class="faq-item reveal reveal-d6">
-          <summary>Какой транспорт вы используете?</summary>
-          <div class="faq-answer">От Газели (до 1,5 тонн) до еврофуры (до 20 тонн). Весь транспорт не старше 8 лет, проходит регулярное ТО. Гарантируем чистый кузов без посторонних запахов.</div>
-        </details>
-        <details class="faq-item reveal reveal-d7">
-          <summary>Как с вами связаться?</summary>
-          <div class="faq-answer">Позвоните: +7 (922) 255-53-72 или напишите в Telegram. Менеджер на связи 24/7, включая выходные.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 7 — HOW WE WORK
-       ============================================ -->
-  <section class="section bg-white" id="how">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>От заявки до разгрузки — 8 простых шагов</h2>
-        <p class="subtitle">Всё прозрачно — вы знаете, что происходит на каждом этапе</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">1</div>
-          <div>
-            <h4>Детали</h4>
-            <p>Сообщите объём груза, маршрут и пожелания</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d1">
-          <div class="step-number">2</div>
-          <div>
-            <h4>Цена</h4>
-            <p>Рассчитаем стоимость. Цены прозрачны и фиксируются в договоре</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d2">
-          <div class="step-number">3</div>
-          <div>
-            <h4>Дата</h4>
-            <p>Выберем удобные дату и время погрузки</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d3">
-          <div class="step-number">4</div>
-          <div>
-            <h4>Договор</h4>
-            <p>Заключим договор, пропишем все условия</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d4">
-          <div class="step-number">5</div>
-          <div>
-            <h4>Погрузка</h4>
-            <p>Авто приедет вовремя, водитель поможет загрузить</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d5">
-          <div class="step-number">6</div>
-          <div>
-            <h4>Транспортировка</h4>
-            <p>~700 км/день, отслеживание геолокации в реальном времени</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d6">
-          <div class="step-number">7</div>
-          <div>
-            <h4>Выгрузка</h4>
-            <p>Авто прибудет вовремя, проверка сохранности на месте</p>
-          </div>
-        </div>
-        <div class="step-card reveal reveal-d7">
-          <div class="step-number">8</div>
-          <div>
-            <h4>Оплата</h4>
-            <p>По факту прибытия: наличные или перевод на карту</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-24 reveal">
-        <a href="#final-form" class="btn btn-primary">Узнать стоимость за 10 минут</a>
-        <p style="color:var(--slate-400);font-size:0.8125rem;margin-top:12px;">Или позвоните: <a href="tel:+79222555372" style="color:var(--navy-500);font-weight:600;text-decoration:none;">+7 (922) 255-53-72</a></p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 8 — REVIEWS
-       ============================================ -->
-  <section class="section bg-slate" id="reviews">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>300+ семей уже переехали с нами</h2>
-        <p class="subtitle">Рейтинг <strong style="font-size:1.375rem;color:var(--amber-600);">4.9</strong> на Авито &middot; Статус «Надёжный исполнитель»</p>
-      </div>
-
-      <div class="review-carousel">
-        <div class="review-screenshot"><img src="img/review-1.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-2.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-3.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-4.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-5.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-6.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-7.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-8.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-9.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-10.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-11.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-12.jpg" alt="Отзыв клиента" loading="lazy"></div>
-        <div class="review-screenshot"><img src="img/review-13.jpg" alt="Отзыв клиента" loading="lazy"></div>
-      </div>
-
-      <div class="text-center mt-16">
-        <a href="https://www.avito.ru/user/0fffe3b7e337707d1ab67581618e9c87/profile?src=sharing" class="avito-link" target="_blank" rel="noopener">
-          <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-          Смотреть все отзывы на Авито
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 9 — FLEET / TRANSPORT
-       ============================================ -->
-  <section class="section bg-white" id="fleet">
-    <div class="container">
-      <div class="section-heading reveal">
-        <h2>Чистые машины, опытные водители</h2>
-      </div>
-
-      <div class="fleet-cards mb-24">
-        <div class="card fleet-fact reveal">
-          <div class="icon-box icon-box--green">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-          </div>
-          <h4>Вся техника исправна</h4>
-          <p>Регулярное ТО</p>
-        </div>
-        <div class="card fleet-fact reveal reveal-d1">
-          <div class="icon-box icon-box--navy">
-            <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-          </div>
-          <h4>Не старше 8 лет</h4>
-          <p>Возраст транспорта</p>
-        </div>
-        <div class="card fleet-fact reveal reveal-d2">
-          <div class="icon-box icon-box--amber">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-          </div>
-          <h4>Профессионалы</h4>
-          <p>Стаж от 10 лет</p>
-        </div>
-        <div class="card fleet-fact reveal reveal-d3">
-          <div class="icon-box icon-box--green">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>
-          </div>
-          <h4>Чистый кузов</h4>
-          <p>Без запахов</p>
-        </div>
-      </div>
-
-      <h3 class="text-center mb-16 reveal">Виды транспорта</h3>
-      <div class="vehicle-grid mb-24 reveal">
-        <div class="vehicle-card"><img src="img/vehicle-1.jpg" alt="Газель — до 1.5 тонн" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/vehicle-2.jpg" alt="5-тонник — до 3 тонн" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/vehicle-3.jpg" alt="10-тонник — до 5 тонн" loading="lazy"></div>
-        <div class="vehicle-card"><img src="img/vehicle-4.jpg" alt="Еврофура — до 20 тонн" loading="lazy"></div>
-      </div>
-
-      <h3 class="text-center mb-16 reveal">Фото наших погрузок</h3>
-      <div class="loading-carousel">
-        <div class="loading-photo"><img src="img/loading-1.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-2.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-3.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-4.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-5.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-6.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-7.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-8.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-9.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-10.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-11.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-12.jpg" alt="Погрузка" loading="lazy"></div>
-        <div class="loading-photo"><img src="img/loading-13.jpg" alt="Погрузка" loading="lazy"></div>
-      </div>
-
-      <div class="text-center mt-24 reveal">
-        <a href="#final-form" class="btn btn-primary">Узнать стоимость за 10 минут</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 10 — TEAM
-       ============================================ -->
-  <section class="section bg-slate" id="team">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>Знакомьтесь — мы за вас отвечаем</h2>
-        <p class="subtitle">Вы будете знать в лицо каждого, кто отвечает за ваш груз</p>
-      </div>
-
-      <div class="team-grid">
-        <div class="card team-card reveal">
-          <div class="team-photo">
-            <img src="img/team-1.jpg" alt="Ильченко Сергей — руководитель" loading="lazy">
-          </div>
-          <div class="team-info">
-            <h4>Сергей Ильченко</h4>
-            <p>Руководитель. Лично контролирует качество каждого переезда.</p>
-          </div>
-        </div>
-        <div class="card team-card reveal reveal-d1">
-          <div class="team-photo">
-            <img src="img/team-2.jpg" alt="Баева Татьяна — менеджер-логист" loading="lazy">
-          </div>
-          <div class="team-info">
-            <h4>Татьяна Баева</h4>
-            <p>Менеджер-логист. На связи 24/7, поможет с любым вопросом.</p>
-          </div>
-        </div>
-        <div class="card team-card reveal reveal-d2">
-          <div class="team-photo">
-            <img src="img/team-3.jpg" alt="Юнусов Камил — менеджер-логист" loading="lazy">
-          </div>
-          <div class="team-info">
-            <h4>Камил Юнусов</h4>
-            <p>Менеджер-логист. Подберёт оптимальный маршрут и рассчитает стоимость.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 11 — TRUST / STATS / LETTERS
-       ============================================ -->
-  <section class="section trust-section" id="trust">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>Цифры говорят за нас</h2>
-      </div>
-
-      <h3 class="text-center mb-16 reveal">Благодарственные письма</h3>
-      <div class="letters-grid mb-24">
-        <div class="letter-card reveal"><img src="img/letter-1.jpg" alt="Благодарственное письмо" loading="lazy"></div>
-        <div class="letter-card reveal reveal-d1"><img src="img/letter-2.jpg" alt="Благодарственное письмо" loading="lazy"></div>
-        <div class="letter-card reveal reveal-d2"><img src="img/letter-3.jpg" alt="Благодарственное письмо" loading="lazy"></div>
-        <div class="letter-card reveal reveal-d3"><img src="img/letter-4.jpg" alt="Благодарственное письмо" loading="lazy"></div>
-      </div>
-
-      <div class="text-center reveal">
-        <a href="#final-form" class="btn btn-primary">Оставить заявку — это бесплатно</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       BLOCK 12 — FINAL CTA FORM
-       ============================================ -->
-  <section class="section final-cta" id="final-form">
-    <div class="container">
-      <div class="section-heading section-heading--center reveal">
-        <h2>Узнайте стоимость прямо сейчас</h2>
-        <p class="subtitle">Заполните форму — пришлём расчёт в Telegram за 10 минут</p>
-      </div>
-
-      <div class="reveal">
-        <div class="final-form-card">
-          <form class="js-form">
-            <div class="form-group">
-              <label for="final-phone" class="form-label">Телефон</label>
-              <input type="tel" id="final-phone" name="phone" class="form-input js-phone" placeholder="+7 (___) ___-__-__" required inputmode="tel" autocomplete="tel">
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <div>
-                  <label for="final-from" class="form-label">Откуда</label>
-                  <input type="text" id="final-from" name="from" class="form-input" placeholder="Город отправления">
-                </div>
-                <div>
-                  <label for="final-to" class="form-label">Куда</label>
-                  <input type="text" id="final-to" name="to" class="form-input" placeholder="Город назначения">
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Узнать стоимость за 10 минут</button>
-          </form>
-          <div class="form-trust">
-            <span class="form-trust-item">
-              <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-              Перезвоним за 10 мин
-            </span>
-            <span class="form-trust-item">
-              <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
-              Без предоплаты
-            </span>
-          </div>
-          <p style="text-align:center;font-size:0.6875rem;color:var(--slate-400);margin-top:12px;">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">
-            <img src="logo.png" alt="Экспресс Транс" width="272" height="164">
-          </div>
-          <p class="footer-legal">ИП Ильченко С.А.</p>
-          <p class="footer-legal">ИНН: 860319741405</p>
-          <p class="footer-legal">ОГРН: 324723200001590</p>
-        </div>
-        <div>
-          <p class="footer-title">Контакты</p>
-          <ul class="footer-links">
-            <li><a href="tel:+79222555372">+7 (922) 255-53-72</a></li>
-            <li><a href="mailto:tk-extrans@mail.ru">tk-extrans@mail.ru</a></li>
-            <li><a href="https://t.me/+79222555372" target="_blank" rel="noopener">Telegram</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-title">Разделы</p>
-          <ul class="footer-links">
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#how">Как мы работаем</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#contract">Договор</a></li>
-            <li><a href="#faq">Вопросы</a></li>
-            <li><a href="https://www.avito.ru/user/0fffe3b7e337707d1ab67581618e9c87/profile?src=sharing" target="_blank" rel="noopener">Профиль на Авито</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Экспресс Транс. Все права защищены.</p>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- ============================================
-       STICKY CTA BAR (Mobile)
-       ============================================ -->
-  <div class="sticky-cta" id="sticky-cta">
-    <div class="sticky-cta-buttons">
-      <a href="tel:+79222555372" class="btn sticky-btn-call">
-        <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        Позвонить
-      </a>
-      <a href="https://t.me/+79222555372" class="btn sticky-btn-tg" target="_blank" rel="noopener">
-        <span class="icon icon-sm"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></span>
-        Telegram
-      </a>
     </div>
   </div>
+</section>
 
+<!-- STATS STRIP -->
+<div class="stats-strip" aria-label="Статистика компании">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-value">300+</div><div class="stat-label">переездов</div></div>
+      <div class="stat-item"><div class="stat-value">4.9</div><div class="stat-label">оценка на Авито</div></div>
+      <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">сервис по договору</div></div>
+      <div class="stat-item"><div class="stat-value">8+</div><div class="stat-label">лет опыта</div></div>
+    </div>
+  </div>
+</div>
 
-  <!-- ============================================
-       JAVASCRIPT
-       ============================================ -->
-  <script>
-    (function() {
-      'use strict';
+<!-- FEARS -->
+<section class="fears" id="fears">
+  <div class="container">
+    <h2 class="section-title reveal">Чего боятся при переезде</h2>
+    <p class="section-subtitle reveal">Мы знаем каждый страх и&nbsp;закрыли их договором, страхованием и&nbsp;гарантиями</p>
+    <div class="fears-grid">
+      <div class="fear-card reveal">
+        <div class="fear-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="fear-title">Повредят или потеряют вещи</div>
+        <div class="fear-solution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Договор с полной мат. ответственностью + страхование груза</span></div>
+      </div>
+      <div class="fear-card reveal">
+        <div class="fear-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="fear-title">Сорвут сроки — негде жить</div>
+        <div class="fear-solution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Компенсация 30% за нарушение сроков, прописана в договоре</span></div>
+      </div>
+      <div class="fear-card reveal">
+        <div class="fear-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="fear-title">Назовут одну цену, возьмут другую</div>
+        <div class="fear-solution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Цена фиксируется в договоре, оплата только по факту</span></div>
+      </div>
+      <div class="fear-card reveal">
+        <div class="fear-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="fear-title">Нарвёмся на мошенников</div>
+        <div class="fear-solution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ИП с ОГРН, 300+ переездов, 4.9 на Авито, контакт руководителя</span></div>
+      </div>
+      <div class="fear-card reveal">
+        <div class="fear-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#991B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
+        <div class="fear-title">Не смогу дозвониться</div>
+        <div class="fear-solution"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Менеджер 24/7, геолокация авто, ответим за 10 минут или скидка</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      // --- Scroll Reveal ---
-      var reveals = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        reveals.forEach(function(el) { io.observe(el); });
-      } else {
-        reveals.forEach(function(el) { el.classList.add('visible'); });
-      }
+<!-- GEOGRAPHY & SERVICES -->
+<section class="geography" id="geography">
+  <div class="container">
+    <div class="geo-top reveal">
+      <div class="geo-map">
+        <img src="img/map-russia.jpg" alt="Карта маршрутов по России" width="560" height="350" loading="lazy">
+      </div>
+      <div class="geo-text">
+        <h2>Переезды по всей России</h2>
+        <p>Доставляем домашние вещи между любыми городами. Маршруты от Калининграда до Владивостока. Регулярные рейсы по Уралу, Сибири и центральной части.</p>
+      </div>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Под ключ</h3>
+        </div>
+        <p>Отдельная машина целиком под ваш переезд. Грузчики, упаковка, доставка до двери. Максимальный комфорт.</p>
+        <div class="price-tag">Полная загрузка</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><line x1="8" y1="7" x2="8" y2="12" stroke-dasharray="2 2"/></svg></div>
+          <h3>Догруз</h3>
+        </div>
+        <p>Ваши вещи едут с попутным грузом. Платите только за занятое место. Экономия до 40% от стоимости.</p>
+        <div class="price-tag">Экономия до 40%</div>
+      </div>
+    </div>
+    <div class="geo-facts reveal">
+      <div class="geo-fact"><div class="geo-fact-value">50+</div><div class="geo-fact-label">городов</div></div>
+      <div class="geo-fact"><div class="geo-fact-value">3-7</div><div class="geo-fact-label">дней доставка</div></div>
+      <div class="geo-fact"><div class="geo-fact-value">0 &#8381;</div><div class="geo-fact-label">предоплата</div></div>
+    </div>
+  </div>
+</section>
 
-      // --- Sticky header (desktop) ---
-      var header = document.getElementById('site-header');
-      var lastScrollY = 0;
-      var headerVisible = false;
+<!-- LEAD MAGNET -->
+<section class="lead-magnet" id="checklist">
+  <div class="container">
+    <div class="lead-inner reveal">
+      <div class="lead-content">
+        <h2>Чек-лист подготовки к&nbsp;переезду</h2>
+        <p>Скачайте бесплатный чек-лист — не&nbsp;забудете ни&nbsp;одной мелочи. Проверено 300+ переездами.</p>
+      </div>
+      <form class="lead-form" onsubmit="handleForm(event,'checklist')">
+        <input type="tel" class="input-field" placeholder="+7 (___) ___-__-__" autocomplete="tel" required aria-label="Телефон для получения чек-листа">
+        <button type="submit" class="btn-primary">Скачать чек-лист бесплатно</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-      function onScroll() {
-        var y = window.pageYOffset;
-        // Show header after scrolling past hero
-        if (y > 400 && !headerVisible) {
-          header.classList.add('visible');
-          headerVisible = true;
-        } else if (y <= 400 && headerVisible) {
-          header.classList.remove('visible');
-          headerVisible = false;
-        }
-        lastScrollY = y;
-      }
+<!-- SUPPORT 24/7 -->
+<section class="support" id="support">
+  <div class="container">
+    <h2 class="section-title reveal">Поддержка 24/7</h2>
+    <p class="section-subtitle reveal">Вы всегда знаете, где ваш груз и&nbsp;с&nbsp;кем связаться</p>
+    <div class="support-grid">
+      <div class="support-card reveal">
+        <div class="support-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Менеджер на связи</h3>
+        <p>Ответим на любой вопрос днём и ночью. Телефон, Telegram, WhatsApp.</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="support-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Геолокация авто</h3>
+        <p>По запросу отправляем координаты машины. Знаете точно, где ваши вещи.</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="support-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Ответ за 10 минут</h3>
+        <p>Не перезвоним в течение 10 минут — скидка на заказ. Это наша гарантия.</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="support-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg></div>
+        <h3>Контакт руководителя</h3>
+        <p>Номер директора в договоре. Решим любую ситуацию лично.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      window.addEventListener('scroll', onScroll, { passive: true });
+<!-- CONTRACT -->
+<section class="contract" id="contract">
+  <div class="container">
+    <h2 class="section-title reveal">Работаем по договору</h2>
+    <p class="section-subtitle reveal">Каждый пункт защищает вас. Не&nbsp;нас.</p>
+    <div class="contract-features reveal">
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Полная материальная ответственность</strong> за сохранность вещей</span></div>
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Страхование груза</strong> на полную стоимость</span></div>
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Фиксированная цена</strong> — сумма в договоре не меняется</span></div>
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Компенсация 30%</strong> за нарушение сроков доставки</span></div>
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Оплата по факту</strong> — после получения вещей</span></div>
+      <div class="contract-feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Опись имущества</strong> при погрузке с фото- и видеофиксацией</span></div>
+    </div>
 
-      // --- Sticky CTA (mobile) ---
-      var stickyCta = document.getElementById('sticky-cta');
-      var stickyVisible = false;
+    <h3 class="section-title reveal" style="font-size:1.3rem;margin-top:16px">Сравните сами</h3>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="comparison-table">
+        <thead><tr><th>Недобросовестные перевозчики</th><th>Экспресс Транс</th></tr></thead>
+        <tbody>
+          <tr><td>Берут предоплату и пропадают</td><td>0% предоплаты — платите по факту</td></tr>
+          <tr><td>Цена растёт после погрузки</td><td>Цена в договоре не меняется</td></tr>
+          <tr><td>Нет договора</td><td>Договор с полной ответственностью</td></tr>
+          <tr><td>Пропадают после погрузки</td><td>Менеджер 24/7 + контакт руководителя</td></tr>
+          <tr><td>Грязный кузов, старая машина</td><td>Техника до 8 лет, чистый кузов</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-      function onScrollSticky() {
-        var y = window.pageYOffset;
-        if (y > 500 && !stickyVisible) {
-          stickyCta.classList.add('visible');
-          stickyVisible = true;
-        } else if (y <= 500 && stickyVisible) {
-          stickyCta.classList.remove('visible');
-          stickyVisible = false;
-        }
-      }
+    <div class="compensation-block reveal">
+      <div class="compensation-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+      <div>
+        <h3>Документы на компенсацию</h3>
+        <p>Подготовим полный пакет документов для компенсации расходов на переезд от работодателя или военной части: договор, опись, чек, акт выполненных работ.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      window.addEventListener('scroll', onScrollSticky, { passive: true });
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section-title reveal">Частые вопросы</h2>
+    <p class="section-subtitle reveal">Ответы на&nbsp;то, что чаще всего спрашивают перед заказом</p>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>Сколько стоит переезд?</summary><div class="faq-answer">Зависит от объёма вещей и маршрута. Оставьте заявку — рассчитаем точную стоимость за 10 минут.</div></details>
+      <details class="faq-item reveal"><summary>Не изменится ли цена после погрузки?</summary><div class="faq-answer">Нет. Цена фиксируется в договоре до начала работ и не меняется ни при каких обстоятельствах.</div></details>
+      <details class="faq-item reveal"><summary>За какое время нужно заказать?</summary><div class="faq-answer">Оптимально за 3-5 дней до переезда. Но можем организовать и в день обращения — зависит от загрузки.</div></details>
+      <details class="faq-item reveal"><summary>Что если водитель опаздывает?</summary><div class="faq-answer">Скидка 30% за нарушение сроков — это прописано в договоре. За 8 лет работы таких случаев было всего 2.</div></details>
+      <details class="faq-item reveal"><summary>Как подготовиться к погрузке?</summary><div class="faq-answer">Направим чек-лист подготовки. Водитель поможет с загрузкой — упакует хрупкое, расставит по кузову.</div></details>
+      <details class="faq-item reveal"><summary>Какие документы дадите на компенсацию?</summary><div class="faq-answer">Полный пакет: договор, опись имущества, кассовый чек, акт выполненных работ. Подходит для работодателя и военной части.</div></details>
+      <details class="faq-item reveal"><summary>Нужны ли грузчики?</summary><div class="faq-answer">В услуге &laquo;Под ключ&raquo; грузчики включены — на погрузку и выгрузку. При догрузе водитель поможет с базовой погрузкой.</div></details>
+      <details class="faq-item reveal"><summary>Как отследить груз?</summary><div class="faq-answer">По запросу направим геолокацию автомобиля в мессенджер. Вы всегда знаете, где ваши вещи.</div></details>
+    </div>
+  </div>
+</section>
 
-      // --- Counter animation ---
-      var statsAnimated = false;
-      var statsBar = document.getElementById('stats-bar');
+<!-- HOW WE WORK -->
+<section class="how-we-work" id="steps">
+  <div class="container">
+    <h2 class="section-title reveal">Как мы работаем</h2>
+    <p class="section-subtitle reveal">8 простых шагов от заявки до переезда</p>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">1</div><h3>Заявка</h3><p>Оставляете заявку на сайте или звоните</p></div>
+      <div class="step-card reveal"><div class="step-num">2</div><h3>Расчёт</h3><p>Называем точную цену за 10 минут</p></div>
+      <div class="step-card reveal"><div class="step-num">3</div><h3>Договор</h3><p>Подписываем договор с гарантиями</p></div>
+      <div class="step-card reveal"><div class="step-num">4</div><h3>Подготовка</h3><p>Высылаем чек-лист, согласуем дату</p></div>
+      <div class="step-card reveal"><div class="step-num">5</div><h3>Погрузка</h3><p>Приезжаем, упаковываем, грузим с описью</p></div>
+      <div class="step-card reveal"><div class="step-num">6</div><h3>Доставка</h3><p>Везём с отслеживанием геолокации</p></div>
+      <div class="step-card reveal"><div class="step-num">7</div><h3>Выгрузка</h3><p>Разгружаем и проверяем по описи</p></div>
+      <div class="step-card reveal"><div class="step-num">8</div><h3>Оплата</h3><p>Платите только после получения вещей</p></div>
+    </div>
+  </div>
+</section>
 
-      function animateCount(el, target, duration, decimals, suffix) {
-        var start = 0;
-        var startTime = null;
-        decimals = decimals || 0;
-        suffix = suffix || '';
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <h2 class="section-title">Отзывы клиентов</h2>
+      <p class="section-subtitle">Рейтинг 4.9 из 5 на Авито. Вот что пишут о нас.</p>
+      <a href="https://www.avito.ru/user/0fffe3b7e337707d1ab67581618e9c87/profile?src=sharing" target="_blank" rel="noopener" class="reviews-avito-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#D97706"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Все отзывы на Авито
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" aria-label="Отзывы клиентов">
+        <div class="review-card"><img src="img/review-1.jpg" alt="Отзыв клиента 1" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-2.jpg" alt="Отзыв клиента 2" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-3.jpg" alt="Отзыв клиента 3" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-4.jpg" alt="Отзыв клиента 4" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-5.jpg" alt="Отзыв клиента 5" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-6.jpg" alt="Отзыв клиента 6" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-7.jpg" alt="Отзыв клиента 7" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-8.jpg" alt="Отзыв клиента 8" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-9.jpg" alt="Отзыв клиента 9" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-10.jpg" alt="Отзыв клиента 10" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-11.jpg" alt="Отзыв клиента 11" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-12.jpg" alt="Отзыв клиента 12" loading="lazy" width="260" height="360"></div>
+        <div class="review-card"><img src="img/review-13.jpg" alt="Отзыв клиента 13" loading="lazy" width="260" height="360"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function step(ts) {
-          if (!startTime) startTime = ts;
-          var progress = Math.min((ts - startTime) / duration, 1);
-          // easeOutCubic
-          var ease = 1 - Math.pow(1 - progress, 3);
-          var current = start + (target - start) * ease;
-          el.textContent = (decimals > 0 ? current.toFixed(decimals) : Math.floor(current)) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+  <div class="container">
+    <h2 class="section-title reveal">Наш автопарк</h2>
+    <p class="section-subtitle reveal">Чистая техника до 8 лет. Подберём машину под ваш объём.</p>
+    <div class="fleet-features reveal">
+      <div class="fleet-feature">
+        <div class="fleet-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>4 типа машин</h3><p>От Газели до еврофуры</p>
+      </div>
+      <div class="fleet-feature">
+        <div class="fleet-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Чистый кузов</h3><p>Обработка перед каждым рейсом</p>
+      </div>
+      <div class="fleet-feature">
+        <div class="fleet-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>До 8 лет</h3><p>Только свежая техника</p>
+      </div>
+      <div class="fleet-feature">
+        <div class="fleet-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>GPS-трекинг</h3><p>Отслеживание в реальном времени</p>
+      </div>
+    </div>
+    <div class="vehicles-grid reveal">
+      <div class="vehicle-card"><img src="img/vehicle-1.jpg" alt="Газель — до 1.5 тонн" loading="lazy" width="280" height="210"><div class="vehicle-card-body"><h3>Газель</h3><p>до 1.5 т / 9 м&sup3;</p></div></div>
+      <div class="vehicle-card"><img src="img/vehicle-2.jpg" alt="5-тонник" loading="lazy" width="280" height="210"><div class="vehicle-card-body"><h3>5-тонник</h3><p>до 5 т / 30 м&sup3;</p></div></div>
+      <div class="vehicle-card"><img src="img/vehicle-3.jpg" alt="10-тонник" loading="lazy" width="280" height="210"><div class="vehicle-card-body"><h3>10-тонник</h3><p>до 10 т / 45 м&sup3;</p></div></div>
+      <div class="vehicle-card"><img src="img/vehicle-4.jpg" alt="Еврофура 20 тонн" loading="lazy" width="280" height="210"><div class="vehicle-card-body"><h3>Еврофура</h3><p>до 20 т / 82 м&sup3;</p></div></div>
+    </div>
+    <h3 style="text-align:center;margin-bottom:16px;font-size:1.1rem" class="reveal">Реальные погрузки</h3>
+    <div class="carousel-wrapper loading-carousel">
+      <div class="carousel-track" aria-label="Фотографии погрузок">
+        <div class="loading-card"><img src="img/loading-1.jpg" alt="Погрузка 1" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-2.jpg" alt="Погрузка 2" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-3.jpg" alt="Погрузка 3" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-4.jpg" alt="Погрузка 4" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-5.jpg" alt="Погрузка 5" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-6.jpg" alt="Погрузка 6" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-7.jpg" alt="Погрузка 7" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-8.jpg" alt="Погрузка 8" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-9.jpg" alt="Погрузка 9" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-10.jpg" alt="Погрузка 10" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-11.jpg" alt="Погрузка 11" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-12.jpg" alt="Погрузка 12" loading="lazy" width="280" height="200"></div>
+        <div class="loading-card"><img src="img/loading-13.jpg" alt="Погрузка 13" loading="lazy" width="280" height="200"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      if (statsBar && 'IntersectionObserver' in window) {
-        var statsIO = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting && !statsAnimated) {
-              statsAnimated = true;
-              var counters = statsBar.querySelectorAll('.stat-number[data-count]');
-              counters.forEach(function(c) {
-                var target = parseFloat(c.getAttribute('data-count'));
-                var suffix = c.getAttribute('data-suffix') || '';
-                var decimals = parseInt(c.getAttribute('data-decimals')) || 0;
-                animateCount(c, target, 1500, decimals, suffix);
-              });
-              statsIO.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-        statsIO.observe(statsBar);
-      }
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <h2 class="section-title reveal">Наша команда</h2>
+    <p class="section-subtitle reveal">Люди, которые лично отвечают за&nbsp;ваш переезд</p>
+    <div class="team-grid reveal">
+      <div class="team-card"><img src="img/team-1.jpg" alt="Сергей Ильченко — руководитель" loading="lazy" width="360" height="360"><div class="team-card-body"><h3>Сергей Ильченко</h3><p>Руководитель</p></div></div>
+      <div class="team-card"><img src="img/team-2.jpg" alt="Татьяна Баева — менеджер-логист" loading="lazy" width="360" height="360"><div class="team-card-body"><h3>Татьяна Баева</h3><p>Менеджер-логист</p></div></div>
+      <div class="team-card"><img src="img/team-3.jpg" alt="Камил Юнусов — менеджер-логист" loading="lazy" width="360" height="360"><div class="team-card-body"><h3>Камил Юнусов</h3><p>Менеджер-логист</p></div></div>
+    </div>
+  </div>
+</section>
 
-      // --- Phone mask ---
-      function phoneMask(input) {
-        input.addEventListener('input', function(e) {
-          var x = input.value.replace(/\D/g, '');
-          // Remove leading 8 or 7
-          if (x.length > 0 && (x[0] === '8' || x[0] === '7')) {
-            x = x.substring(1);
-          }
-          var formatted = '+7';
-          if (x.length > 0) formatted += ' (' + x.substring(0, 3);
-          if (x.length >= 3) formatted += ') ' + x.substring(3, 6);
-          if (x.length >= 6) formatted += '-' + x.substring(6, 8);
-          if (x.length >= 8) formatted += '-' + x.substring(8, 10);
+<!-- TRUST -->
+<section class="trust" id="trust">
+  <div class="container">
+    <h2 class="section-title reveal">Нам доверяют</h2>
+    <p class="section-subtitle reveal">Цифры, которые говорят за нас</p>
+    <div class="trust-counters reveal">
+      <div class="trust-counter"><div class="trust-counter-value">300+</div><div class="trust-counter-label">переездов</div></div>
+      <div class="trust-counter"><div class="trust-counter-value">4.9</div><div class="trust-counter-label">рейтинг Авито</div></div>
+      <div class="trust-counter"><div class="trust-counter-value">8+</div><div class="trust-counter-label">лет работы</div></div>
+      <div class="trust-counter"><div class="trust-counter-value">0</div><div class="trust-counter-label">потерянных грузов</div></div>
+    </div>
+    <h3 class="letters-heading reveal">Благодарственные письма</h3>
+    <div class="letters-grid reveal">
+      <div class="letter-card" onclick="openLightbox(this.querySelector('img').src)"><img src="img/letter-1.jpg" alt="Благодарственное письмо 1" loading="lazy" width="260" height="360"></div>
+      <div class="letter-card" onclick="openLightbox(this.querySelector('img').src)"><img src="img/letter-2.jpg" alt="Благодарственное письмо 2" loading="lazy" width="260" height="360"></div>
+      <div class="letter-card" onclick="openLightbox(this.querySelector('img').src)"><img src="img/letter-3.jpg" alt="Благодарственное письмо 3" loading="lazy" width="260" height="360"></div>
+      <div class="letter-card" onclick="openLightbox(this.querySelector('img').src)"><img src="img/letter-4.jpg" alt="Благодарственное письмо 4" loading="lazy" width="260" height="360"></div>
+    </div>
+  </div>
+</section>
 
-          input.value = formatted;
-        });
+<!-- FINAL CTA -->
+<section class="final-cta" id="cta">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <h2>Узнайте стоимость переезда</h2>
+      <p>Назовём точную цену за 10 минут. Без обязательств и предоплаты.</p>
+      <form class="final-cta-form" onsubmit="handleForm(event,'final')">
+        <input type="tel" class="input-field" placeholder="+7 (___) ___-__-__" autocomplete="tel" required aria-label="Телефон">
+        <input type="text" class="input-field" placeholder="Откуда — Куда" aria-label="Маршрут">
+        <button type="submit" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Узнать стоимость за 10 минут
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 
-        input.addEventListener('focus', function() {
-          if (!input.value) input.value = '+7';
-        });
+</main>
 
-        input.addEventListener('blur', function() {
-          if (input.value === '+7' || input.value === '+7 (') input.value = '';
-        });
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="logo-white.png" alt="Экспресс Транс" width="140" height="32" loading="lazy" style="margin-bottom:16px">
+        <p style="color:rgba(255,255,255,.6);font-size:.9rem">Межгородские переезды по всей России. Работаем по договору, без предоплаты.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <div class="footer-contacts">
+          <a href="tel:+79222555372" class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +7 (922) 255-53-72
+          </a>
+          <a href="https://t.me/+79222555372" target="_blank" rel="noopener" class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Telegram
+          </a>
+          <a href="mailto:tk-extrans@mail.ru" class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            tk-extrans@mail.ru
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <div class="footer-links">
+          <a href="#fears">Гарантии</a>
+          <a href="#geography">Услуги</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#fleet">Автопарк</a>
+          <a href="#faq">Вопросы</a>
+          <a href="https://www.avito.ru/user/0fffe3b7e337707d1ab67581618e9c87/profile?src=sharing" target="_blank" rel="noopener">Авито</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>ИП Ильченко С.А. ИНН 860319741405 ОГРН 324723200001590</span>
+      <span>&copy; 2024-2026 Экспресс Транс. Все права защищены.</span>
+    </div>
+  </div>
+</footer>
 
-        // Handle paste
-        input.addEventListener('paste', function(e) {
-          e.preventDefault();
-          var paste = (e.clipboardData || window.clipboardData).getData('text');
-          var digits = paste.replace(/\D/g, '');
-          if (digits.length > 0 && (digits[0] === '8' || digits[0] === '7')) {
-            digits = digits.substring(1);
-          }
-          input.value = '+7';
-          if (digits.length > 0) {
-            var evt = new Event('input', { bubbles: true });
-            // Temporarily set raw digits so mask can format
-            var x = digits.substring(0, 10);
-            var formatted = '+7';
-            if (x.length > 0) formatted += ' (' + x.substring(0, 3);
-            if (x.length >= 3) formatted += ') ' + x.substring(3, 6);
-            if (x.length >= 6) formatted += '-' + x.substring(6, 8);
-            if (x.length >= 8) formatted += '-' + x.substring(8, 10);
-            input.value = formatted;
-          }
-        });
-      }
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <a href="tel:+79222555372" class="sticky-btn sticky-btn-phone">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Позвонить
+  </a>
+  <a href="https://t.me/+79222555372" target="_blank" rel="noopener" class="sticky-btn sticky-btn-tg">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Telegram
+  </a>
+</div>
 
-      var phoneInputs = document.querySelectorAll('.js-phone');
-      phoneInputs.forEach(function(inp) { phoneMask(inp); });
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()" aria-hidden="true" role="dialog" aria-label="Просмотр изображения">
+  <button class="lightbox-close" aria-label="Закрыть">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img src="" alt="Просмотр изображения" id="lightboxImg">
+</div>
 
-      // --- Form submission feedback ---
-      var forms = document.querySelectorAll('.js-form');
-      forms.forEach(function(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var btn = form.querySelector('button[type="submit"]');
-          var origText = btn.textContent;
-          btn.textContent = 'Отправлено!';
-          btn.style.background = '#16a34a';
-          btn.disabled = true;
-          setTimeout(function() {
-            btn.textContent = origText;
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 3000);
-        });
-      });
+<script>
+(function(){
+  var header=document.getElementById('header');
+  window.addEventListener('scroll',function(){
+    header.classList.toggle('scrolled',window.pageYOffset>10);
+  },{passive:true});
 
-      // --- Smooth scroll for anchor links ---
-      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          var target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
+  document.querySelectorAll('input[type="tel"]').forEach(function(input){
+    input.addEventListener('focus',function(){if(!this.value)this.value='+7 ('});
+    input.addEventListener('input',function(){
+      var v=this.value.replace(/\D/g,'');
+      if(!v.length){this.value='';return}
+      if(v[0]==='8')v='7'+v.slice(1);
+      if(v[0]!=='7')v='7'+v;
+      var f='+7';
+      if(v.length>1)f+=' ('+v.substring(1,4);
+      if(v.length>=4)f+=') '+v.substring(4,7);
+      if(v.length>=7)f+='-'+v.substring(7,9);
+      if(v.length>=9)f+='-'+v.substring(9,11);
+      this.value=f;
+    });
+    input.addEventListener('keydown',function(e){
+      if(e.key==='Backspace'&&this.value.length<=4){e.preventDefault();this.value=''}
+    });
+  });
 
-    })();
-  </script>
+  var reveals=document.querySelectorAll('.reveal');
+  function check(){
+    var trigger=window.innerHeight*.88;
+    reveals.forEach(function(el){if(el.getBoundingClientRect().top<trigger)el.classList.add('visible')});
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check,{passive:true});
+  check();
+})();
+
+function handleForm(e,source){
+  e.preventDefault();
+  var form=e.target,btn=form.querySelector('button[type="submit"]'),orig=btn.innerHTML;
+  btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Отправляем...';
+  btn.disabled=true;
+  setTimeout(function(){
+    btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Заявка отправлена!';
+    btn.style.background='#16A34A';
+    setTimeout(function(){btn.innerHTML=orig;btn.disabled=false;btn.style.background='';form.reset()},3000);
+  },1200);
+}
+
+function openLightbox(src){
+  var lb=document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src=src;
+  lb.classList.add('active');lb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  var lb=document.getElementById('lightbox');
+  lb.classList.remove('active');lb.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+</script>
 </body>
 </html>
