@@ -1160,6 +1160,31 @@
       padding: var(--space-3);
     }
 
+    /* --- Review screenshots grid --- */
+    .review-screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .review-screenshots-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .review-screenshot {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* --- Vehicle grid --- */
     .vehicle-grid {
       display: grid;
@@ -2075,76 +2100,30 @@
         </span>
       </div>
 
-      <div class="review-scroll">
-        <div class="card-review reveal reveal-delay-1">
-          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
-            <div class="review-avatar review-avatar--1">АМ</div>
-            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-            </div>
-          </div>
-          <p class="text-body mb-3">Переезжали из Москвы в Краснодар. Всё приехало в целости. Менеджер на связи был круглосуточно, отвечал даже поздно вечером. Рекомендую!</p>
-          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Анна М., Москва → Краснодар</p>
+      <!-- Avito rating screenshot -->
+      <div class="text-center mb-6 reveal">
+        <img src="img/review-avito-rating.jpg" alt="Рейтинг 4.9 на Авито — 74 оценки" loading="lazy" style="max-width:360px;margin:0 auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
+      </div>
+
+      <!-- Real Avito review screenshots -->
+      <div class="review-screenshots-grid">
+        <div class="review-screenshot reveal reveal-delay-1">
+          <img src="img/review-1.jpg" alt="Отзыв Татьяна — Сызрань-Санкт-Петербург" loading="lazy">
         </div>
-        <div class="card-review reveal reveal-delay-2">
-          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
-            <div class="review-avatar review-avatar--2">ДК</div>
-            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-            </div>
-          </div>
-          <p class="text-body mb-3">Отправляли вещи догрузом из Питера в Новосибирск. Сэкономили почти в 2 раза по сравнению с отдельной машиной. Сроки соблюдены, вещи без повреждений.</p>
-          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Дмитрий К., Санкт-Петербург → Новосибирск</p>
+        <div class="review-screenshot reveal reveal-delay-2">
+          <img src="img/review-2.jpg" alt="Отзыв Мария — Московская область-Ульяновск" loading="lazy">
         </div>
-        <div class="card-review reveal reveal-delay-3">
-          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
-            <div class="review-avatar review-avatar--3">СВ</div>
-            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-            </div>
-          </div>
-          <p class="text-body mb-3">Военнослужащий, переезжал по контракту. Ребята подготовили все документы для компенсации — договор, опись, чек, акт. Всё приняли без вопросов.</p>
-          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Сергей В., Мурманск → Ростов-на-Дону</p>
+        <div class="review-screenshot reveal reveal-delay-3">
+          <img src="img/review-3.jpg" alt="Отзыв Кирилл Мишин" loading="lazy">
         </div>
-        <div class="card-review reveal reveal-delay-4">
-          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
-            <div class="review-avatar review-avatar--4">ЕТ</div>
-            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-            </div>
-          </div>
-          <p class="text-body mb-3">Срочно нужно было перевезти вещи — подали машину в тот же день! Без предоплаты, всё по договору. Водитель вежливый, помог загрузить. Спасибо!</p>
-          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Елена Т., Екатеринбург → Казань</p>
+        <div class="review-screenshot reveal reveal-delay-4">
+          <img src="img/review-4.jpg" alt="Отзыв клиента" loading="lazy">
         </div>
-        <div class="card-review reveal reveal-delay-5">
-          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);">
-            <div class="review-avatar review-avatar--5">ОН</div>
-            <div style="display:flex;gap:2px;color:var(--color-accent-400);">
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i>
-            </div>
-          </div>
-          <p class="text-body mb-3">Перевозили мебель и бытовую технику. Кузов чистый, всё аккуратно закрепили. Геолокацию присылали по запросу — видно, где машина. Очень удобно.</p>
-          <p class="text-body-sm" style="color:var(--color-neutral-500);font-weight:var(--font-weight-medium);">Олег Н., Самара → Воронеж</p>
+        <div class="review-screenshot reveal reveal-delay-5">
+          <img src="img/review-5.jpg" alt="Отзыв клиента" loading="lazy">
+        </div>
+        <div class="review-screenshot reveal reveal-delay-5">
+          <img src="img/review-6.jpg" alt="Отзыв клиента" loading="lazy">
         </div>
       </div>
 
