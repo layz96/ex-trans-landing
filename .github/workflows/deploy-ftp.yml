@@ -1,0 +1,37 @@
+name: Deploy to NIC.RU Hosting
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.ex-7599068.nichost.ru
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./
+          server-dir: /home/ex-7599068/ex-trans.ru/docs/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+            **/.playwright-mcp/**
+            **/ex-trans.ru.xmind
+            **/tailwind.config.js
+            **/DESIGN-SYSTEM.md
+            **/ex-trans-site.zip
+            **/site-html.zip
+            **/mont-fort-*
+            **/img/Погрузки/**
+            **/img/Отзывы/**
+            **/img/team/**
+            **/img/photo_*
+            **/Экспресс_транс*
