@@ -823,6 +823,29 @@ function closeLightbox(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+
+// Bitrix24 CRM integration
+var B24_WEBHOOK='https://b24-l87pqf.bitrix24.ru/rest/1/usbw9xdl9fafm4cr/';
+document.querySelectorAll('form').forEach(function(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var origText=btn.textContent;
+    btn.textContent='Отправка...';btn.disabled=true;
+    var d=new FormData(form);
+    var phone=d.get('phone')||'',name=d.get('name')||'',route=d.get('route')||'',from=d.get('from')||'',to=d.get('to')||'';
+    var comment='Заявка с сайта ex-trans.ru (v2)';
+    if(from&&to)comment+='\nМаршрут: '+from+' → '+to;
+    if(route)comment+='\nМаршрут: '+route;
+    fetch(B24_WEBHOOK+'crm.lead.add.json',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({fields:{TITLE:'Заявка с сайта '+(phone||''),NAME:name||'Посетитель сайта',PHONE:[{VALUE:phone,VALUE_TYPE:'WORK'}],SOURCE_ID:'WEB',COMMENTS:comment}})
+    }).then(function(r){return r.json()}).then(function(res){
+      if(res.result){btn.textContent='Отправлено!';btn.style.background='#16a34a';form.reset();setTimeout(function(){btn.textContent=origText;btn.style.background='';btn.disabled=false},3000)}
+      else throw new Error('err');
+    }).catch(function(){btn.textContent='Ошибка';btn.style.background='#dc2626';setTimeout(function(){btn.textContent=origText;btn.style.background='';btn.disabled=false},3000)});
+  });
+});
 </script>
 </body>
 </html>

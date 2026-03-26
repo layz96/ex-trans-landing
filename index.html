@@ -2640,6 +2640,72 @@
       });
 
     });
+
+    // Bitrix24 CRM integration
+    var B24_WEBHOOK = 'https://b24-l87pqf.bitrix24.ru/rest/1/usbw9xdl9fafm4cr/';
+
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var origText = btn.textContent;
+        btn.textContent = 'Отправка...';
+        btn.disabled = true;
+
+        var data = new FormData(form);
+        var phone = data.get('phone') || '';
+        var name = data.get('name') || '';
+        var from = data.get('from') || '';
+        var to = data.get('to') || '';
+        var route = data.get('route') || '';
+
+        var comment = 'Заявка с сайта ex-trans.ru';
+        if (from && to) comment += '\nМаршрут: ' + from + ' → ' + to;
+        if (route) comment += '\nМаршрут: ' + route;
+
+        var title = 'Заявка с сайта';
+        if (phone) title += ' ' + phone;
+
+        fetch(B24_WEBHOOK + 'crm.lead.add.json', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: {
+              TITLE: title,
+              NAME: name || 'Посетитель сайта',
+              PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
+              SOURCE_ID: 'WEB',
+              COMMENTS: comment
+            }
+          })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          if (res.result) {
+            btn.textContent = 'Отправлено!';
+            btn.style.background = '#16a34a';
+            form.reset();
+            setTimeout(function() {
+              btn.textContent = origText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 3000);
+          } else {
+            throw new Error('Bitrix error');
+          }
+        })
+        .catch(function() {
+          btn.textContent = 'Ошибка, попробуйте позвонить';
+          btn.style.background = '#dc2626';
+          setTimeout(function() {
+            btn.textContent = origText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        });
+      });
+    });
+
   </script>
 
 </body>
