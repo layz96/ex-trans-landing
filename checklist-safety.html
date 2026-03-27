@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как выбрать перевозчика для безопасного переезда — Экспресс Транс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 14mm 16mm 14mm;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #0F172A;
+      background: #F8FAFC;
+      line-height: 1.6;
+    }
+
+    /* --- Layout --- */
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Header --- */
+    .doc-header {
+      background: linear-gradient(160deg, #0F1B2D 0%, #1A2B45 60%, #243B5E 100%);
+      padding: 40px 44px 36px;
+      border-radius: 0 0 16px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -30px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .doc-header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 60px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(217, 119, 6, 0.08);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: #D97706;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-title span {
+      color: #FBBF24;
+    }
+
+    .header-subtitle {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 10px;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- Intro --- */
+    .intro {
+      padding: 28px 0 8px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    /* --- Checklist --- */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-bottom: 24px;
+    }
+
+    .check-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 20px 24px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .check-number {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      background: linear-gradient(135deg, #D97706, #F59E0B);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+      margin-top: 2px;
+    }
+
+    .check-content {
+      flex: 1;
+    }
+
+    .check-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .check-checkbox {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 2px solid #D97706;
+      border-radius: 5px;
+      background: #FFFBEB;
+      position: relative;
+    }
+
+    .check-checkbox::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 10px;
+      border: 2px solid #D97706;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+      opacity: 0.3;
+    }
+
+    .check-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #1A2B45;
+      letter-spacing: -0.01em;
+    }
+
+    .check-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+      padding-left: 30px;
+    }
+
+    /* --- Footer --- */
+    .doc-footer {
+      background: linear-gradient(160deg, #0F1B2D 0%, #1A2B45 100%);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .footer-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .footer-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(217, 119, 6, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-contact-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: #FBBF24;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer-contact-text {
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    .footer-contact-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 1px;
+    }
+
+    /* --- Print --- */
+    @media print {
+      html { font-size: 13px; }
+      body { background: #FFFFFF; }
+      .page-wrap { max-width: 100%; }
+
+      .doc-header {
+        border-radius: 0;
+        padding: 28px 32px 24px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .check-card {
+        box-shadow: none;
+        border-color: #E2E8F0;
+        page-break-inside: avoid;
+      }
+
+      .doc-footer {
+        border-radius: 0;
+        margin-top: 12px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <header class="doc-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="brand-name">Экспресс Транс</div>
+      </div>
+      <h1 class="header-title">Как выбрать перевозчика<br>для <span>безопасного переезда</span></h1>
+      <p class="header-subtitle">11 ключевых критериев надёжного подрядчика</p>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+      <p>Выбор надежного перевозчика — залог спокойного переезда. Как найти действительно безопасного и ответственного подрядчика? В этом руководстве — 11 ключевых критериев.</p>
+    </section>
+
+    <!-- Checklist -->
+    <div class="checklist">
+
+      <!-- 1 -->
+      <div class="check-card">
+        <div class="check-number">1</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Проверенные площадки</div>
+          </div>
+          <div class="check-desc">Ищите на площадках с проверенными реквизитами, аккаунт подрядчика старше 3 лет</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="check-card">
+        <div class="check-number">2</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Юридическое лицо</div>
+          </div>
+          <div class="check-desc">Проверьте на сайте ФНС: существует 3+ лет, нет задолженностей и судов</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="check-card">
+        <div class="check-number">3</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Отзывы</div>
+          </div>
+          <div class="check-desc">Свежие, 50+ штук, оценка 4.8+, читайте содержание а не только звёзды</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="check-card">
+        <div class="check-number">4</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Реальные рекомендации</div>
+          </div>
+          <div class="check-desc">Запросите контакты последних клиентов, позвоните</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="check-card">
+        <div class="check-number">5</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Сайт компании</div>
+          </div>
+          <div class="check-desc">Профессиональный дизайн, фото/видео работ, полная информация</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="check-card">
+        <div class="check-number">6</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Доставка от двери до двери</div>
+          </div>
+          <div class="check-desc">Без перегрузок на складах, напрямую</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="check-card">
+        <div class="check-number">7</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Договор</div>
+          </div>
+          <div class="check-desc">Подробный, с ответственностью за сохранность, сроки, стоимость</div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="check-card">
+        <div class="check-number">8</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Гарантии сроков</div>
+          </div>
+          <div class="check-desc">Штрафные санкции за нарушение сроков в договоре</div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="check-card">
+        <div class="check-number">9</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Без предоплаты</div>
+          </div>
+          <div class="check-desc">Надёжный перевозчик не требует предоплату, оплата по факту</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="check-card">
+        <div class="check-number">10</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Коммуникация</div>
+          </div>
+          <div class="check-desc">Вежливость, скорость ответов, информативность, прозрачность</div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="check-card">
+        <div class="check-number">11</div>
+        <div class="check-content">
+          <div class="check-title-row">
+            <div class="check-checkbox"></div>
+            <div class="check-title">Дополнительно</div>
+          </div>
+          <div class="check-desc">Страхование, грузчики, состояние авто, личная встреча</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="doc-footer">
+      <div class="footer-title">Контакты</div>
+      <div class="footer-contacts">
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Телефон</div>
+            <div class="footer-contact-text">+7 (922) 255-53-72</div>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Email</div>
+            <div class="footer-contact-text">tk-extrans@mail.ru</div>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855-.2 1.751.25 2.148.328.29.651.46 1.1.636l4.501 1.772c.2.616 1.263 3.892 1.52 4.682.146.453.29.733.486.992a1.801 1.801 0 0 0 .503.421l.04.024c.326.19.664.235.89.235.4 0 .727-.173.727-.173l.013-.007.35-.233 2.963-2.596 4.238 3.251c.075.048.306.21.6.314.296.104.69.163 1.046.07a1.868 1.868 0 0 0 1.26-1.312l3.37-17.078c.146-.712.054-1.365-.34-1.816a1.737 1.737 0 0 0-1.238-.533z"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Telegram</div>
+            <div class="footer-contact-text">@extrans</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

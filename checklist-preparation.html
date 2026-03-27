@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 этапов комфортного и безопасного переезда — Экспресс Транс</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 14mm 16mm 14mm;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #0F172A;
+      background: #F8FAFC;
+      line-height: 1.6;
+    }
+
+    /* --- Layout --- */
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Header --- */
+    .doc-header {
+      background: linear-gradient(160deg, #0F1B2D 0%, #1A2B45 60%, #243B5E 100%);
+      padding: 40px 44px 36px;
+      border-radius: 0 0 16px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-header::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -30px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .doc-header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 60px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(217, 119, 6, 0.08);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: #D97706;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-title span {
+      color: #FBBF24;
+    }
+
+    /* --- Intro --- */
+    .intro {
+      padding: 28px 0 8px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    /* --- Stage sections --- */
+    .stages {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-bottom: 24px;
+    }
+
+    .stage {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+      overflow: hidden;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: 1px solid #F1F5F9;
+      background: #FAFBFD;
+    }
+
+    .stage-number {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: linear-gradient(135deg, #D97706, #F59E0B);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+    }
+
+    .stage-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1A2B45;
+      letter-spacing: -0.01em;
+    }
+
+    .stage-items {
+      padding: 16px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 12px;
+      background: #F8FAFC;
+      border-radius: 8px;
+      border-left: 3px solid #D97706;
+    }
+
+    .item-check {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 2px solid #CBD5E1;
+      border-radius: 4px;
+      margin-top: 1px;
+      position: relative;
+      background: #FFFFFF;
+    }
+
+    .stage-item .item-text {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.55;
+    }
+
+    .item-text strong {
+      color: #1A2B45;
+      font-weight: 600;
+    }
+
+    /* --- Footer --- */
+    .doc-footer {
+      background: linear-gradient(160deg, #0F1B2D 0%, #1A2B45 100%);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .footer-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .footer-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(217, 119, 6, 0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-contact-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: #FBBF24;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer-contact-text {
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+
+    .footer-contact-label {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 1px;
+    }
+
+    /* --- Print --- */
+    @media print {
+      html { font-size: 13px; }
+      body { background: #FFFFFF; }
+      .page-wrap { max-width: 100%; }
+
+      .doc-header {
+        border-radius: 0;
+        padding: 28px 32px 24px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .stage {
+        box-shadow: none;
+        border-color: #E2E8F0;
+        page-break-inside: avoid;
+      }
+
+      .doc-footer {
+        border-radius: 0;
+        margin-top: 12px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <header class="doc-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="brand-name">Экспресс Транс</div>
+      </div>
+      <h1 class="header-title"><span>5 этапов</span> комфортного<br>и безопасного переезда</h1>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+      <p>Переезд в другой город — это всегда волнительно! Но среди приятных хлопот возникает немало тревог. В этом чек-листе мы разберем 5 ключевых этапов, которые помогут сделать правильный выбор и избежать неприятных сюрпризов.</p>
+    </section>
+
+    <!-- Stages -->
+    <div class="stages">
+
+      <!-- Stage I -->
+      <div class="stage">
+        <div class="stage-header">
+          <div class="stage-number">I</div>
+          <div class="stage-title">Подготовка</div>
+        </div>
+        <div class="stage-items">
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Оценка объема:</strong> определите примерный объем вещей (коробки, мебель, техника)</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Определение сроков:</strong> установите даты погрузки и доставки. Если дата приходится на будний день — перевозка выйдет дешевле</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Список вопросов:</strong> подготовьте вопросы для подрядчиков (страхование, опыт, гарантии)</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Бюджет:</strong> установите комфортный бюджет с учётом грузчиков и упаковки</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage II -->
+      <div class="stage">
+        <div class="stage-header">
+          <div class="stage-number">II</div>
+          <div class="stage-title">Поиск подрядчиков</div>
+        </div>
+        <div class="stage-items">
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Онлайн-поиск:</strong> Авито, Яндекс.Услуги, специализированные сайты</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Рекомендации:</strong> спросите знакомых</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text"><strong>Проверка:</strong> изучите сайт, контакты, юридическую информацию</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Составьте список из 3-5 подрядчиков</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage III -->
+      <div class="stage">
+        <div class="stage-header">
+          <div class="stage-number">III</div>
+          <div class="stage-title">Оценка подрядчиков</div>
+        </div>
+        <div class="stage-items">
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Свяжитесь и опишите задачу, запросите расчёт</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Сравните цены — слишком низкая цена может быть признаком недобросовестности</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Оцените тон общения — вежливость важна</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Проверьте документы (ИНН, ОГРН), дату создания, судебные тяжбы</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Изучите отзывы: важно количество (50+ отзывов) и оценка (4.8+)</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Узнайте про страхование, опыт, гарантии, грузчиков</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage IV -->
+      <div class="stage">
+        <div class="stage-header">
+          <div class="stage-number">IV</div>
+          <div class="stage-title">Заключение договора</div>
+        </div>
+        <div class="stage-items">
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Внимательно прочитайте договор</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Проверьте: стоимость, сроки, ответственность, страхование, список имущества</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Внесите устные договорённости в договор</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Получите копию подписанного договора</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage V -->
+      <div class="stage">
+        <div class="stage-header">
+          <div class="stage-number">V</div>
+          <div class="stage-title">Контроль переезда</div>
+        </div>
+        <div class="stage-items">
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Поддерживайте связь с подрядчиком</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Присутствуйте при погрузке</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Тщательно проверьте вещи при выгрузке</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Подпишите акт приёма-передачи только после проверки</div>
+          </div>
+          <div class="stage-item">
+            <div class="item-check"></div>
+            <div class="item-text">Зафиксируйте повреждения в акте</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="doc-footer">
+      <div class="footer-title">Контакты</div>
+      <div class="footer-contacts">
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Телефон</div>
+            <div class="footer-contact-text">+7 (922) 255-53-72</div>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Email</div>
+            <div class="footer-contact-text">tk-extrans@mail.ru</div>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855-.2 1.751.25 2.148.328.29.651.46 1.1.636l4.501 1.772c.2.616 1.263 3.892 1.52 4.682.146.453.29.733.486.992a1.801 1.801 0 0 0 .503.421l.04.024c.326.19.664.235.89.235.4 0 .727-.173.727-.173l.013-.007.35-.233 2.963-2.596 4.238 3.251c.075.048.306.21.6.314.296.104.69.163 1.046.07a1.868 1.868 0 0 0 1.26-1.312l3.37-17.078c.146-.712.054-1.365-.34-1.816a1.737 1.737 0 0 0-1.238-.533z"/></svg>
+          </div>
+          <div>
+            <div class="footer-contact-label">Telegram</div>
+            <div class="footer-contact-text">@extrans</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
