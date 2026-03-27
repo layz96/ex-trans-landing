@@ -18,6 +18,7 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./
           server-dir: /home/ex-7599068/ex-trans.ru/docs/
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
