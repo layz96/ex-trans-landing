@@ -771,18 +771,27 @@ section{padding:48px 0}
   },{passive:true});
 
   document.querySelectorAll('input[type="tel"]').forEach(function(input){
-    input.addEventListener('focus',function(){if(!this.value)this.value='+7 ('});
+    input.addEventListener('focus',function(){if(!this.value)this.value='+7'});
     input.addEventListener('input',function(){
       var v=this.value.replace(/\D/g,'');
       if(!v.length){this.value='';return}
       if(v[0]==='8')v='7'+v.slice(1);
       if(v[0]!=='7')v='7'+v;
-      var f='+7';
+      if(v.length>11)v=v.slice(0,11);
+      var f='+'+v[0];
       if(v.length>1)f+=' ('+v.substring(1,4);
-      if(v.length>=4)f+=') '+v.substring(4,7);
-      if(v.length>=7)f+='-'+v.substring(7,9);
-      if(v.length>=9)f+='-'+v.substring(9,11);
+      if(v.length>4)f+=') '+v.substring(4,7);
+      if(v.length>7)f+='-'+v.substring(7,9);
+      if(v.length>9)f+='-'+v.substring(9,11);
       this.value=f;
+    });
+    input.addEventListener('paste',function(e){
+      e.preventDefault();
+      var paste=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'');
+      if(paste.startsWith('8'))paste='7'+paste.slice(1);
+      if(!paste.startsWith('7'))paste='7'+paste;
+      this.value=paste;
+      this.dispatchEvent(new Event('input'));
     });
     input.addEventListener('keydown',function(e){
       if(e.key==='Backspace'&&this.value.length<=4){e.preventDefault();this.value=''}
